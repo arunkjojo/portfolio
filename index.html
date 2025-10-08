@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Jojo | Senior Software Developer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            /* Dark Theme */
+            --dark-bg: #0a192f;
+            --dark-component-bg: #112240;
+            --dark-light-navy: #233554;
+            --dark-slate: #8892b0;
+            --dark-light-slate: #ccd6f6;
+            --dark-white: #e6f1ff;
+            --dark-accent: #64ffda;
+
+            /* Light Theme */
+            --light-bg: #f8f8f8;
+            --light-component-bg: #ffffff;
+            --light-light-gray: #e0e0e0;
+            --light-text-color: #333333;
+            --light-headings-color: #222222;
+            --light-accent-green: #28a745; /* Green */
+            --light-accent-red: #dc3545;   /* Red */
+            --light-accent-black: #000000; /* Black for general text */
+
+            /* Current Theme */
+            --current-bg: var(--dark-bg);
+            --current-component-bg: var(--dark-component-bg);
+            --current-light-color: var(--dark-light-navy); /* For borders, dividers */
+            --current-text-color: var(--dark-slate);
+            --current-headings-color: var(--dark-light-slate);
+            --current-accent-color: var(--dark-accent);
+            --current-link-hover: var(--dark-white);
+
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        body.light-mode {
+            --current-bg: var(--light-bg);
+            --current-component-bg: var(--light-component-bg);
+            --current-light-color: var(--light-light-gray);
+            --current-text-color: var(--light-text-color);
+            --current-headings-color: var(--light-headings-color);
+            --current-accent-color: var(--light-accent-green); /* Default accent for light mode */
+            --current-link-hover: var(--light-accent-black);
+        }
+
+        /* General Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--current-bg);
+            color: var(--current-text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--current-component-bg);
+            border: 1px solid var(--current-light-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2rem;
+            color: var(--current-accent-color);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        #theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* General Layout & Typography */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--current-headings-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        h2.section-heading {
+            font-size: clamp(26px, 5vw, 32px);
+            margin-bottom: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: var(--current-accent-color); /* Section headings use accent color */
+        }
+
+        h2.section-heading::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 2px;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--current-light-color);
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            color: var(--current-accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--current-link-hover);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 700;
+            color: var(--current-accent-color);
+            margin-bottom: 5px;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 5vw, 40px);
+            color: var(--current-headings-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: var(--current-text-color);
+        }
+
+        .hero-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--current-accent-color);
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3); /* Accent glow */
+            opacity: 0; /* Hidden by default */
+        }
+
+        body.light-mode .hero-photo {
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--current-accent-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--current-accent-color);
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--current-link-hover);
+            transform: translateY(-3px);
+            border-color: var(--current-link-hover);
+        }
+
+        body.light-mode .cta-button:hover {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--light-accent-black);
+            border-color: var(--light-accent-black);
+        }
+        
+        /* --- Experience Timeline --- */
+        #experience {
+            padding-top: 150px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--current-light-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--current-bg);
+            border: 4px solid var(--current-accent-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--current-component-bg);
+            position: relative;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+        body.light-mode .timeline-content:hover {
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            color: var(--current-headings-color);
+        }
+
+        .timeline-content .company {
+            color: var(--current-accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .date {
+            font-size: 0.9rem;
+            color: var(--current-text-color);
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline-content ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--current-text-color);
+        }
+
+        .timeline-content ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--current-accent-color);
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 900px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background-color: var(--current-component-bg);
+            color: var(--current-headings-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--current-light-color);
+            transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tag i {
+            color: var(--current-accent-color);
+            font-size: 1.1em;
+            transition: color 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            color: var(--current-accent-color);
+            background-color: var(--current-light-color);
+            border-color: var(--current-accent-color);
+        }
+        body.light-mode .skill-tag:hover {
+            background-color: var(--light-light-gray);
+            border-color: var(--light-accent-green);
+        }
+        body.light-mode .skill-tag:hover i {
+            color: var(--light-accent-black);
+        }
+
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--current-component-bg);
+            padding: 25px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
+        }
+        body.light-mode .project-card:hover {
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: var(--current-headings-color);
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 15px;
+            color: var(--current-text-color);
+        }
+        
+        .project-tech-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--current-text-color);
+            margin-bottom: 20px;
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            font-weight: 600;
+            color: var(--current-accent-color); /* Link color */
+        }
+        .project-links a:hover svg {
+            fill: var(--current-link-hover);
+        }
+        .project-links svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--current-headings-color); /* Icon fill color */
+            transition: fill 0.3s ease;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            text-align: center;
+            min-height: auto;
+            padding-bottom: 50px;
+        }
+
+        #contact h2 {
+            justify-content: center;
+            color: var(--current-accent-color);
+        }
+        #contact h2::after {
+            display: none;
+        }
+
+        #contact p {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            color: var(--current-text-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-links svg {
+            width: 28px; /* Slightly larger icons */
+            height: 28px;
+            fill: var(--current-headings-color); /* Icons fill with headings color */
+            transition: fill 0.3s ease;
+        }
+        .social-links a:hover svg {
+            fill: var(--current-accent-color);
+        }
+        body.light-mode .social-links a:hover svg {
+             fill: var(--light-accent-black);
+        }
+
+
+        .email-link {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--current-accent-color);
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .email-link:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--current-link-hover);
+            border-color: var(--current-link-hover);
+        }
+        body.light-mode .email-link:hover {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--light-accent-black);
+            border-color: var(--light-accent-black);
+        }
+
+        /* --- Animation Base State --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            h2.section-heading::after {
+                width: 150px;
+            }
+            
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 10px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i> </button>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="anim-hero">Arun Jojo</h1>
+                    <h2 class="anim-hero">Senior React.js - Next.js | Software Developer</h2>
+                    <p class="anim-hero">
+                        Results-driven Software Engineer with over 5 years of experience in developing robust web and mobile applications, focused on building scalable and responsive solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="cta-button anim-hero">View My Work</a>
+                        <a href="arun_jojo_resume.pdf" download="Arun_Jojo_Resume.pdf" class="cta-button anim-hero">Download Resume</a>
+                    </div>
+                </div>
+                <img src="" alt="Arun Jojo" class="hero-photo anim-hero" id="profile-photo" style="display: none;">
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-heading reveal">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <h3>Senior Developer - React.js</h3>
+                            <p class="company">BCT Consulting</p>
+                            <p class="date">Jun 2024 - Aug 2025</p>
+                            <ul>
+                                <li>Created interactive front-end components with React.js, significantly improving user interface performance.</li>
+                                <li>Contributed to the Information Kerala Mission project, implementing key features to improve delivery timelines.</li>
+                                <li>Implemented state management using React.js with Redux-Saga for better data handling.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <h3>Full-Stack Developer</h3>
+                            <p class="company">Inlux Intelligence</p>
+                            <p class="date">Oct 2022 - Jun 2024</p>
+                            <ul>
+                                <li>Developed front-end applications using React.js and Next.js with TypeScript.</li>
+                                <li>Built and maintained backend systems using PHP and Node.js with Express.js.</li>
+                                <li>Enhanced user interface performance and improved server response times.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <h3>Jn. React Developer</h3>
+                            <p class="company">2Hats Logic Solutions</p>
+                            <p class="date">Apr 2022 - Sep 2022</p>
+                            <ul>
+                                <li>Developed a Progressive Web App using React JS, Firebase, and MongoDB.</li>
+                                <li>Built a Voice Translation App using React.js, Redux, and WebRTC.</li>
+                                <li>Created a React Native E-commerce App with a WooCommerce back-end.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <h3>React Developer</h3>
+                            <p class="company">Inlux Intelligence</p>
+                            <p class="date">May 2020 - Feb 2022</p>
+                            <ul>
+                                <li>Developed full-stack applications using React.js, PHP APIs, and MySQL.</li>
+                                <li>Created and successfully published a React PWA TWA application on the Play Store.</li>
+                                <li>Contributed to releasing multiple projects on the Play Store, enhancing app visibility.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-heading reveal">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag reveal"><i class="fab fa-react"></i> React.js</div>
+                    <div class="skill-tag reveal"><i class="fas fa-code"></i> Next.js</div>
+                    <div class="skill-tag reveal"><i class="fab fa-reacteurope"></i> React Native (Expo)</div>
+                    <div class="skill-tag reveal"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-tag reveal"><i class="fas fa-code"></i> TypeScript</div>
+                    <div class="skill-tag reveal"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="skill-tag reveal"><i class="fas fa-server"></i> Express.js</div>
+                    <div class="skill-tag reveal"><i class="fab fa-php"></i> PHP</div>
+                    <div class="skill-tag reveal"><i class="fas fa-dna"></i> Redux</div>
+                    <div class="skill-tag reveal"><i class="fab fa-html5"></i> HTML</div>
+                    <div class="skill-tag reveal"><i class="fab fa-css3-alt"></i> CSS</div>
+                    <div class="skill-tag reveal"><i class="fas fa-palette"></i> Tailwind/MUI</div>
+                    <div class="skill-tag reveal"><i class="fas fa-database"></i> MongoDB</div>
+                    <div class="skill-tag reveal"><i class="fas fa-database"></i> MySQL</div>
+                    <div class="skill-tag reveal"><i class="fas fa-database"></i> PostgreSQL</div>
+                    <div class="skill-tag reveal"><i class="fas fa-fire"></i> Firebase</div>
+                    <div class="skill-tag reveal"><i class="fas fa-exchange-alt"></i> RESTful APIs</div>
+                    <div class="skill-tag reveal"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+                    <div class="skill-tag reveal"><i class="fas fa-cogs"></i> CI/CD</div>
+                    <div class="skill-tag reveal"><i class="fas fa-vial"></i> Unit Testing</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-heading reveal">Key Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card reveal">
+                        <h3>Ksmart & Ksuite Web Application</h3>
+                        <p>A comprehensive web application developed for the Information Kerala Mission (IKM) to enhance user accessibility and streamline system functionality for public services.</p>
+                        <ul class="project-tech-list">
+                            <li>React.js</li>
+                            <li>Redux-Saga</li>
+                            <li>TypeScript</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arunkjojo" target="_blank" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Live Demo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <h3>Real-Time Voice Translation App</h3>
+                        <p>A web-based application improving real-time communication by translating voice input instantly, built with a focus on low-latency streaming and state management.</p>
+                        <ul class="project-tech-list">
+                            <li>React.js</li>
+                            <li>Redux</li>
+                            <li>WebRTC</li>
+                            <li>Firebase</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arunkjojo" target="_blank" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <h3>React Native E-commerce App</h3>
+                        <p>A cross-platform mobile application designed to streamline the online shopping experience for users, featuring a clean UI and robust integration with a WooCommerce back-end.</p>
+                        <ul class="project-tech-list">
+                            <li>React Native</li>
+                            <li>Expo</li>
+                            <li>WooCommerce API</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arunkjojo" target="_blank" aria-label="GitHub">
+                                <svg xmlns="http://www.3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <h2 class="section-heading reveal">Get In Touch</h2>
+                <p class="reveal">
+                    I'm currently open to new opportunities and would love to hear from you. Whether you have a question or just want to connect, feel free to reach out.
+                </p>
+                <div class="social-links reveal">
+                    <a href="https://github.com/arunkjojo" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/arunkjojo" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:arunkjojo@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/+919946452243" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="reveal">
+                    <a href="mailto:arunkjojo@gmail.com" class="email-link">Say Hello</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const profilePhoto = document.getElementById('profile-photo');
+            const toggleThemeButton = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Image Generation Placeholder
+            // In a real scenario, an image generation model would provide the image URL here.
+            // For now, I'll use a placeholder.
+            const professionalImageUrl = 'https://i.imgur.com/your-image-here.png'; // Replace with a real URL or an actual generated image if you have one.
+            profilePhoto.src = professionalImageUrl;
+
+
+            // --- Theme Toggle Logic ---
+            let isLightMode = false;
+
+            function updateTheme() {
+                if (isLightMode) {
+                    body.classList.add('light-mode');
+                    toggleThemeButton.innerHTML = '<i class="fas fa-moon"></i>';
+                    gsap.to(document.documentElement, { 
+                        '--current-accent-color': 'var(--light-accent-green)',
+                        '--current-link-hover': 'var(--light-accent-black)',
+                        duration: 0.3 
+                    });
+                } else {
+                    body.classList.remove('light-mode');
+                    toggleThemeButton.innerHTML = '<i class="fas fa-sun"></i>';
+                    gsap.to(document.documentElement, { 
+                        '--current-accent-color': 'var(--dark-accent)',
+                        '--current-link-hover': 'var(--dark-white)',
+                        duration: 0.3 
+                    });
+                }
+            }
+
+            toggleThemeButton.addEventListener('click', () => {
+                isLightMode = !isLightMode;
+                updateTheme();
+            });
+
+            // Set initial theme
+            updateTheme();
+
+            // --- Hero Section Animation ---
+            gsap.from(".anim-hero", {
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // --- Profile Photo Animation (if exists) ---
+            if (profilePhoto.src) { // Check if a photo URL is set
+                profilePhoto.style.display = 'block'; // Make it visible
+                gsap.from(profilePhoto, {
+                    duration: 1,
+                    opacity: 0,
+                    x: 50,
+                    ease: "power3.out",
+                    delay: 0.8 // Animate after text
+                });
+            }
+
+            // --- Scroll-driven Narrative Animations ---
+            const revealElements = gsap.utils.toArray('.reveal');
+            
+            revealElements.forEach((element) => {
+                gsap.fromTo(element, 
+                    { 
+                        opacity: 0, 
+                        y: 50 
+                    }, 
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%", 
+                            toggleActions: "play none none none", 
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+</body>
+</html>
