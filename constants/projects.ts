@@ -1,0 +1,32 @@
+export const PROJECTS = [
+    {
+        title: 'IIOT Fleet Telemetry System',
+        description: 'High-performance IIoT telemetry system tracking 10,000+ assets in real-time. Built with Next.js 15, .NET 8, SignalR WebSocket for 60FPS industrial monitoring.',
+        tags: ['Next.js', '.NET Core', 'SignalR', 'DevOps'],
+        image: '/iiot-fleet-telemetry-system.png',
+        slug: 'iiot-fleet-telemetry-system',
+        link: 'https://github.com/arunkjojo/iiot-fleet-telemetry-system',
+        about_long_description: 'High-performance IIoT telemetry system tracking 10,000+ assets in real-time. Built with Next.js 15, .NET 8, SignalR WebSocket for 60FPS industrial monitoring.',
+        about_tags: ['Next.js', '.NET Core', 'SignalR', 'DevOps', 'TypeScript', 'Tailwind CSS', 'JWT', 'Docker', 'GitHub Actions(CI/CD)', 'AI driven Development', 'GitHub Copilot', 'Claude', 'Google Antigravity'],
+    },
+    {
+        title: 'QkSell',
+        description: 'QKsell (qksell.in) is online classifieds platform for buying/selling items like vehicles, real estate, ect.',
+        tags: ['React.js', 'PHP', 'MySQL', 'DevOps'],
+        image: '/qksell.png',
+        slug: 'qksell',
+        link: 'https://github.com/arunkjojo/qksell',
+        about_long_description: 'QKsell (qksell.in) is online classifieds platform for buying/selling items like vehicles, real estate, ect.',
+        about_tags: ['React.js', 'PHP', 'MySQL', 'PWA', 'DevOps', 'TypeScript', 'Tailwind CSS', 'PhonePe', 'Cashfree', 'GitHub Actions(CI/CD)', 'AI driven Development', 'GitHub Copilot', 'Claude', 'Google Antigravity'],
+    },
+    {
+        title: 'Furniture Native App',
+        description: 'This is a furniture e-commerce app project using React Native. Our app consists of a NodeJS Backend, a separate stripe Node server, and a React Native - Expo front end.',
+        tags: ['React Native', 'NodeJS', 'Stripe', 'Expo'],
+        image: '/furniture-app-clone.png',
+        slug: 'furniture-app-clone',
+        link: 'https://github.com/arunkjojo/FurnitureAppClone',
+        about_long_description: 'This is a furniture e-commerce app project using React Native. Our app consists of a NodeJS Backend, a separate stripe Node server, and a React Native - Expo front end.',
+        about_tags: ['React Native', 'NodeJS', 'Stripe', 'Expo', 'JavaScript', 'JWT'],
+    },
+];
