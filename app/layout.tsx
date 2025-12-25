@@ -9,6 +9,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Arun jojo - Software Enginner",
   description: "Portfolio of a Senior Software Engineeer specialized in Next.js and .NET",
+  icons: {
+    icon: [
+      {
+        url: '/logo.png',
+        href: '/logo.png',
+        sizes: '256x256',
+        type: 'image/png',
+      }
+    ],
+  },
 };
 
 export default function RootLayout({
