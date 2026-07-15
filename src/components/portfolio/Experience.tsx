@@ -12,6 +12,11 @@ export default function Experience() {
       period: 'May 2026 – Present'
     },
     {
+      key: 'upskillingGap' as const,
+      company: 'Self-Employed / Personal Projects',
+      period: 'Sep 2025 – Apr 2026'
+    },
+    {
       key: 'bct' as const,
       company: 'BCT Consulting',
       period: 'Jun 2024 – Aug 2025'

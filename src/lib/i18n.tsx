@@ -13,7 +13,6 @@ export interface TranslationSchema {
     contact: string
   }
   hero: {
-    available: string
     title: string
     subtitle: string
     bio: string
@@ -31,6 +30,7 @@ export interface TranslationSchema {
     at: string
     roles: {
       gesher: { role: string; location: string; highlights: string[] }
+      upskillingGap: { role: string; location: string; highlights: string[] }
       bct: { role: string; location: string; highlights: string[] }
       inluxFull: { role: string; location: string; highlights: string[] }
       hats: { role: string; location: string; highlights: string[] }
@@ -39,19 +39,20 @@ export interface TranslationSchema {
   }
   projects: {
     title: string
-    furniture: string
-    googleRedesign: string
-    ecommerceApp: string
-    pizzaOrder: string
+    marketplace: string
     voiceTranslation: string
+    ecommerce: string
+    saas: string
+    shopStore: string
+    iiot: string
   }
   skills: {
     title: string
     categories: {
       frontend: string
       backend: string
-      databases: string
       devops: string
+      databases: string
       testing: string
       ai: string
       soft: string
@@ -85,10 +86,9 @@ const translations: Record<Language, TranslationSchema> = {
   en: {
     nav: { home: 'Home', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact' },
     hero: {
-      available: 'Available for Opportunities',
       title: 'Arun Jojo',
-      subtitle: 'AI Certified | Full-Stack | Software Engineer',
-      bio: 'AI Certified Full-Stack Software Engineer with 5+ years of experience building scalable web applications using Next.js, React, Node.js, and TypeScript. I help teams ship faster by architecting CI/CD pipelines and optimizing real-time systems that handle 10,000+ events/second.',
+      subtitle: 'DevOps Engineer with AI Automation',
+      bio: 'DevOps Engineer with AI Automation with 5+ years of experience building scalable web applications and automating delivery pipelines. I help teams ship faster by architecting CI/CD pipelines, integrating AIOps, and optimizing real-time systems that handle 10,000+ events/second.',
       downloadCv: 'Download CV',
       contactInfo: 'Contact Info'
     },
@@ -109,6 +109,15 @@ const translations: Record<Language, TranslationSchema> = {
             'Architecting full-stack solutions using Next.js and Supabase PostgreSQL, focusing on high concurrency and modular backend design for scalability. Optimized backend infrastructure via AI driven development.',
             'Implementing modern DevOps strategies, including automated CI/CD pipelines via GitHub Actions and containerization with Docker for seamless cloud scaling. Architected a deployment pipeline using GitHub Actions, ensuring zero-downtime frontend releases, increasing release frequency by 20%, and reducing manual intervention by 15% for a production-scale project.',
             'Consulting on frontend performance, implementing advanced caching strategies, and SSR optimization to improve SEO and user retention. Implemented complex state management architectures using React, TypeScript, and Redux-Saga, ensuring type safety and reducing client-side rendering bottlenecks by 30%.'
+          ]
+        },
+        upskillingGap: {
+          role: 'AI-Automated DevOps Upskilling & Planned Break',
+          location: 'Self-Employed / Personal Learning',
+          highlights: [
+            'Planned career break for personal milestones (wedding and family functions).',
+            'Intensively upskilled in modern DevOps practices, AIOps, and AI automation tooling.',
+            'Developed personal projects and automated workflows using loop-engineering activities and agentic orchestrations to prepare for the next career step.'
           ]
         },
         bct: {
@@ -148,20 +157,21 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Projects',
-      furniture: 'A furniture e-commerce app project using React Native. Our app consists of a NodeJS Backend, a separate stripe Node server, and a React Native - Expo front end.',
-      googleRedesign: 'Google Redesign by Storybook and Vite, and using Lerna-monorepo',
-      ecommerceApp: 'Redux-toolkit, Redux Thunk, Styled Components, APIs, Bootstrap',
-      pizzaOrder: 'Web application with integrated PayPal payment integration. Deployed on Vercel.',
-      voiceTranslation: 'Used WebRTC, and multiple audio format conversion. Redux ToolKit-based state management. React Native android application'
+      title: 'Personal & Representative Projects',
+      marketplace: 'Highly scalable multi-vendor marketplace platform featuring real-time catalogs, search, and secure multi-tenant data architecture.',
+      voiceTranslation: 'Real-time translation Android/iOS application utilizing WebRTC and multiple audio format conversions.',
+      ecommerce: 'Premium web and mobile commerce solutions with integrated payment gateways and secure checkout.',
+      saas: 'Cloud-native software-as-a-service application featuring subscription billing, secure multi-tenancy, and automated deployment.',
+      shopStore: 'Progressive web and native mobile application published to Google Play Store featuring local caching and Firebase sync.',
+      iiot: 'Real-time Industrial Internet of Things live monitoring dashboard handling high events concurrency and live data visualization.'
     },
     skills: {
       title: 'Skills Portfolio',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend & APIs',
+        devops: 'DevOps',
         databases: 'Databases',
-        devops: 'DevOps & CI/CD',
         testing: 'Testing',
         ai: 'AI & Tooling',
         soft: 'Soft Skills'
@@ -186,16 +196,15 @@ const translations: Record<Language, TranslationSchema> = {
       email: 'Email',
       phone: 'Phone',
       location: 'Location',
-      locationVal: 'Ernakulam / Kasaragod, Kerala, India'
+      locationVal: 'Ernakulam, Kerala, India'
     }
   },
   hi: {
     nav: { home: 'होम', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क' },
     hero: {
-      available: 'अवसरों के लिए उपलब्ध',
       title: 'अरुण जोजो',
-      subtitle: 'एआई प्रमाणित | फुल-स्टैक | सॉफ्टवेयर इंजीनियर',
-      bio: 'नेक्स्ट.जेएस, रिएक्ट, नोड.जेएस और टाइपस्क्रिप्ट का उपयोग करके स्केलेबल वेब एप्लिकेशन बनाने के 5+ वर्षों के अनुभव के साथ एआई प्रमाणित फुल-स्टैक सॉफ्टवेयर इंजीनियर। मैं सीआई/सीडी पाइपलाइनों को डिजाइन करके और 10,000+ इवेंट/सेकंड को संभालने वाले रीयल-टाइम सिस्टम को अनुकूलित करके टीमों को तेजी से डिलीवर करने में मदद करता हूं।',
+      subtitle: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
+      bio: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर, जिन्हें स्केलेबल वेब एप्लिकेशन बनाने और डिलीवरी पाइपलाइनों को स्वचालित करने का 5+ वर्षों का अनुभव है। मैं सीआई/सीडी पाइपलाइनों को डिजाइन करके, एआईऑप्स को एकीकृत करके और 10,000+ इवेंट/सेकंड को संभालने वाले रीयल-टाइम सिस्टम को अनुकूलित करके टीमों को तेजी से डिलीवर करने में मदद करता हूं।',
       downloadCv: 'सीवी डाउनलोड करें',
       contactInfo: 'संपर्क जानकारी'
     },
@@ -216,6 +225,15 @@ const translations: Record<Language, TranslationSchema> = {
             'नेक्स्ट.जेएस और Supabase पोस्टग्रेएसक्यूएल का उपयोग करके फुल-स्टैक समाधान तैयार करना, स्केलेबिलिटी के लिए उच्च समवर्ती और मॉड्यूलर बैकएंड डिजाइन पर ध्यान केंद्रित करना। एआई-संचालित विकास के माध्यम से बैकएंड इंफ्रास्ट्रक्चर को अनुकूलित किया।',
             'गीथूब एक्शन्स के माध्यम से स्वचालित सीआई/सीडी पाइपलाइनों और निर्बाध क्लाउड स्केलिंग के लिए डॉकर के साथ कंटेनराइजेशन सहित आधुनिक डेवऑप्स रणनीतियों को लागू करना।',
             'SEO और उपयोगकर्ता प्रतिधारण को बेहतर बनाने के लिए उन्नत कैशिंग रणनीतियों और SSR अनुकूलन को लागू करना।'
+          ]
+        },
+        upskillingGap: {
+          role: 'एआई-स्वचालित डेवऑप्स अपस्किलिंग और नियोजित ब्रेक',
+          location: 'स्व-नियोजित / व्यक्तिगत सीखना',
+          highlights: [
+            'व्यक्तिगत मील के पत्थर (शादी और अन्य पारिवारिक समारोहों) के लिए नियोजित करियर ब्रेक।',
+            'आधुनिक डेवऑप्स प्रथाओं, एआईऑप्स और एआई ऑटोमेशन टूल्स में गहन रूप से कौशल बढ़ाया।',
+            'अगले करियर कदम की तैयारी के लिए लूप-इंजीनियरिंग गतिविधियों और एजेंटिक ऑर्केस्ट्रेशन का उपयोग करके व्यक्तिगत परियोजनाएं और स्वचालित वर्कफ़्लो विकसित किए।'
           ]
         },
         bct: {
@@ -255,20 +273,21 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'परियोजनाएं',
-      furniture: 'रिएक्ट नेटिव का उपयोग करके फर्नीचर ई-कॉमर्स ऐप। इसमें नोड.जेएस बैकएंड, अलग स्ट्राइप सर्वर और रिएक्ट नेटिव एक्सपो फ्रंटएंड शामिल हैं।',
-      googleRedesign: 'स्टोरीबुक, वीट और लर्ना-मोनोरेपो का उपयोग करके गूगल सेवाओं का पुनर्रचना।',
-      ecommerceApp: 'रिडक्स-टूलकिट, रिडक्स थंक, स्टाइल्ड कंपोनेंट्स, एपीआई, बूटस्ट्रैप।',
-      pizzaOrder: 'एकीकृत पेपाल भुगतान के साथ वेब अनुप्रयोग। वर्सेल पर तैनात।',
-      voiceTranslation: 'वेबआरटीसी और कई ऑडियो प्रारूपों के रूपांतरण का उपयोग किया। रिएक्ट नेटिव एंड्रॉइड एप्लिकेशन।'
+      title: 'व्यक्तिगत और प्रतिनिधि परियोजनाएं',
+      marketplace: 'अत्यधिक स्केलेबल मल्टी-वेंडर मार्केटप्लेस प्लेटफॉर्म जिसमें रीयल-टाइम कैटलॉग, खोज और सुरक्षित मल्टी-टेनेंट डेटा आर्किटेक्चर शामिल हैं।',
+      voiceTranslation: 'वेबआरटीसी और कई ऑडियो प्रारूपों के रूपांतरण का उपयोग करके रीयल-टाइम अनुवाद एंड्रॉइड/आईओएस एप्लिकेशन।',
+      ecommerce: 'एकीकृत भुगतान गेटवे और सुरक्षित चेकआउट के साथ प्रीमियम वेब और मोबाइल वाणिज्य समाधान।',
+      saas: 'क्लाउड-नेटिव सॉफ्टवेयर-एज-ए-सर्विस एप्लिकेशन जिसमें सब्सक्रिप्शन बिलिंग, सुरक्षित मल्टी-टेनेंसी और स्वचालित परिनियोजन शामिल हैं।',
+      shopStore: 'गूगल प्ले स्टोर पर प्रकाशित प्रोग्रेसिव वेब और नेटिव मोबाइल एप्लिकेशन जिसमें स्थानीय कैशिंग और फायरबेस सिंक शामिल हैं।',
+      iiot: 'रीयल-टाइम औद्योगिक इंटरनेट ऑफ थिंग्स लाइव मॉनिटरिंग डैशबोर्ड जो उच्च ईवेंट समवर्ती और लाइव डेटा विज़ुअलाइज़ेशन को संभालता है।'
     },
     skills: {
       title: 'कौशल पोर्टफोलियो',
       categories: {
         frontend: 'फ्रंटएंड',
         backend: 'बैकएंड और एपीआई',
+        devops: 'डेवऑप्स',
         databases: 'डेटाबेस',
-        devops: 'डेवऑप्स और सीआई/सीडी',
         testing: 'परीक्षण',
         ai: 'एआई और टूल्स',
         soft: 'व्यक्तिगत कौशल'
@@ -293,16 +312,15 @@ const translations: Record<Language, TranslationSchema> = {
       email: 'ईमेल',
       phone: 'फ़ोन',
       location: 'स्थान',
-      locationVal: 'एर्नाकुलम / कासरगोड, केरल, भारत'
+      locationVal: 'एर्नाकुलम, केरल, भारत'
     }
   },
   de: {
     nav: { home: 'Startseite', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt' },
     hero: {
-      available: 'Verfügbar für neue Aufgaben',
       title: 'Arun Jojo',
-      subtitle: 'KI-Zertifiziert | Full-Stack | Softwareentwickler',
-      bio: 'KI-Zertifizierter Full-Stack-Softwareentwickler mit mehr als 5 Jahren Erfahrung im Erstellen skalierbarer Webanwendungen mit Next.js, React, Node.js und TypeScript. Ich helfe Teams, schneller zu liefern, indem ich CI/CD-Pipelines architiere und Echtzeitsysteme optimiere, die 10.000+ Ereignisse/Sekunde verarbeiten.',
+      subtitle: 'DevOps-Engineer mit KI-Automatisierung',
+      bio: 'DevOps-Engineer mit KI-Automatisierung und mehr als 5 Jahren Erfahrung im Aufbau skalierbarer Webanwendungen und der Automatisierung von Bereitstellungspipelines. Ich helfe Teams, schneller zu liefern, indem ich CI/CD-Pipelines architiere, AIOps integriere und Echtzeitsysteme optimiere, die 10.000+ Ereignisse/Sekunde verarbeiten.',
       downloadCv: 'Lebenslauf herunterladen',
       contactInfo: 'Kontaktinfo'
     },
@@ -323,6 +341,15 @@ const translations: Record<Language, TranslationSchema> = {
             'Architektur von Full-Stack-Lösungen mit Next.js und Supabase PostgreSQL. Optimierung der Backend-Infrastruktur durch KI-gestützte Entwicklung.',
             'Implementierung moderner DevOps-Strategien einschließlich automatisierter CI/CD-Pipelines über GitHub Actions und Containerisierung mit Docker.',
             'Beratung zur Frontend-Performance, Implementierung fortgeschrittener Caching-Strategien und SSR-Optimierung zur Verbesserung von SEO.'
+          ]
+        },
+        upskillingGap: {
+          role: 'KI-Automatisierte DevOps-Fortbildung & geplante Pause',
+          location: 'Selbstständig / Persönliches Lernen',
+          highlights: [
+            'Geplante Karrierepause für persönliche Meilensteine (Hochzeit und Familienfeiern).',
+            'Intensive Fortbildung in modernen DevOps-Praktiken, AIOps und KI-Automatisierungswerkzeugen.',
+            'Entwicklung persönlicher Projekte und automatisierter Workflows mithilfe von Loop-Engineering-Aktivitäten und Agenten-Orchestrierungen.'
           ]
         },
         bct: {
@@ -347,7 +374,7 @@ const translations: Record<Language, TranslationSchema> = {
           role: 'Junior React-Entwickler',
           location: 'Ernakulam, Indien',
           highlights: [
-            'Bau und Bereitstellung einer PWA und TWA unter Verwendung von React.js und React Native mit einer Steigerung der Nutzerbindung um 40%.',
+            'Bau und Bereitstellung einer PWA und TWA unter Verwendung von React.js and React Native mit einer Steigerung der Nutzerbindung um 40%.',
             'Verwaltung von Echtzeitanwendungen (Sprachübersetzungs-App) und E-Commerce-Plattformen.'
           ]
         },
@@ -362,20 +389,21 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Projekte',
-      furniture: 'Möbel-E-Commerce-App mit React Native. Node.js-Backend, Stripe-Server und React Native Expo-Frontend.',
-      googleRedesign: 'Neugestaltung von Google-Diensten mit Storybook und Vite, strukturiert in Lerna-Monorepo.',
-      ecommerceApp: 'Redux-Toolkit, Redux Thunk, Styled Components, APIs, Bootstrap.',
-      pizzaOrder: 'Webanwendung mit integrierter PayPal-Zahlung. Bereitgestellt auf Vercel.',
-      voiceTranslation: 'Echtzeit-Übersetzungs-App mit WebRTC und Audiokonvertierung.'
+      title: 'Persönliche und repräsentative Projekte',
+      marketplace: 'Hochgradig skalierbare Multi-Vendor-Marktplatzplattform mit Echtzeit-Katalogen, Suche und sicherer Multi-Tenancy-Datenarchitektur.',
+      voiceTranslation: 'Echtzeit-Übersetzungsanwendung für Android/iOS unter Verwendung von WebRTC und mehreren Audioformatkonvertierungen.',
+      ecommerce: 'Premium-Web- und Mobile-Commerce-Lösungen mit integrierten Zahlungsgateways und sicherem Checkout.',
+      saas: 'Cloud-native Software-as-a-Service-Anwendung mit Abonnementabrechnung, sicherer Multi-Tenancy und automatisierter Bereitstellung.',
+      shopStore: 'Progressive Web- und native Mobilanwendung, veröffentlicht im Google Play Store mit lokalem Caching und Firebase-Synchronisierung.',
+      iiot: 'Echtzeit-Dashboard zur Live-Überwachung des industriellen Internets der Dinge, das eine hohe Ereigniskonkurrenz und Live-Datenvisualisierung verarbeitet.'
     },
     skills: {
       title: 'Fähigkeiten-Portfolio',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend & APIs',
+        devops: 'DevOps',
         databases: 'Datenbanken',
-        devops: 'DevOps & CI/CD',
         testing: 'Testen',
         ai: 'KI & Werkzeuge',
         soft: 'Soft Skills'
@@ -400,16 +428,15 @@ const translations: Record<Language, TranslationSchema> = {
       email: 'E-Mail',
       phone: 'Telefon',
       location: 'Standort',
-      locationVal: 'Ernakulam / Kasaragod, Kerala, Indien'
+      locationVal: 'Ernakulam, Kerala, Indien'
     }
   },
   es: {
     nav: { home: 'Inicio', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto' },
     hero: {
-      available: 'Disponible para Oportunidades',
       title: 'Arun Jojo',
-      subtitle: 'Certificado en IA | Full-Stack | Ingeniero de Software',
-      bio: 'Ingeniero de Software Full-Stack certificado en IA con más de 5 años de experiencia en la creación de aplicaciones web escalables con Next.js, React, Node.js y TypeScript. Ayudo a los equipos a entregar más rápido diseñando pipelines de CI/CD y optimizando sistemas en tiempo real que manejan más de 10,000 eventos por segundo.',
+      subtitle: 'Ingeniero DevOps con Automatización de IA',
+      bio: 'Ingeniero DevOps con Automatización de IA con más de 5 años de experiencia en la construcción de aplicaciones web escalables y automatización de pipelines de entrega. Ayudo a los equipos a entregar más rápido diseñando pipelines de CI/CD, integrando AIOps y optimizando sistemas en tiempo real que manejan más de 10,000 eventos por segundo.',
       downloadCv: 'Descargar CV',
       contactInfo: 'Información de Contacto'
     },
@@ -430,6 +457,15 @@ const translations: Record<Language, TranslationSchema> = {
             'Arquitectura de soluciones full-stack usando Next.js y Supabase PostgreSQL. Optimización de la infraestructura backend mediante desarrollo guiado por IA.',
             'Implementación de estrategias modernas de DevOps, incluidos pipelines de CI/CD automatizados mediante GitHub Actions y contenedorización con Docker.',
             'Consultoría sobre rendimiento frontend, implementación de estrategias avanzadas de almacenamiento en caché y optimización SSR.'
+          ]
+        },
+        upskillingGap: {
+          role: 'Capacitación DevOps Automatizada por IA y Pausa Planificada',
+          location: 'Trabajo por cuenta propia / Aprendizaje personal',
+          highlights: [
+            'Pausa profesional planificada para hitos personales (boda y funciones familiares).',
+            'Capacitación intensiva en prácticas modernas de DevOps, AIOps y herramientas de automatización de IA.',
+            'Desarrollo de proyectos personales y flujos de trabajo automatizados utilizando actividades de ingeniería en bucle y orquestaciones de agentes.'
           ]
         },
         bct: {
@@ -469,20 +505,21 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Proyectos',
-      furniture: 'Aplicación de comercio electrónico de muebles con React Native. Backend en Node.js, servidor Stripe y frontend React Native Expo.',
-      googleRedesign: 'Rediseño de Google con Storybook, Vite y Lerna-monorepo.',
-      ecommerceApp: 'Redux-toolkit, Redux Thunk, Styled Components, APIs, Bootstrap.',
-      pizzaOrder: 'Aplicación web con integración de pago PayPal. Desplegado en Vercel.',
-      voiceTranslation: 'Aplicación de traducción de voz utilizando WebRTC y múltiples conversiones de audio.'
+      title: 'Proyectos Personales y Representativos',
+      marketplace: 'Plataforma de mercado multi-proveedor altamente escalable con catálogos en tiempo real, búsqueda y arquitectura de datos multi-tenant segura.',
+      voiceTranslation: 'Aplicación para Android/iOS de traducción en tiempo real mediante WebRTC y múltiples conversiones de audio.',
+      ecommerce: 'Soluciones de comercio web y móvil premium con pasarelas de pago integradas y pago seguro.',
+      saas: 'Aplicación de software como servicio nativa de la nube con facturación de suscripción, multi-tenancy segura y despliegue automatizado.',
+      shopStore: 'Aplicación web progresiva y móvil nativa publicada en Google Play Store con caché local y sincronización de Firebase.',
+      iiot: 'Panel de monitoreo en vivo de Internet de las cosas industrial en tiempo real que maneja alta concurrencia de eventos y visualización de datos en vivo.'
     },
     skills: {
       title: 'Portafolio de Habilidades',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend y APIs',
+        devops: 'DevOps',
         databases: 'Bases de Datos',
-        devops: 'DevOps y CI/CD',
         testing: 'Pruebas',
         ai: 'IA y Herramientas',
         soft: 'Habilidades Blandas'
@@ -507,16 +544,15 @@ const translations: Record<Language, TranslationSchema> = {
       email: 'Correo Electrónico',
       phone: 'Teléfono',
       location: 'Ubicación',
-      locationVal: 'Ernakulam / Kasaragod, Kerala, India'
+      locationVal: 'Ernakulam, Kerala, India'
     }
   },
   ar: {
     nav: { home: 'الرئيسية', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال' },
     hero: {
-      available: 'متاح للفرص والمشاريع',
       title: 'أرون جوجو',
-      subtitle: 'مهندس برمجيات | فول ستاك | معتمد في الذكاء الاصطناعي',
-      bio: 'مهندس برمجيات متكامل (Full-Stack) معتمد في الذكاء الاصطناعي مع خبرة تزيد عن 5 سنوات في بناء تطبيقات الويب القابلة للتوسع باستخدام Next.js و React و Node.js و TypeScript. أساعد الفرق على التسليم بشكل أسرع من خلال تصميم أنابيب CI/CD وتحسين الأنظمة في الوقت الفعلي التي تتعامل مع أكثر من 10,000 حدث/ثانية.',
+      subtitle: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',
+      bio: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي وخبرة تزيد عن 5 سنوات في بناء تطبيقات الويب القابلة للتوسع وأتمتة خطوط أنابيب التسليم. أساعد الفرق على التسليم بشكل أسرع من خلال تصميم أنابيب CI/CD ودمج AIOps وتحسين الأنظمة في الوقت الفعلي التي تتعامل مع أكثر من 10,000 حدث/ثانية.',
       downloadCv: 'تحميل السيرة الذاتية',
       contactInfo: 'معلومات الاتصال'
     },
@@ -539,6 +575,15 @@ const translations: Record<Language, TranslationSchema> = {
             'استشارات أداء واجهة المستخدم، وتطبيق استراتيجيات التخزين المؤقت المتقدمة، وتحسين SSR لتعزيز محركات البحث.'
           ]
         },
+        upskillingGap: {
+          role: 'تطوير مهارات ديف أوبس المؤتمتة بالذكاء الاصطناعي وفترة استراحة مخططة',
+          location: 'عمل حر / تعليم شخصي',
+          highlights: [
+            'استراحة مهنية مخططة لأحداث شخصية (الزفاف ومناسبات عائلية أخرى).',
+            'تطوير مكثف للمهارات في ممارسات ديف أوبس الحديثة وAIOps وأدوات أتمتة الذكاء الاصطناعي.',
+            'تطوير مشاريع شخصية وسير عمل مؤتمت باستخدام أنشطة هندسة التكرار والتنسيق البرمجي للاستعداد للخطوة المهنية التالية.'
+          ]
+        },
         bct: {
           role: 'مطور برمجيات أول',
           location: 'تيروفاناندابورام، الهند',
@@ -553,7 +598,7 @@ const translations: Record<Language, TranslationSchema> = {
           location: 'كاساراجود، الهند',
           highlights: [
             'تحسين الأنظمة الخلفية (PHP/Node.js-Express.js) لتعزيز سرعة استجابة الخوادم واستقرار النظام.',
-            'استخدام Git و GitHub للتحكم الدقيق في الإصدارات، والمراجعات التعاونية للأكواد وإدارة الفروع.',
+            'استخدم Git و GitHub للتحكم الدقيق في الإصدارات، والمراجعات التعاونية للأكواد وإدارة الفروع.',
             'تطوير تطبيقات قابلة للتطوير وتصميم هياكل قواعد البيانات العلائقية وغير العلائقية (PostgreSQL، MongoDB).'
           ]
         },
@@ -576,20 +621,21 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'المشاريع',
-      furniture: 'تطبيق تجارة إلكترونية للأثاث باستخدام React Native. يحتوي على خادم Node.js وخادم Stripe وواجهة React Native Expo.',
-      googleRedesign: 'إعادة تصميم خدمات جوجل باستخدام Storybook و Vite وتجميعها في Lerna-monorepo.',
-      ecommerceApp: 'تطبيق تجارة إلكترونية مبني باستخدام Redux-toolkit و Redux Thunk و Styled Components و Bootstrap.',
-      pizzaOrder: 'تطبيق ويب متكامل مع الدفع عبر PayPal. تم النشر على منصة Vercel.',
-      voiceTranslation: 'تطبيق ترجمة صوتية في الوقت الفعلي يستخدم WebRTC وتحويلات متعددة لتنسيق الصوت.'
+      title: 'المشاريع الشخصية والتمثيلية',
+      marketplace: 'منصة سوق متكاملة للبائعين متعددة وقابلة للتطوير بشكل كبير تتميز بكتالوجات الوقت الفعلي والبحث وبنية البيانات الآمنة.',
+      voiceTranslation: 'تطبيق أندرويد و iOS للترجمة الفورية في الوقت الفعلي باستخدام تقنيات WebRTC وتحويلات الصوت المتعددة.',
+      ecommerce: 'حلول تجارة إلكترونية مميزة للويب والهواتف مع بوابات دفع متكاملة وعمليات دفع آمنة.',
+      saas: 'تطبيق برمجيات كخدمة سحابي أصيل يتميز بفواتير الاشتراكات وبيئات تشغيل آمنة متعددة المستأجرين ونشر تلقائي.',
+      shopStore: 'تطبيق ويب تقدمي وتطبيق جوال أصيل تم نشره على متجر Google Play مع تخزين مؤقت محلي ومزامنة Firebase.',
+      iiot: 'لوحة مراقبة حية لإنترنت الأشياء الصناعي في الوقت الفعلي تتعامل مع أحداث عالية الكثافة وتمثيل بيانات حي.'
     },
     skills: {
       title: 'ملف المهارات',
       categories: {
         frontend: 'واجهة المستخدم',
         backend: 'الأنظمة الخلفية والربط',
+        devops: 'عمليات التطوير (DevOps)',
         databases: 'قواعد البيانات',
-        devops: 'عمليات التطوير والنشر',
         testing: 'الاختبار والجودة',
         ai: 'الذكاء الاصطناعي والأدوات',
         soft: 'المهارات الشخصية'
@@ -614,7 +660,7 @@ const translations: Record<Language, TranslationSchema> = {
       email: 'البريد الإلكتروني',
       phone: 'الهاتف',
       location: 'الموقع الجغرافي',
-      locationVal: 'إرناكولام / كاساراجود، كيرالا، الهند'
+      locationVal: 'إرناكولام، كيرالا، الهند'
     }
   }
 }

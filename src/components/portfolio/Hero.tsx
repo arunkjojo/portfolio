@@ -11,7 +11,6 @@ export default function Hero() {
       
       <div className="relative z-10 grid gap-10 md:grid-cols-12 items-center">
         <div className="md:col-span-8">
-          <span className="island-kicker mb-3 inline-block">{t.hero.available}</span>
           {/* Single H1 - User's name */}
           <h1 className="display-title mb-3 text-5xl md:text-7xl font-extrabold tracking-tight text-[var(--sea-ink)] leading-none">
             {t.hero.title}

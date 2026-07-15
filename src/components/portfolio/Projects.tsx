@@ -1,4 +1,4 @@
-import { ExternalLink, Terminal } from 'lucide-react'
+import { Terminal } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
 
 export default function Projects() {
@@ -6,38 +6,40 @@ export default function Projects() {
 
   const projectList = [
     {
-      name: 'FurnitureApp',
-      period: 'Nov 2023',
-      description: t.projects.furniture,
-      tags: ['React Native', 'Expo', 'Node.js', 'Stripe', 'Mobile']
-    },
-    {
-      name: 'google_redesign',
-      period: 'Oct 2023',
-      description: t.projects.googleRedesign,
-      tags: ['Vite', 'Storybook', 'Lerna', 'Monorepo', 'React']
-    },
-    {
-      name: 'React-eCommerce-App',
-      period: 'Dec 2023',
-      description: t.projects.ecommerceApp,
-      tags: ['React', 'Redux Toolkit', 'Redux Thunk', 'Styled Components', 'Bootstrap']
-    },
-    {
-      name: 'Ecommerce React Js application',
-      period: 'May 2022 - Jun 2022',
-      description: t.projects.pizzaOrder,
-      tags: ['React.js', 'PayPal API', 'Vercel', 'E-commerce'],
-      links: [
-        { label: 'Demo', url: 'https://pizza-order-tau.vercel.app/' },
-        { label: 'GitHub', url: 'https://github.com/arunkjojo/pizza-order' }
-      ]
+      name: 'Market Place Web App',
+      period: 'Representative Project',
+      description: t.projects.marketplace,
+      tags: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Supabase', 'Docker']
     },
     {
       name: 'Voice Translation App',
-      period: 'Apr 2022 - May 2022',
+      period: 'Representative Project',
       description: t.projects.voiceTranslation,
-      tags: ['React Native', 'Android', 'WebRTC', 'Redux Toolkit']
+      tags: ['React Native', 'Android', 'WebRTC', 'Redux Toolkit', 'Audio Conversion']
+    },
+    {
+      name: 'Ecommerce Application',
+      period: 'Representative Project',
+      description: t.projects.ecommerce,
+      tags: ['Next.js', 'Stripe API', 'Redux', 'Bootstrap', 'Node.js']
+    },
+    {
+      name: 'SaaS Application',
+      period: 'Personal Project',
+      description: t.projects.saas,
+      tags: ['React', 'Node.js', 'Docker', 'GitHub Actions', 'CI/CD']
+    },
+    {
+      name: 'Shop-store Native App',
+      period: 'Representative Project',
+      description: t.projects.shopStore,
+      tags: ['React Native', 'PWA Service Worker', 'Firebase', 'Google Play Store']
+    },
+    {
+      name: 'IIoT Live Monitoring System',
+      period: 'Representative Project',
+      description: t.projects.iiot,
+      tags: ['React.js', 'WebSockets', 'Node.js', 'PostgreSQL', 'Real-time Charting']
     }
   ]
 
@@ -64,28 +66,13 @@ export default function Projects() {
             </div>
 
             <div>
-              <div className="flex flex-wrap gap-1.5 mb-4">
+              <div className="flex flex-wrap gap-1.5">
                 {proj.tags.map((tag, tIdx) => (
                   <span key={tIdx} className="text-[10px] font-bold text-[var(--sea-ink-soft)] bg-[var(--chip-bg)] border border-[var(--chip-line)] px-2 py-0.5 rounded-full uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
               </div>
-              {proj.links && (
-                <div className="flex gap-4 pt-2 border-t border-[var(--line)]">
-                  {proj.links.map((link, lIdx) => (
-                    <a
-                      key={lIdx}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[var(--lagoon-deep)] no-underline hover:underline"
-                    >
-                      {link.label} <ExternalLink className="h-3 w-3" />
-                    </a>
-                  ))}
-                </div>
-              )}
             </div>
           </article>
         ))}

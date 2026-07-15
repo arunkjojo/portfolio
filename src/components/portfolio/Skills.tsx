@@ -16,36 +16,55 @@ export default function Skills() {
       items: ['Node.js-Express.js', 'PHP', 'ASP.NET Core Web API', 'RESTful APIs', 'WebSockets']
     },
     {
+      category: t.skills.categories.devops,
+      icon: <Zap className="h-5 w-5 text-[var(--lagoon-deep)]" />,
+      items: [
+        'Docker',
+        'Helm',
+        'Kubernetes',
+        'Terraform',
+        'ArgoCD',
+        'GitHub Pipelines',
+        'Zero-Downtime Release',
+        'AIOps',
+        'FluxCD',
+        'Istio',
+        'Prometheus & Grafana',
+        'Cloud Platforms'
+      ]
+    },
+    {
       category: t.skills.categories.databases,
       icon: <Database className="h-5 w-5 text-[var(--lagoon-deep)]" />,
       items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firestore', 'Supabase']
     },
     {
-      category: t.skills.categories.devops,
-      icon: <Zap className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['GitHub Actions', 'Zero-Downtime Release', 'Docker']
-    },
-    {
       category: t.skills.categories.testing,
       icon: <Wrench className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['Vitest/Jest', 'Unit & Functional', 'React Testing Library (RTL)']
+      items: ['Playwright', 'B2B Testing', 'Postman Testing']
     },
     {
       category: t.skills.categories.ai,
       icon: <TrendingUp className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['GitHub Copilot', 'Anthropic Claude', 'Antigravity']
+      items: [
+        'GitHub Copilot',
+        'Claude cowork & code',
+        'Cursor AI',
+        'Codex',
+        'Lovable',
+        'Bolt.new',
+        'Agentic Orchestration',
+        'Advanced Prompting',
+        'SSD Development',
+        'Workflow Automation',
+        'AI Agents & Subagents',
+        'AI Integrations'
+      ]
     },
     {
       category: t.skills.categories.soft,
       icon: <CheckCircle2 className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: [
-        'Communication & Collaboration',
-        'Problem-Solving & Critical Thinking',
-        'Adaptability & Continuous Learning',
-        'Time Management',
-        'Accountability & Ownership',
-        'Attention to Detail'
-      ]
+      items: ['Leadership', 'Task Prioritization', 'Stress Management']
     }
   ]
 
