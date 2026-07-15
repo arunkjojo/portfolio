@@ -106,7 +106,7 @@ const translations: Record<Language, TranslationSchema> = {
       at: 'at',
       roles: {
         gesher: {
-          role: 'Software Engineer',
+          role: 'DevOps Engineer with AI Automation',
           location: 'Ernakulam, Kerala',
           highlights: [
             'Architecting full-stack solutions using Next.js and Supabase PostgreSQL, focusing on high concurrency and modular backend design for scalability. Optimized backend infrastructure via AI driven development.',
@@ -225,7 +225,7 @@ const translations: Record<Language, TranslationSchema> = {
       at: 'पर',
       roles: {
         gesher: {
-          role: 'सॉफ्टवेयर इंजीनियर',
+          role: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
           location: 'एर्नाकुलम, केरल',
           highlights: [
             'नेक्स्ट.जेएस और Supabase पोस्टग्रेएसक्यूएल का उपयोग करके फुल-स्टैक समाधान तैयार करना, स्केलेबिलिटी के लिए उच्च समवर्ती और मॉड्यूलर बैकएंड डिजाइन पर ध्यान केंद्रित करना। एआई-संचालित विकास के माध्यम से बैकएंड इंफ्रास्ट्रक्चर को अनुकूलित किया।',
@@ -344,7 +344,7 @@ const translations: Record<Language, TranslationSchema> = {
       at: 'bei',
       roles: {
         gesher: {
-          role: 'Softwareentwickler',
+          role: 'DevOps-Engineer mit KI-Automatisierung',
           location: 'Ernakulam, Indien',
           highlights: [
             'Architektur von Full-Stack-Lösungen mit Next.js und Supabase PostgreSQL. Optimierung der Backend-Infrastruktur durch KI-gestützte Entwicklung.',
@@ -463,7 +463,7 @@ const translations: Record<Language, TranslationSchema> = {
       at: 'en',
       roles: {
         gesher: {
-          role: 'Ingeniero de Software',
+          role: 'Ingeniero DevOps con Automatización de IA',
           location: 'Ernakulam, India',
           highlights: [
             'Arquitectura de soluciones full-stack usando Next.js y Supabase PostgreSQL. Optimización de la infraestructura backend mediante desarrollo guiado por IA.',
@@ -582,7 +582,7 @@ const translations: Record<Language, TranslationSchema> = {
       at: 'في',
       roles: {
         gesher: {
-          role: 'مهندس برمجيات',
+          role: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',
           location: 'إرناكولام، الهند',
           highlights: [
             'هندسة حلول الويب المتكاملة باستخدام Next.js و Supabase PostgreSQL مع التركيز على التصميم القابل للتوسع. تحسين البنية التحتية من خلال البرمجة المعتمدة على الذكاء الاصطناعي.',
