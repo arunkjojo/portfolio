@@ -95,3 +95,104 @@ tanstackIntent:
     run: "npx @tanstack/intent@latest load @tanstack/virtual-file-routes#virtual-file-routes"
     for: "Programmatic route tree building as an alternative to filesystem conventions: rootRoute, index, route, layout, physical, defineVirtualSubtreeConfig. Use with TanStack Router plugin's virtualRouteConfig option."
 <!-- intent-skills:end -->
+
+---
+
+# Developer Agent System Documentation
+
+Welcome! This documentation details the system flow, architecture, design patterns, technologies, and AI tools governing the development and runtime execution of the **Arun Jojo - Personal Portfolio SPA** website.
+
+---
+
+## 1. System Overview & Technology Stack
+
+The application is a full-featured, static-rendered portfolio SPA built using a modern full-stack web stack:
+
+### Core Frameworks
+*   **React 19:** Utilizing the latest rendering engine, support for concurrent features, and clean component architecture.
+*   **TypeScript:** Enforcing rigid type-safety across routes, translation schemas, and component interfaces.
+*   **TanStack Start:** Built on top of TanStack Router and Vite, managing the isomorphic application lifecycle, client-server hydration boundaries, and physical file-based routing.
+*   **Tailwind CSS v4:** Providing utility-first styling with native CSS variables and dynamic compiler performance.
+
+### Project Directory Structure
+```text
+personal-portfolio/
+├── public/                 # Static asset delivery
+│   ├── docs/resume.pdf     # Extracted PDF Resume
+│   └── images/portrait.jpg # Profile Photo
+├── src/                    # Application source code
+│   ├── components/         # Shared & layout components
+│   │   ├── Header.tsx      # Navigation header & Language select
+│   │   ├── Footer.tsx      # Translated copyright footer
+│   │   ├── ThemeToggle.tsx # Dark/Light theme selector
+│   │   └── portfolio/      # Refactored modular sections
+│   │       ├── Hero.tsx, Stats.tsx, Experience.tsx, Projects.tsx,
+│   │       ├── Skills.tsx, Certifications.tsx, Education.tsx, Contact.tsx
+│   ├── lib/
+│   │   └── i18n.tsx        # Multi-language translation state & Context
+│   ├── routes/             # File-based routing folder
+│   │   ├── __root.tsx      # HTML shell, document wrapper & i18n handler
+│   │   ├── index.tsx       # Landing page (renders portfolio sections)
+│   │   └── about.tsx       # Secondary about details page
+│   ├── styles.css          # Design system stylesheet
+│   └── router.tsx          # TanStack Router instance
+├── package.json            # Dependencies & scripts
+└── vite.config.ts          # Vite build & TanStack/Tailwind plugins
+```
+
+---
+
+## 2. Key Architecture Patterns
+
+### A. Isomorphic Routing & SEO
+*   Routing is handled by **TanStack Router** using file-based routing conventions.
+*   `__root.tsx` serves as the root document shell. It exports a `Route` with a `head()` config providing real SEO meta tags (OpenGraph, Twitter card, metadata descriptions, favicons, and keywords) for indexing.
+
+### B. Dark-White "White-First" Theme
+*   Theme settings are managed in `src/styles.css` using CSS custom properties (variables) defined for both `:root` (default Light theme) and `:root[data-theme="dark"]` (Dark theme).
+*   A client-side inline script (pre-hydrated `THEME_INIT_SCRIPT`) prevents flashes of unstyled content (FOUC) by checking `localStorage` and system settings immediately.
+*   `ThemeToggle.tsx` provides a button to switch between Light, Dark, and Auto (system preference) modes.
+
+### C. Multi-Language i18n Setup
+*   `src/lib/i18n.tsx` hosts complete dictionaries for five languages: **English (en)**, **Hindi (hi)**, **German (de)**, **Spanish (es)**, and **Arabic (ar)**.
+*   A custom `LanguageProvider` manages the locale state.
+*   When **Arabic (ar)** is selected, the application automatically applies the HTML attribute `dir="rtl"` to support Right-to-Left writing directions. Other languages default to `dir="ltr"`.
+
+### D. Component Restructuring
+*   The landing page (`index.tsx`) acts as an assembler, delegating rendering to specialized, focused components inside `src/components/portfolio/`. This separates presentation, data timeline rendering, grids, and stats.
+
+---
+
+## 3. AI Tool Suite Reference
+
+The agentic development framework provides several tool categories that allow AI agents to view, compile, edit, and audit the application code:
+
+```mermaid
+graph TD
+    subgraph Filesystem
+        A[view_file / list_dir] --> B[replace_file_content]
+        B --> C[write_to_file]
+    end
+    subgraph Execution
+        D[run_command] --> E[npm run build / dev]
+        F[manage_task] --> D
+    end
+    subgraph Verification
+        G[chrome-devtools-mcp] --> H[new_page / navigate_page]
+        H --> I[take_screenshot / evaluate_script]
+    end
+```
+
+### File Operations
+*   `view_file`: Reads text (source code) or binary files (PDFs, images) to extract contents.
+*   `list_dir`: Lists files and directories recursively to map out the structure of a workspace.
+*   `write_to_file`: Creates new source code files and builds parent paths automatically.
+*   `replace_file_content` & `multi_replace_file_content`: Perform precise, contiguous or non-contiguous text insertions/replacements inside files without re-writing the whole file.
+
+### Shell Execution
+*   `run_command`: Executes PowerShell scripts, git commands, and server startup tasks. Runs asynchronously with user-approved permissions.
+*   `manage_task`: Interacts with long-running background tasks (e.g., `npm run dev` servers), allowing input piping, status auditing, or process termination.
+
+### Web & Auditing Tools
+*   `search_web` & `read_url_content`: Fetch search results and parse public webpage documents to extract source facts.
+*   `chrome-devtools-mcp`: Launches a headless browser, allowing the agent to open ports (`new_page`), capture layout screenshots (`take_screenshot`), audit logs (`list_console_messages`), or run DOM queries (`evaluate_script`) to ensure zero-error builds.

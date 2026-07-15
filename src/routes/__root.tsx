@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import { LanguageProvider, useTranslation } from '../lib/i18n'
 
 import appCss from '../styles.css?url'
 
@@ -47,7 +48,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:url',
-        content: 'https://arunkjojo.vercel.app',
+        content: 'https://github.com/arunkjojo',
       },
       {
         property: 'og:image',
@@ -87,7 +88,17 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <LanguageProvider>
+      <RootDocumentContent>{children}</RootDocumentContent>
+    </LanguageProvider>
+  )
+}
+
+function RootDocumentContent({ children }: { children: React.ReactNode }) {
+  const { language } = useTranslation()
+
+  return (
+    <html lang={language} dir={language === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
