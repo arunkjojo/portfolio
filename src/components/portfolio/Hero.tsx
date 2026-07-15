@@ -3,36 +3,35 @@ import { Download, Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
 import SpeakButton from './SpeakButton'
 
-// Persistent flag to track typewriter animation state across renders
-let hasTypedOnce = false
-
 // Typewriter Subtitle Component
 function Typewriter({ text }: { text: string }) {
-  const [displayedText, setDisplayedText] = useState(hasTypedOnce ? text : '')
+  const [displayedText, setDisplayedText] = useState('')
+  const [isCompleted, setIsCompleted] = useState(false)
 
   useEffect(() => {
-    if (hasTypedOnce) {
-      setDisplayedText(text)
-      return
-    }
-
-    let i = 0
     setDisplayedText('')
-    const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + text.charAt(i))
-      i++
-      if (i >= text.length) {
-        clearInterval(interval)
-        hasTypedOnce = true
+    setIsCompleted(false)
+
+    if (!text) return
+
+    let index = 0
+    const interval = window.setInterval(() => {
+      setDisplayedText(text.slice(0, index + 1))
+      index += 1
+
+      if (index >= text.length) {
+        window.clearInterval(interval)
+        setIsCompleted(true)
       }
     }, 45)
-    return () => clearInterval(interval)
+
+    return () => window.clearInterval(interval)
   }, [text])
 
   return (
     <span className="relative">
       {displayedText}
-      {!hasTypedOnce && <span className="animate-blink border-r-2 border-[var(--lagoon-deep)] ml-0.5" />}
+      {!isCompleted && <span className="animate-blink border-r-2 border-[var(--lagoon-deep)] ml-0.5" />}
     </span>
   )
 }

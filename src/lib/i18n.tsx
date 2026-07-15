@@ -6,6 +6,7 @@ export type Language = 'en' | 'hi' | 'de' | 'es' | 'ar'
 export interface TranslationSchema {
   nav: {
     home: string
+    about: string
     experience: string
     projects: string
     skills: string
@@ -87,7 +88,7 @@ export interface TranslationSchema {
 
 const translations: Record<Language, TranslationSchema> = {
   en: {
-    nav: { home: 'Home', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact' },
+    nav: { home: 'Home', about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'DevOps Engineer with AI Automation',
@@ -206,7 +207,7 @@ const translations: Record<Language, TranslationSchema> = {
     }
   },
   hi: {
-    nav: { home: 'होम', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क' },
+    nav: { home: 'होम', about: 'बारे में', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क' },
     hero: {
       title: 'अरुण जोजो',
       subtitle: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
@@ -325,7 +326,7 @@ const translations: Record<Language, TranslationSchema> = {
     }
   },
   de: {
-    nav: { home: 'Startseite', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt' },
+    nav: { home: 'Startseite', about: 'Über mich', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'DevOps-Engineer mit KI-Automatisierung',
@@ -444,7 +445,7 @@ const translations: Record<Language, TranslationSchema> = {
     }
   },
   es: {
-    nav: { home: 'Inicio', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto' },
+    nav: { home: 'Inicio', about: 'Acerca de', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'Ingeniero DevOps con Automatización de IA',
@@ -563,7 +564,7 @@ const translations: Record<Language, TranslationSchema> = {
     }
   },
   ar: {
-    nav: { home: 'الرئيسية', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال' },
+    nav: { home: 'الرئيسية', about: 'عنّي', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال' },
     hero: {
       title: 'أرون جوجو',
       subtitle: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',

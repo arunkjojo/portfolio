@@ -33,7 +33,7 @@ export default function Header() {
           {/* AJ Logo */}
           <h2 className="m-0 flex-shrink-0 text-base font-semibold tracking-tight">
             <a
-              href="#"
+              href="/"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm text-[var(--sea-ink)] no-underline shadow-[0_8px_24px_rgba(30,90,72,0.08)] sm:px-4 sm:py-2"
             >
               <span className="h-2 w-2 rounded-full bg-[linear-gradient(90deg,#56c6be,#7ed3bf)]" />
@@ -43,12 +43,13 @@ export default function Header() {
 
           {/* Desktop Navigation Link Menu (Hidden below 1024px) */}
           <div className="hidden lg:flex items-center gap-x-6 text-sm font-semibold">
-            <a href="#" className="nav-link">{t.nav.home}</a>
-            <a href="#experience" className="nav-link">{t.nav.experience}</a>
-            <a href="#projects" className="nav-link">{t.nav.projects}</a>
-            <a href="#skills" className="nav-link">{t.nav.skills}</a>
-            <a href="#certifications" className="nav-link">{t.nav.certifications}</a>
-            <a href="#contact" className="nav-link">{t.nav.contact}</a>
+            <a href="/" className="nav-link">{t.nav.home}</a>
+            <a href="/about" className="nav-link">{t.nav.about}</a>
+            <a href="/#experience" className="nav-link">{t.nav.experience}</a>
+            <a href="/#projects" className="nav-link">{t.nav.projects}</a>
+            <a href="/#skills" className="nav-link">{t.nav.skills}</a>
+            <a href="/#certifications" className="nav-link">{t.nav.certifications}</a>
+            <a href="/#contact" className="nav-link">{t.nav.contact}</a>
           </div>
 
           {/* Right Action Tray (Language & Theme selectors, socials) */}
