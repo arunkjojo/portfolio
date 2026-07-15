@@ -39,6 +39,8 @@ export interface TranslationSchema {
   }
   projects: {
     title: string
+    professional: string
+    personal: string
     marketplace: string
     voiceTranslation: string
     ecommerce: string
@@ -75,6 +77,7 @@ export interface TranslationSchema {
   }
   contact: {
     title: string
+    website: string
     email: string
     phone: string
     location: string
@@ -88,12 +91,12 @@ const translations: Record<Language, TranslationSchema> = {
     hero: {
       title: 'Arun Jojo',
       subtitle: 'DevOps Engineer with AI Automation',
-      bio: 'DevOps Engineer with AI Automation with 5+ years of experience building scalable web applications and automating delivery pipelines. I help teams ship faster by architecting CI/CD pipelines, integrating AIOps, and optimizing real-time systems that handle 10,000+ events/second.',
+      bio: 'DevOps Engineer with AI Automation (1 year) and Software/Frontend Engineering (5+ years), with an overall experience of 5+ years building scalable web applications and automating delivery pipelines. I help teams ship faster by architecting CI/CD pipelines, integrating AIOps, and optimizing real-time systems that handle 10,000+ events/second.',
       downloadCv: 'Download CV',
       contactInfo: 'Contact Info'
     },
     stats: {
-      experience: { value: '5+ Years', label: 'Full-Stack Experience', desc: 'Building scalable web applications' },
+      experience: { value: '5+ Years', label: 'Overall Experience', desc: 'DevOps (1 yr), Software & Frontend (5+ yrs)' },
       throughput: { value: '10,000+', label: 'Events / Second', desc: 'Optimizing real-time high-throughput systems' },
       bottlenecks: { value: '30%', label: 'Less Bottlenecks', desc: 'Reduced rendering delay via SSR/ISR' },
       delivery: { value: '40%', label: 'Faster Delivery', desc: 'Accelerated cycles via AI-augmented dev' }
@@ -157,7 +160,9 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Personal & Representative Projects',
+      title: 'Projects Portfolio',
+      professional: 'Professional Project',
+      personal: 'Personal Project',
       marketplace: 'Highly scalable multi-vendor marketplace platform featuring real-time catalogs, search, and secure multi-tenant data architecture.',
       voiceTranslation: 'Real-time translation Android/iOS application utilizing WebRTC and multiple audio format conversions.',
       ecommerce: 'Premium web and mobile commerce solutions with integrated payment gateways and secure checkout.',
@@ -193,6 +198,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     contact: {
       title: 'Contact Information',
+      website: 'LinkedIn Website',
       email: 'Email',
       phone: 'Phone',
       location: 'Location',
@@ -204,12 +210,12 @@ const translations: Record<Language, TranslationSchema> = {
     hero: {
       title: 'अरुण जोजो',
       subtitle: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
-      bio: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर, जिन्हें स्केलेबल वेब एप्लिकेशन बनाने और डिलीवरी पाइपलाइनों को स्वचालित करने का 5+ वर्षों का अनुभव है। मैं सीआई/सीडी पाइपलाइनों को डिजाइन करके, एआईऑप्स को एकीकृत करके और 10,000+ इवेंट/सेकंड को संभालने वाले रीयल-टाइम सिस्टम को अनुकूलित करके टीमों को तेजी से डिलीवर करने में मदद करता हूं।',
+      bio: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर (1 वर्ष) और सॉफ्टवेयर/फ्रंटएंड इंजीनियरिंग (5+ वर्ष), जिन्हें स्केलेबल वेब एप्लिकेशन बनाने और डिलीवरी पाइपलाइनों को स्वचालित करने का कुल 5+ वर्षों का अनुभव है। मैं सीआई/सीडी पाइपलाइनों को डिजाइन करके, एआईऑप्स को एकीकृत करके और 10,000+ इवेंट/सेकंड को संभालने वाले रीयल-टाइम सिस्टम को अनुकूलित करके टीमों को तेजी से डिलीवर करने में मदद करता हूं।',
       downloadCv: 'सीवी डाउनलोड करें',
       contactInfo: 'संपर्क जानकारी'
     },
     stats: {
-      experience: { value: '5+ वर्ष', label: 'फुल-स्टैक अनुभव', desc: 'स्केलेबल वेब एप्लिकेशन बनाना' },
+      experience: { value: '5+ वर्ष', label: 'कुल अनुभव', desc: 'डेवऑप्स (1 वर्ष), सॉफ्टवेयर और फ्रंटएंड (5+ वर्ष)' },
       throughput: { value: '10,000+', label: 'इवेंट / सेकंड', desc: 'रीयल-टाइम हाई-थ्रूपुट सिस्टम को अनुकूलित करना' },
       bottlenecks: { value: '30%', label: 'कम बाधाएं', desc: 'एसएसआर/आईएसआर के माध्यम से रेंडरिंग में देरी को कम किया' },
       delivery: { value: '40%', label: 'तेज़ डिलीवरी', desc: 'एआई-संवर्धित विकास के माध्यम से चक्रों को तेज किया' }
@@ -273,7 +279,9 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'व्यक्तिगत और प्रतिनिधि परियोजनाएं',
+      title: 'परियोजनाएं पोर्टफोलियो',
+      professional: 'व्यावसायिक परियोजना',
+      personal: 'व्यक्तिगत परियोजना',
       marketplace: 'अत्यधिक स्केलेबल मल्टी-वेंडर मार्केटप्लेस प्लेटफॉर्म जिसमें रीयल-टाइम कैटलॉग, खोज और सुरक्षित मल्टी-टेनेंट डेटा आर्किटेक्चर शामिल हैं।',
       voiceTranslation: 'वेबआरटीसी और कई ऑडियो प्रारूपों के रूपांतरण का उपयोग करके रीयल-टाइम अनुवाद एंड्रॉइड/आईओएस एप्लिकेशन।',
       ecommerce: 'एकीकृत भुगतान गेटवे और सुरक्षित चेकआउट के साथ प्रीमियम वेब और मोबाइल वाणिज्य समाधान।',
@@ -309,6 +317,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     contact: {
       title: 'संपर्क सूत्र',
+      website: 'लिंक्डइन वेबसाइट',
       email: 'ईमेल',
       phone: 'फ़ोन',
       location: 'स्थान',
@@ -320,12 +329,12 @@ const translations: Record<Language, TranslationSchema> = {
     hero: {
       title: 'Arun Jojo',
       subtitle: 'DevOps-Engineer mit KI-Automatisierung',
-      bio: 'DevOps-Engineer mit KI-Automatisierung und mehr als 5 Jahren Erfahrung im Aufbau skalierbarer Webanwendungen und der Automatisierung von Bereitstellungspipelines. Ich helfe Teams, schneller zu liefern, indem ich CI/CD-Pipelines architiere, AIOps integriere und Echtzeitsysteme optimiere, die 10.000+ Ereignisse/Sekunde verarbeiten.',
+      bio: 'DevOps-Engineer mit KI-Automatisierung (1 Jahr) und Software-/Frontend-Entwicklung (5+ Jahre) mit einer Gesamterfahrung von 5+ Jahren im Aufbau skalierbarer Webanwendungen und der Automatisierung von Bereitstellungspipelines. Ich helfe Teams, schneller zu liefern, indem ich CI/CD-Pipelines architiere, AIOps integriere und Echtzeitsysteme optimiere, die 10.000+ Ereignisse/Sekunde verarbeiten.',
       downloadCv: 'Lebenslauf herunterladen',
       contactInfo: 'Kontaktinfo'
     },
     stats: {
-      experience: { value: '5+ Jahre', label: 'Full-Stack Erfahrung', desc: 'Entwicklung skalierbarer Webanwendungen' },
+      experience: { value: '5+ Jahre', label: 'Gesamterfahrung', desc: 'DevOps (1 J.), Software & Frontend (5+ J.)' },
       throughput: { value: '10.000+', label: 'Ereignisse / Sekunde', desc: 'Optimierung von Echtzeit-Systemen' },
       bottlenecks: { value: '30%', label: 'Weniger Engpässe', desc: 'Reduzierte Rendering-Verzögerung durch SSR/ISR' },
       delivery: { value: '40%', label: 'Schnellere Lieferung', desc: 'Beschleunigte Zyklen durch KI-gestützte Entwicklung' }
@@ -389,7 +398,9 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Persönliche und repräsentative Projekte',
+      title: 'Projektportfolio',
+      professional: 'Professionelles Projekt',
+      personal: 'Persönliches Projekt',
       marketplace: 'Hochgradig skalierbare Multi-Vendor-Marktplatzplattform mit Echtzeit-Katalogen, Suche und sicherer Multi-Tenancy-Datenarchitektur.',
       voiceTranslation: 'Echtzeit-Übersetzungsanwendung für Android/iOS unter Verwendung von WebRTC und mehreren Audioformatkonvertierungen.',
       ecommerce: 'Premium-Web- und Mobile-Commerce-Lösungen mit integrierten Zahlungsgateways und sicherem Checkout.',
@@ -425,6 +436,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     contact: {
       title: 'Kontaktinformationen',
+      website: 'LinkedIn-Website',
       email: 'E-Mail',
       phone: 'Telefon',
       location: 'Standort',
@@ -436,12 +448,12 @@ const translations: Record<Language, TranslationSchema> = {
     hero: {
       title: 'Arun Jojo',
       subtitle: 'Ingeniero DevOps con Automatización de IA',
-      bio: 'Ingeniero DevOps con Automatización de IA con más de 5 años de experiencia en la construcción de aplicaciones web escalables y automatización de pipelines de entrega. Ayudo a los equipos a entregar más rápido diseñando pipelines de CI/CD, integrando AIOps y optimizando sistemas en tiempo real que manejan más de 10,000 eventos por segundo.',
+      bio: 'Ingeniero DevOps con Automatización de IA (1 año) y Desarrollo de Software/Frontend (5+ años), con una experiencia general de 5+ años en la construcción de aplicaciones web escalables y automatización de pipelines de entrega. Ayudo a los equipos a entregar más rápido diseñando pipelines de CI/CD, integrando AIOps y optimizando sistemas en tiempo real que manejan más de 10,000 eventos por segundo.',
       downloadCv: 'Descargar CV',
       contactInfo: 'Información de Contacto'
     },
     stats: {
-      experience: { value: '5+ Años', label: 'Experiencia Full-Stack', desc: 'Construcción de aplicaciones web escalables' },
+      experience: { value: '5+ Años', label: 'Experiencia General', desc: 'DevOps (1 año), Software y Frontend (5+ años)' },
       throughput: { value: '10,000+', label: 'Eventos / Segundo', desc: 'Optimización de sistemas en tiempo real de alto rendimiento' },
       bottlenecks: { value: '30%', label: 'Menos Cuellos de Botella', desc: 'Reducción de latencia de renderizado mediante SSR/ISR' },
       delivery: { value: '40%', label: 'Entrega más Rápida', desc: 'Ciclos acelerados mediante desarrollo aumentado por IA' }
@@ -505,7 +517,9 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Proyectos Personales y Representativos',
+      title: 'Portafolio de Proyectos',
+      professional: 'Proyecto Profesional',
+      personal: 'Proyecto Personal',
       marketplace: 'Plataforma de mercado multi-proveedor altamente escalable con catálogos en tiempo real, búsqueda y arquitectura de datos multi-tenant segura.',
       voiceTranslation: 'Aplicación para Android/iOS de traducción en tiempo real mediante WebRTC y múltiples conversiones de audio.',
       ecommerce: 'Soluciones de comercio web y móvil premium con pasarelas de pago integradas y pago seguro.',
@@ -541,6 +555,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     contact: {
       title: 'Información de Contacto',
+      website: 'Sitio Web de LinkedIn',
       email: 'Correo Electrónico',
       phone: 'Teléfono',
       location: 'Ubicación',
@@ -552,12 +567,12 @@ const translations: Record<Language, TranslationSchema> = {
     hero: {
       title: 'أرون جوجو',
       subtitle: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',
-      bio: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي وخبرة تزيد عن 5 سنوات في بناء تطبيقات الويب القابلة للتوسع وأتمتة خطوط أنابيب التسليم. أساعد الفرق على التسليم بشكل أسرع من خلال تصميم أنابيب CI/CD ودمج AIOps وتحسين الأنظمة في الوقت الفعلي التي تتعامل مع أكثر من 10,000 حدث/ثانية.',
+      bio: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي (سنة واحدة) وهندسة البرمجيات والواجهات الأمامية (٥+ سنوات) بخبرة إجمالية تزيد عن ٥ سنوات في بناء تطبيقات الويب القابلة للتوسع وأتمتة خطوط أنابيب التسليم. أساعد الفرق على التسليم بشكل أسرع من خلال تصميم أنابيب CI/CD ودمج AIOps وتحسين الأنظمة في الوقت الفعلي التي تتعامل مع أكثر من 10,000 حدث/ثانية.',
       downloadCv: 'تحميل السيرة الذاتية',
       contactInfo: 'معلومات الاتصال'
     },
     stats: {
-      experience: { value: '+٥ سنوات', label: 'خبرة الفول ستاك', desc: 'بناء تطبيقات ويب قابلة للتوسع' },
+      experience: { value: '٥+ سنوات', label: 'الخبرة الإجمالية', desc: 'ديف أوبس (سنة واحدة)، هندسة البرمجيات والواجهات (٥+ سنوات)' },
       throughput: { value: '١٠,٠٠٠+', label: 'حدث / ثانية', desc: 'تحسين الأنظمة في الوقت الفعلي ذات الإنتاجية العالية' },
       bottlenecks: { value: '٣٠٪', label: 'أداء أفضل', desc: 'تقليل تأخير العرض من خلال استراتيجيات SSR/ISR' },
       delivery: { value: '٤٠٪', label: 'تسليم أسرع', desc: 'تسريع دورات التطوير من خلال البرمجة المدعومة بالذكاء الاصطناعي' }
@@ -589,7 +604,7 @@ const translations: Record<Language, TranslationSchema> = {
           location: 'تيروفاناندابورام، الهند',
           highlights: [
             'تطبيق إدارة الحالة باستخدام React/Redux-Saga، مع التركيز بشكل خاص على تحسين معالجة البيانات التي تؤثر على استقرار التطبيق في البيئات الحية.',
-            'زيادة بنسبة ٢٥٪ في كفاءة تطوير الفريق من خلال استخدام ممارسات التطوير المعززة بالذكاء الاصطناعي ومساعد GitHub Copilot.',
+            'زيادة بنسبة ٢٥٪ in كفاءة تطوير الفريق من خلال استخدام ممارسات التطوير المعززة بالذكاء الاصطناعي ومساعد GitHub Copilot.',
             'المساهمة في نشر تطبيقات الويب Ksmart و Ksuite، مما يضمن الاستقرار وسهولة الاستخدام.'
           ]
         },
@@ -621,7 +636,9 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'المشاريع الشخصية والتمثيلية',
+      title: 'محفظة المشاريع',
+      professional: 'مشروع مهني',
+      personal: 'مشروع شخصي',
       marketplace: 'منصة سوق متكاملة للبائعين متعددة وقابلة للتطوير بشكل كبير تتميز بكتالوجات الوقت الفعلي والبحث وبنية البيانات الآمنة.',
       voiceTranslation: 'تطبيق أندرويد و iOS للترجمة الفورية في الوقت الفعلي باستخدام تقنيات WebRTC وتحويلات الصوت المتعددة.',
       ecommerce: 'حلول تجارة إلكترونية مميزة للويب والهواتف مع بوابات دفع متكاملة وعمليات دفع آمنة.',
@@ -657,6 +674,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     contact: {
       title: 'معلومات الاتصال المباشر',
+      website: 'موقع لينكد إن',
       email: 'البريد الإلكتروني',
       phone: 'الهاتف',
       location: 'الموقع الجغرافي',

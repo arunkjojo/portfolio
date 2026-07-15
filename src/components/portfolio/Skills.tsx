@@ -4,17 +4,8 @@ import { useTranslation } from '../../lib/i18n'
 export default function Skills() {
   const { t } = useTranslation()
 
+  // Sorted and consolidated skill groups
   const skillGroups = [
-    {
-      category: t.skills.categories.frontend,
-      icon: <Cpu className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['React.js', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'PWA Service Worker']
-    },
-    {
-      category: t.skills.categories.backend,
-      icon: <Terminal className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['Node.js-Express.js', 'PHP', 'ASP.NET Core Web API', 'RESTful APIs', 'WebSockets']
-    },
     {
       category: t.skills.categories.devops,
       icon: <Zap className="h-5 w-5 text-[var(--lagoon-deep)]" />,
@@ -32,16 +23,6 @@ export default function Skills() {
         'Prometheus & Grafana',
         'Cloud Platforms'
       ]
-    },
-    {
-      category: t.skills.categories.databases,
-      icon: <Database className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firestore', 'Supabase']
-    },
-    {
-      category: t.skills.categories.testing,
-      icon: <Wrench className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['Playwright', 'B2B Testing', 'Postman Testing']
     },
     {
       category: t.skills.categories.ai,
@@ -62,9 +43,39 @@ export default function Skills() {
       ]
     },
     {
+      category: t.skills.categories.frontend,
+      icon: <Cpu className="h-5 w-5 text-[var(--lagoon-deep)]" />,
+      items: ['React.js', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'PWA Service Worker']
+    },
+    {
+      category: t.skills.categories.backend,
+      icon: <Terminal className="h-5 w-5 text-[var(--lagoon-deep)]" />,
+      items: ['Node.js-Express.js', 'PHP', 'ASP.NET Core Web API', 'RESTful APIs', 'WebSockets']
+    },
+    {
+      category: t.skills.categories.databases,
+      icon: <Database className="h-5 w-5 text-[var(--lagoon-deep)]" />,
+      items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firestore', 'Supabase']
+    },
+    {
+      category: t.skills.categories.testing,
+      icon: <Wrench className="h-5 w-5 text-[var(--lagoon-deep)]" />,
+      items: ['Playwright', 'B2B Testing', 'Postman Testing']
+    },
+    {
       category: t.skills.categories.soft,
       icon: <CheckCircle2 className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['Leadership', 'Task Prioritization', 'Stress Management']
+      items: [
+        'Communication & Collaboration',
+        'Problem-Solving & Critical Thinking',
+        'Adaptability & Continuous Learning',
+        'Time Management',
+        'Accountability & Ownership',
+        'Attention to Detail',
+        'Leadership',
+        'Task Prioritization',
+        'Stress Management'
+      ]
     }
   ]
 

@@ -7,37 +7,37 @@ export default function Projects() {
   const projectList = [
     {
       name: 'Market Place Web App',
-      period: 'Representative Project',
+      typeLabel: t.projects.professional,
       description: t.projects.marketplace,
       tags: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Supabase', 'Docker']
     },
     {
       name: 'Voice Translation App',
-      period: 'Representative Project',
+      typeLabel: t.projects.professional,
       description: t.projects.voiceTranslation,
       tags: ['React Native', 'Android', 'WebRTC', 'Redux Toolkit', 'Audio Conversion']
     },
     {
       name: 'Ecommerce Application',
-      period: 'Representative Project',
+      typeLabel: t.projects.professional,
       description: t.projects.ecommerce,
       tags: ['Next.js', 'Stripe API', 'Redux', 'Bootstrap', 'Node.js']
     },
     {
       name: 'SaaS Application',
-      period: 'Personal Project',
+      typeLabel: t.projects.professional,
       description: t.projects.saas,
       tags: ['React', 'Node.js', 'Docker', 'GitHub Actions', 'CI/CD']
     },
     {
       name: 'Shop-store Native App',
-      period: 'Representative Project',
+      typeLabel: t.projects.professional,
       description: t.projects.shopStore,
       tags: ['React Native', 'PWA Service Worker', 'Firebase', 'Google Play Store']
     },
     {
       name: 'IIoT Live Monitoring System',
-      period: 'Representative Project',
+      typeLabel: t.projects.personal,
       description: t.projects.iiot,
       tags: ['React.js', 'WebSockets', 'Node.js', 'PostgreSQL', 'Real-time Charting']
     }
@@ -57,7 +57,7 @@ export default function Projects() {
               <div className="flex justify-between items-start gap-2 mb-2">
                 <h3 className="text-lg font-bold text-[var(--sea-ink)]">{proj.name}</h3>
                 <span className="text-xs text-[var(--sea-ink-soft)] font-medium whitespace-nowrap bg-[var(--chip-bg)] border border-[var(--chip-line)] px-2 py-0.5 rounded-full">
-                  {proj.period}
+                  {proj.typeLabel}
                 </span>
               </div>
               <p className="text-sm text-[var(--sea-ink-soft)] mb-6 leading-relaxed">
