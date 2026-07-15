@@ -160,7 +160,7 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Projects Portfolio',
+      title: 'Projects',
       professional: 'Professional Project',
       personal: 'Personal Project',
       marketplace: 'Highly scalable multi-vendor marketplace platform featuring real-time catalogs, search, and secure multi-tenant data architecture.',
@@ -279,7 +279,7 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'परियोजनाएं पोर्टफोलियो',
+      title: 'परियोजनाएं',
       professional: 'व्यावसायिक परियोजना',
       personal: 'व्यक्तिगत परियोजना',
       marketplace: 'अत्यधिक स्केलेबल मल्टी-वेंडर मार्केटप्लेस प्लेटफॉर्म जिसमें रीयल-टाइम कैटलॉग, खोज और सुरक्षित मल्टी-टेनेंट डेटा आर्किटेक्चर शामिल हैं।',
@@ -398,7 +398,7 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Projektportfolio',
+      title: 'Projekte',
       professional: 'Professionelles Projekt',
       personal: 'Persönliches Projekt',
       marketplace: 'Hochgradig skalierbare Multi-Vendor-Marktplatzplattform mit Echtzeit-Katalogen, Suche und sicherer Multi-Tenancy-Datenarchitektur.',
@@ -517,7 +517,7 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'Portafolio de Proyectos',
+      title: 'Proyectos',
       professional: 'Proyecto Profesional',
       personal: 'Proyecto Personal',
       marketplace: 'Plataforma de mercado multi-proveedor altamente escalable con catálogos en tiempo real, búsqueda y arquitectura de datos multi-tenant segura.',
@@ -636,7 +636,7 @@ const translations: Record<Language, TranslationSchema> = {
       }
     },
     projects: {
-      title: 'محفظة المشاريع',
+      title: 'المشاريع',
       professional: 'مشروع مهني',
       personal: 'مشروع شخصي',
       marketplace: 'منصة سوق متكاملة للبائعين متعددة وقابلة للتطوير بشكل كبير تتميز بكتالوجات الوقت الفعلي والبحث وبنية البيانات الآمنة.',

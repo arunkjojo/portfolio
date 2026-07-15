@@ -1,8 +1,9 @@
 import { Terminal } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
+import SpeakButton from './SpeakButton'
 
 export default function Projects() {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
 
   const projectList = [
     {
@@ -52,13 +53,18 @@ export default function Projects() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {projectList.map((proj, idx) => (
-          <article key={idx} className="island-shell feature-card rounded-2xl p-6 flex flex-col justify-between">
+          <article key={idx} className="island-shell feature-card rounded-2xl p-6 flex flex-col justify-between animate-fade-in">
             <div>
-              <div className="flex justify-between items-start gap-2 mb-2">
-                <h3 className="text-lg font-bold text-[var(--sea-ink)]">{proj.name}</h3>
-                <span className="text-xs text-[var(--sea-ink-soft)] font-medium whitespace-nowrap bg-[var(--chip-bg)] border border-[var(--chip-line)] px-2 py-0.5 rounded-full">
-                  {proj.typeLabel}
-                </span>
+              <div className="flex justify-between items-start gap-4 mb-4">
+                <div>
+                  <h3 className="text-lg font-bold text-[var(--sea-ink)]">{proj.name}</h3>
+                  <span className="text-[10px] text-[var(--sea-ink-soft)] font-bold uppercase tracking-wider bg-[var(--chip-bg)] border border-[var(--chip-line)] px-2 py-0.5 rounded-full mt-1.5 inline-block">
+                    {proj.typeLabel}
+                  </span>
+                </div>
+                <div className="flex-shrink-0">
+                  <SpeakButton text={`${proj.name}. ${proj.description}`} lang={language} />
+                </div>
               </div>
               <p className="text-sm text-[var(--sea-ink-soft)] mb-6 leading-relaxed">
                 {proj.description}

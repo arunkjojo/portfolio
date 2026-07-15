@@ -1,9 +1,12 @@
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 import { useTranslation } from '../lib/i18n'
 import type { Language } from '../lib/i18n'
 
 export default function Header() {
   const { language, setLanguage, t } = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
 
   const languages: { key: Language; label: string }[] = [
     { key: 'en', label: 'English (EN)' },
@@ -15,18 +18,30 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
-      <nav className="page-wrap flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
+      <nav className="page-wrap flex items-center justify-between py-3 sm:py-4">
+        {/* Left Mobile Menu Toggle Button */}
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          className="sm:hidden rounded-xl p-2 text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)] cursor-pointer"
+          aria-label="Open navigation menu"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+
+        {/* AJ Logo */}
         <h2 className="m-0 flex-shrink-0 text-base font-semibold tracking-tight">
           <a
             href="#"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm text-[var(--sea-ink)] no-underline shadow-[0_8px_24px_rgba(30,90,72,0.08)] sm:px-4 sm:py-2"
           >
             <span className="h-2 w-2 rounded-full bg-[linear-gradient(90deg,#56c6be,#7ed3bf)]" />
-            {t.hero.title}
+            AJ
           </a>
         </h2>
 
-        <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-none sm:w-auto sm:flex-nowrap sm:pb-0">
+        {/* Desktop Navigation Link Menu */}
+        <div className="hidden sm:flex items-center gap-x-6 text-sm font-semibold">
           <a href="#" className="nav-link">{t.nav.home}</a>
           <a href="#experience" className="nav-link">{t.nav.experience}</a>
           <a href="#projects" className="nav-link">{t.nav.projects}</a>
@@ -35,7 +50,8 @@ export default function Header() {
           <a href="#contact" className="nav-link">{t.nav.contact}</a>
         </div>
 
-        <div className="ml-auto flex items-center gap-2">
+        {/* Right Action Tray (Language & Theme selectors, socials) */}
+        <div className="flex items-center gap-2">
           {/* Language Selector */}
           <select
             value={language}
@@ -57,7 +73,7 @@ export default function Header() {
             rel="noreferrer"
             className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
           >
-            <span className="sr-only">Follow Arun Jojo on LinkedIn</span>
+            <span className="sr-only">Follow AJ on LinkedIn</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="currentColor">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
@@ -70,7 +86,7 @@ export default function Header() {
             rel="noreferrer"
             className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
           >
-            <span className="sr-only">Go to Arun Jojo GitHub</span>
+            <span className="sr-only">Go to AJ GitHub</span>
             <svg viewBox="0 0 16 16" aria-hidden="true" width="22" height="22">
               <path
                 fill="currentColor"
@@ -82,6 +98,41 @@ export default function Header() {
           <ThemeToggle />
         </div>
       </nav>
+
+      {/* Mobile Drawer Panel Backdrop */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 sm:hidden transition-opacity"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Mobile Drawer Left Panel Menu */}
+      <div
+        className={`fixed inset-y-0 left-0 w-64 bg-[var(--surface)] border-r border-[var(--line)] p-6 z-50 transform transition-transform duration-300 ease-in-out sm:hidden ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex items-center justify-between mb-8">
+          <span className="text-lg font-bold text-[var(--sea-ink)]">AJ</span>
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="rounded-xl p-2 text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)] cursor-pointer"
+            aria-label="Close navigation menu"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+        <div className="flex flex-col gap-5 text-base font-bold">
+          <a href="#" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.home}</a>
+          <a href="#experience" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.experience}</a>
+          <a href="#projects" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.projects}</a>
+          <a href="#skills" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.skills}</a>
+          <a href="#certifications" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.certifications}</a>
+          <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>{t.nav.contact}</a>
+        </div>
+      </div>
     </header>
   )
 }

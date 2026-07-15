@@ -467,3 +467,20 @@ a {
   }
 }
 
+/* Subtitle Typewriter Blinking Cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.animate-blink {
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Active Click Micro-interactions */
+button:active,
+a:active,
+.island-shell:active {
+  transform: scale(0.985);
+  transition: transform 100ms ease-out;
+}
+

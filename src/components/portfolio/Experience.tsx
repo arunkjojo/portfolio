@@ -1,8 +1,9 @@
 import { Briefcase } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
+import SpeakButton from './SpeakButton'
 
 export default function Experience() {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
 
   // Static company/period data paired with localized key contents
   const rolesList = [
@@ -53,15 +54,25 @@ export default function Experience() {
               {/* Bullet node on timeline */}
               <div className="absolute -left-[31px] md:-left-[39px] top-1.5 h-4 w-4 rounded-full bg-[var(--lagoon)] border-4 border-[var(--bg-base)] shadow-sm" />
               
-              <div className="island-shell p-6 rounded-2xl">
-                <span className="text-xs font-bold text-[var(--lagoon-deep)] uppercase tracking-wider block mb-1">
-                  {role.period}
-                </span>
-                <h3 className="text-lg font-bold text-[var(--sea-ink)] flex flex-wrap gap-2 items-center">
-                  <span>{roleDetails.role}</span>
-                  <span className="text-[var(--sea-ink-soft)] text-sm font-normal">{t.experience.at}</span>
-                  <span className="text-[var(--lagoon-deep)] font-semibold">{role.company}</span>
-                </h3>
+              <div className="island-shell p-6 rounded-2xl animate-fade-in">
+                <div className="flex justify-between items-start gap-4 mb-3">
+                  <div>
+                    <span className="text-xs font-bold text-[var(--lagoon-deep)] uppercase tracking-wider block mb-1">
+                      {role.period}
+                    </span>
+                    <h3 className="text-lg font-bold text-[var(--sea-ink)] flex flex-wrap gap-2 items-center leading-tight">
+                      <span>{roleDetails.role}</span>
+                      <span className="text-[var(--sea-ink-soft)] text-sm font-normal">{t.experience.at}</span>
+                      <span className="text-[var(--lagoon-deep)] font-semibold">{role.company}</span>
+                    </h3>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <SpeakButton 
+                      text={`${roleDetails.role} at ${role.company}. ${roleDetails.highlights.join(' ')}`} 
+                      lang={language} 
+                    />
+                  </div>
+                </div>
                 <span className="text-xs text-[var(--sea-ink-soft)] block mb-4">
                   {roleDetails.location}
                 </span>
