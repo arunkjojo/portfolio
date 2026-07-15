@@ -1,8 +1,9 @@
 import { Cpu, Database, Terminal, Zap, Wrench, TrendingUp, CheckCircle2 } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
+import SpeakButton from './SpeakButton'
 
 export default function Skills() {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
 
   // Sorted and consolidated skill groups
   const skillGroups = [
@@ -79,11 +80,15 @@ export default function Skills() {
     }
   ]
 
+  // Construct text for Speech Synthesis
+  const speakText = `${t.skills.title}. ${skillGroups.map((g) => `${g.category}: ${g.items.join(', ')}`).join('. ')}`
+
   return (
     <section id="skills" className="mb-16 scroll-mt-20">
-      <div className="flex items-center gap-2 mb-8">
+      <div className="flex items-center gap-3 mb-8">
         <Wrench className="h-6 w-6 text-[var(--lagoon-deep)]" />
         <h2 className="text-2xl font-bold tracking-tight text-[var(--sea-ink)]">{t.skills.title}</h2>
+        <SpeakButton text={speakText} lang={language} />
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

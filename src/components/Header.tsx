@@ -19,11 +19,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
       <nav className="page-wrap flex items-center justify-between py-3 sm:py-4">
-        {/* Left Mobile Menu Toggle Button */}
+        {/* Left Mobile Menu Toggle Button (Visible below 1024px) */}
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="sm:hidden rounded-xl p-2 text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)] cursor-pointer"
+          className="lg:hidden rounded-xl p-2 text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)] cursor-pointer"
           aria-label="Open navigation menu"
         >
           <Menu className="h-6 w-6" />
@@ -40,8 +40,8 @@ export default function Header() {
           </a>
         </h2>
 
-        {/* Desktop Navigation Link Menu */}
-        <div className="hidden sm:flex items-center gap-x-6 text-sm font-semibold">
+        {/* Desktop Navigation Link Menu (Hidden below 1024px) */}
+        <div className="hidden lg:flex items-center gap-x-6 text-sm font-semibold">
           <a href="#" className="nav-link">{t.nav.home}</a>
           <a href="#experience" className="nav-link">{t.nav.experience}</a>
           <a href="#projects" className="nav-link">{t.nav.projects}</a>
@@ -99,17 +99,17 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Drawer Panel Backdrop */}
+      {/* Mobile Drawer Panel Backdrop (Darkened and high-blur) */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 sm:hidden transition-opacity"
+          className="fixed inset-0 bg-black/60 backdrop-blur-md z-40 lg:hidden transition-opacity"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* Mobile Drawer Left Panel Menu */}
+      {/* Mobile Drawer Left Panel Menu (Solid background for maximum readability) */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-[var(--surface)] border-r border-[var(--line)] p-6 z-50 transform transition-transform duration-300 ease-in-out sm:hidden ${
+        className={`fixed inset-y-0 left-0 w-64 bg-[var(--bg-base)] border-r border-[var(--line)] p-6 z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
