@@ -8,7 +8,7 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [devtools(), TanStackRouterVite(), viteReact(), tailwindcss()],
   build: {
-    outDir: 'dist/client',
+    outDir: 'dist',
   },
 })
 
