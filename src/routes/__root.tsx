@@ -1,112 +1,36 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { LanguageProvider, useTranslation } from '../lib/i18n'
 
-import appCss from '../styles.css?url'
-
-const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
-
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        title: 'Arun Jojo | AI Certified Full-Stack Software Engineer',
-      },
-      {
-        name: 'description',
-        content: 'AI Certified Full-Stack Software Engineer with 5+ years of experience building scalable web applications. Expert in React, Next.js, Node.js, and TypeScript.',
-      },
-      {
-        name: 'keywords',
-        content: 'Arun Jojo, Full-Stack Engineer, AI Certified, React, Next.js, Node.js, TypeScript, Supabase, CI/CD, DevOps, Software Engineer Portfolio',
-      },
-      {
-        name: 'author',
-        content: 'Arun Jojo',
-      },
-      {
-        property: 'og:title',
-        content: 'Arun Jojo | AI Certified Full-Stack Software Engineer',
-      },
-      {
-        property: 'og:description',
-        content: 'AI Certified Full-Stack Software Engineer with 5+ years of experience building scalable web applications. Specialize in CI/CD automation, React, and performance tuning.',
-      },
-      {
-        property: 'og:type',
-        content: 'website',
-      },
-      {
-        property: 'og:url',
-        content: 'https://github.com/arunkjojo',
-      },
-      {
-        property: 'og:image',
-        content: '/images/portrait.jpg',
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {
-        name: 'twitter:title',
-        content: 'Arun Jojo | AI Certified Full-Stack Software Engineer',
-      },
-      {
-        name: 'twitter:description',
-        content: 'AI Certified Full-Stack Software Engineer with 5+ years of experience. Expert in React, TypeScript, Node.js, and CI/CD.',
-      },
-      {
-        name: 'twitter:image',
-        content: '/images/portrait.jpg',
-      },
-    ],
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-      {
-        rel: 'icon',
-        type: 'image/jpeg',
-        href: '/images/portrait.jpg',
-      },
-    ],
-  }),
-  shellComponent: RootDocument,
+  component: RootDocument,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument() {
   return (
     <LanguageProvider>
-      <RootDocumentContent>{children}</RootDocumentContent>
+      <RootDocumentContent />
     </LanguageProvider>
   )
 }
 
-function RootDocumentContent({ children }: { children: React.ReactNode }) {
+function RootDocumentContent() {
   const { language } = useTranslation()
 
+  useEffect(() => {
+    document.documentElement.lang = language
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr'
+  }, [language])
+
   return (
-    <html lang={language} dir={language === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
-        <HeadContent />
-      </head>
-      <body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
-        <Header />
-        {children}
-        <Footer />
-        <Scripts />
-      </body>
-    </html>
+    <div className="min-h-screen bg-[var(--bg-base)] flex flex-col font-sans transition-colors duration-300">
+      <Header />
+      <div className="flex-grow">
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
   )
 }
