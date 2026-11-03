@@ -111,7 +111,7 @@ The application is a full-featured, static-rendered portfolio SPA built using a 
 ### Core Frameworks
 *   **React 19:** Utilizing the latest rendering engine, support for concurrent features, and clean component architecture.
 *   **TypeScript:** Enforcing rigid type-safety across routes, translation schemas, and component interfaces.
-*   **TanStack Start:** Built on top of TanStack Router and Vite, managing the isomorphic application lifecycle, client-server hydration boundaries, and physical file-based routing.
+*   **TanStack Router on a Vite SPA:** File-based routing via `@tanstack/router-plugin` (generates `src/routeTree.gen.ts`). The app was moved off TanStack Start to a client-only SPA; there is no SSR or server functions. Vercel serves `dist/` with an SPA rewrite in `vercel.json`.
 *   **Tailwind CSS v4:** Providing utility-first styling with native CSS variables and dynamic compiler performance.
 
 ### Project Directory Structure
@@ -125,15 +125,18 @@ personal-portfolio/
 │   │   ├── Header.tsx      # Navigation header & Language select
 │   │   ├── Footer.tsx      # Translated copyright footer
 │   │   ├── ThemeToggle.tsx # Dark/Light theme selector
+│   │   ├── WhatsAppPrompt.tsx # Mobile-only WhatsApp countdown banner
 │   │   └── portfolio/      # Refactored modular sections
-│   │       ├── Hero.tsx, Stats.tsx, Experience.tsx, Projects.tsx,
-│   │       ├── Skills.tsx, Certifications.tsx, Education.tsx, Contact.tsx
+│   │       ├── Hero.tsx, Stats.tsx, CertHighlight.tsx, Experience.tsx,
+│   │       ├── Projects.tsx, Skills.tsx, Certifications.tsx, Education.tsx, Contact.tsx
 │   ├── lib/
-│   │   └── i18n.tsx        # Multi-language translation state & Context
+│   │   ├── i18n.tsx        # Multi-language translation state & Context
+│   │   └── redirects.ts    # /r shortcuts, host allowlist, WhatsApp number
 │   ├── routes/             # File-based routing folder
-│   │   ├── __root.tsx      # HTML shell, document wrapper & i18n handler
+│   │   ├── __root.tsx      # Layout shell, i18n provider, WhatsApp prompt
 │   │   ├── index.tsx       # Landing page (renders portfolio sections)
-│   │   └── about.tsx       # Secondary about details page
+│   │   ├── about.tsx       # Secondary about details page
+│   │   └── r.{-$slug}.tsx  # /r short-link & allowlisted redirect route
 │   ├── styles.css          # Design system stylesheet
 │   └── router.tsx          # TanStack Router instance
 ├── package.json            # Dependencies & scripts
@@ -144,9 +147,10 @@ personal-portfolio/
 
 ## 2. Key Architecture Patterns
 
-### A. Isomorphic Routing & SEO
+### A. Routing & SEO
 *   Routing is handled by **TanStack Router** using file-based routing conventions.
-*   `__root.tsx` serves as the root document shell. It exports a `Route` with a `head()` config providing real SEO meta tags (OpenGraph, Twitter card, metadata descriptions, favicons, and keywords) for indexing.
+*   SEO meta tags (title, description, keywords, OpenGraph, Twitter card) live statically in the root `index.html`. Update them there when the headline or summary changes.
+*   `__root.tsx` renders the layout shell (Header, Outlet, Footer, WhatsAppPrompt) inside `LanguageProvider`.
 
 ### B. Dark-White "White-First" Theme
 *   Theme settings are managed in `src/styles.css` using CSS custom properties (variables) defined for both `:root` (default Light theme) and `:root[data-theme="dark"]` (Dark theme).
@@ -160,6 +164,18 @@ personal-portfolio/
 
 ### D. Component Restructuring
 *   The landing page (`index.tsx`) acts as an assembler, delegating rendering to specialized, focused components inside `src/components/portfolio/`. This separates presentation, data timeline rendering, grids, and stats.
+*   Profile content source of truth is the user's LinkedIn profile. When syncing, work from a LinkedIn "Save to PDF" export (`docs/linkedin-profile.pdf`, kept out of git); do not scrape linkedin.com. Periods/companies live in the components; prose lives in `i18n.tsx` and must be updated in all five languages.
+
+### E. Redirect Route (`/r`)
+*   `/r/<slug>` resolves a named shortcut from `SHORTCUTS` in `src/lib/redirects.ts` (linkedin, github, resume, whatsapp).
+*   `/r?url=<target>` redirects only to `https://` URLs whose host is in `ALLOWED_HOSTS` (or a subdomain of one). Bare hosts like `linkedin.com/in/x` get `https://` prepended. Never loosen this to an open redirect; add hosts to the allowlist instead.
+
+### F. Mobile WhatsApp Prompt
+*   `WhatsAppPrompt.tsx` shows a bottom banner with a visible 5s countdown, then opens `wa.me` with a localized message (`t.whatsapp.message`).
+*   It triggers only when `(max-width: 768px) and (pointer: coarse)` matches, the path is not `/r` or `/r/*`, and the sessionStorage flag `wa_redirect_done` is unset. Cancel or completion sets the flag.
+
+### G. KCSA Highlight Card
+*   `CertHighlight.tsx` renders above Work Experience: CSS-perspective tilt on mouse move, animated conic-gradient border (`.cert-3d-*` classes in `styles.css`). Motion is disabled under `prefers-reduced-motion`.
 
 ---
 
