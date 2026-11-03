@@ -116,7 +116,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     stats: {
       experience: { value: '5+ Years', label: 'Overall Experience', desc: 'DevOps (1 yr), Software & Frontend (5+ yrs)' },
-      throughput: { value: '99.9%', label: 'Checkout Uptime', desc: 'Payment gateways: Stripe, PhonePe, Cashfree' },
+      throughput: { value: '80%', label: 'Faster Project Setup', desc: 'Terraform Infrastructure-as-Code provisioning' },
       bottlenecks: { value: '30%', label: 'Faster Deployments', desc: 'Automated GitHub Actions pipelines & container orchestration' },
       delivery: { value: '40%', label: 'Less Manual Overhead', desc: 'Dockerized microservices & automated provisioning' }
     },
@@ -254,7 +254,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     stats: {
       experience: { value: '5+ वर्ष', label: 'कुल अनुभव', desc: 'डेवऑप्स (1 वर्ष), सॉफ्टवेयर और फ्रंटएंड (5+ वर्ष)' },
-      throughput: { value: '99.9%', label: 'चेकआउट अपटाइम', desc: 'पेमेंट गेटवे: Stripe, PhonePe, Cashfree' },
+      throughput: { value: '80%', label: 'तेज़ प्रोजेक्ट सेटअप', desc: 'Terraform इन्फ्रास्ट्रक्चर-एज़-कोड प्रोविज़निंग' },
       bottlenecks: { value: '30%', label: 'तेज़ डिप्लॉयमेंट', desc: 'स्वचालित GitHub Actions पाइपलाइन और कंटेनर ऑर्केस्ट्रेशन' },
       delivery: { value: '40%', label: 'कम मैनुअल ओवरहेड', desc: 'Docker माइक्रोसर्विसेज़ और स्वचालित प्रोविज़निंग' }
     },
@@ -392,7 +392,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     stats: {
       experience: { value: '5+ Jahre', label: 'Gesamterfahrung', desc: 'DevOps (1 J.), Software & Frontend (5+ J.)' },
-      throughput: { value: '99,9%', label: 'Checkout-Verfügbarkeit', desc: 'Zahlungs-Gateways: Stripe, PhonePe, Cashfree' },
+      throughput: { value: '80%', label: 'Schnelleres Projekt-Setup', desc: 'Terraform Infrastructure-as-Code-Bereitstellung' },
       bottlenecks: { value: '30%', label: 'Schnellere Deployments', desc: 'Automatisierte GitHub-Actions-Pipelines & Container-Orchestrierung' },
       delivery: { value: '40%', label: 'Weniger manueller Aufwand', desc: 'Docker-Microservices & automatisierte Bereitstellung' }
     },
@@ -530,7 +530,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     stats: {
       experience: { value: '5+ Años', label: 'Experiencia General', desc: 'DevOps (1 año), Software y Frontend (5+ años)' },
-      throughput: { value: '99.9%', label: 'Disponibilidad del Checkout', desc: 'Pasarelas de pago: Stripe, PhonePe, Cashfree' },
+      throughput: { value: '80%', label: 'Configuración más Rápida', desc: 'Aprovisionamiento Infrastructure-as-Code con Terraform' },
       bottlenecks: { value: '30%', label: 'Despliegues más Rápidos', desc: 'Pipelines automatizados con GitHub Actions y orquestación de contenedores' },
       delivery: { value: '40%', label: 'Menos Trabajo Manual', desc: 'Microservicios con Docker y aprovisionamiento automatizado' }
     },
@@ -668,7 +668,7 @@ const translations: Record<Language, TranslationSchema> = {
     },
     stats: {
       experience: { value: '٥+ سنوات', label: 'الخبرة الإجمالية', desc: 'ديف أوبس (سنة واحدة)، هندسة البرمجيات والواجهات (٥+ سنوات)' },
-      throughput: { value: '٩٩٫٩٪', label: 'جاهزية الدفع', desc: 'بوابات الدفع: Stripe وPhonePe وCashfree' },
+      throughput: { value: '٨٠٪', label: 'إعداد أسرع للمشاريع', desc: 'تجهيز البنية التحتية كرمز باستخدام Terraform' },
       bottlenecks: { value: '٣٠٪', label: 'نشر أسرع', desc: 'خطوط GitHub Actions مؤتمتة وتنسيق الحاويات' },
       delivery: { value: '٤٠٪', label: 'جهد يدوي أقل', desc: 'خدمات مصغرة بـ Docker وتجهيز مؤتمت' }
     },

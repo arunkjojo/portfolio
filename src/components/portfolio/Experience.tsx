@@ -15,11 +15,11 @@ export default function Experience() {
     {
       key: 'upskillingGap' as const,
       company: 'Self-Employed / Personal Projects',
-      period: 'Sep 2025 – Apr 2026'
+      period: 'Sep 2025 – Jul 2026'
     },
     {
       key: 'bct' as const,
-      company: 'BCT Consulting (Information Kerala Mission)',
+      company: 'BCT Consulting (client: Information Kerala Mission, Govt. of Kerala)',
       period: 'Jun 2024 – Aug 2025'
     },
     {
