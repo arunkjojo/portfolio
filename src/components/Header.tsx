@@ -46,9 +46,10 @@ export default function Header() {
             <a href="/" className="nav-link">{t.nav.home}</a>
             <a href="/about" className="nav-link">{t.nav.about}</a>
             <a href="/#experience" className="nav-link">{t.nav.experience}</a>
-            <a href="/#projects" className="nav-link">{t.nav.projects}</a>
             <a href="/#skills" className="nav-link">{t.nav.skills}</a>
             <a href="/#certifications" className="nav-link">{t.nav.certifications}</a>
+            <a href="/#projects" className="nav-link">{t.nav.projects}</a>
+            <a href="/#education" className="nav-link">{t.nav.education}</a>
             <a href="/#contact" className="nav-link">{t.nav.contact}</a>
           </div>
 

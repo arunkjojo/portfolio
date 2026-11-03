@@ -31,7 +31,7 @@ function App() {
   }, [])
 
   return (
-    <main className="page-wrap px-4 pb-16 pt-24 overflow-x-hidden">
+    <main className="page-wrap px-4 pb-16 pt-16 overflow-x-hidden">
       <div className="scroll-fade-in">
         <Hero />
       </div>

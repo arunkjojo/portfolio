@@ -12,6 +12,7 @@ export interface TranslationSchema {
     skills: string
     certifications: string
     contact: string
+    education: string
   }
   hero: {
     title: string
@@ -88,6 +89,18 @@ export interface TranslationSchema {
     cancel: string
     message: string
   }
+  about: {
+    kicker: string
+    title: string
+    summary: string
+    backHome: string
+    contactMe: string
+    capabilitiesTitle: string
+    capabilities: string[]
+    snapshotTitle: string
+    snapshot: string[]
+    portraitAlt: string
+  }
   kcsa: {
     kicker: string
     title: string
@@ -106,7 +119,7 @@ export interface TranslationSchema {
 
 const translations: Record<Language, TranslationSchema> = {
   en: {
-    nav: { home: 'Home', about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact' },
+    nav: { home: 'Home', about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact', education: 'Education' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'AI DevOps Engineer & Senior Software Engineer',
@@ -228,6 +241,29 @@ const translations: Record<Language, TranslationSchema> = {
       cancel: 'Cancel',
       message: 'Hi Arun, I visited your portfolio and would like to connect.'
     },
+    about: {
+      kicker: 'Professional Summary',
+      title: 'About Arun Jojo',
+      summary: 'AI DevOps Engineer with 5+ years of software engineering and systems experience. I build resilient cloud infrastructure, automated GitOps pipelines, and AI-accelerated delivery systems, bridging application architecture and cloud operations. I advocate developer-led reliability ("you build it, you run it"): optimizing cloud resource use, enforcing security early in the pipeline, and delivering observable, self-healing platforms.',
+      backHome: 'Back to Home',
+      contactMe: 'Contact Me',
+      capabilitiesTitle: 'Core Capabilities',
+      capabilities: [
+        'Provisioning infrastructure as code with Terraform and Ansible across AWS, Azure, and GCP',
+        'Orchestrating containers with Docker, Kubernetes, and Helm using GitOps workflows',
+        'Deploying automated zero-downtime CI/CD pipelines via GitHub Actions',
+        'Optimizing backend architectures in PHP, Node.js, and ASP.NET Core',
+        'Building observable, self-healing platforms with Prometheus and Grafana',
+        'AI-augmented software development using modern AI tools and agents'
+      ],
+      snapshotTitle: 'Profile Snapshot',
+      snapshot: [
+        '5+ years building scalable web applications and digital products.',
+        'Specializes in Kubernetes, Terraform, Docker, Helm, GitOps, and CI/CD, on a Next.js, React, ASP.NET Core, and Node.js foundation.',
+        'Open to remote AI DevOps, Platform Engineering, and SRE roles.'
+      ],
+      portraitAlt: 'Arun Jojo portrait'
+    },
     kcsa: {
       kicker: 'Currently pursuing',
       title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
@@ -238,18 +274,18 @@ const translations: Record<Language, TranslationSchema> = {
       title: 'Contact Information',
       website: 'LinkedIn Website',
       email: 'Email',
-      phone: 'Phone',
+      phone: 'WhatsApp',
       location: 'Location',
       locationVal: 'Ernakulam, Kerala, India'
     }
   },
   hi: {
-    nav: { home: 'होम', about: 'बारे में', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क' },
+    nav: { home: 'होम', about: 'बारे में', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क', education: 'शिक्षा' },
     hero: {
       title: 'अरुण जोजो',
       subtitle: 'एआई डेवऑप्स इंजीनियर और सीनियर सॉफ्टवेयर इंजीनियर',
-      bio: 'सॉफ्टवेयर इंजीनियरिंग और सिस्टम में 5+ वर्षों के अनुभव वाला एआई डेवऑप्स इंजीनियर। मैं मज़बूत क्लाउड इन्फ्रास्ट्रक्चर, स्वचालित GitOps पाइपलाइन और एआई-त्वरित डिलीवरी सिस्टम बनाता हूं: ज़ीरो-डाउनटाइम सीआई/सीडी वर्कफ़्लो, Kubernetes, Helm और Terraform के साथ कंटेनर ऑर्केस्ट्रेशन, और इंजीनियरिंग गति बढ़ाने के लिए डेवऑप्स वातावरण में एजेंटिक एआई का एकीकरण। रिमोट एआई डेवऑप्स, प्लेटफ़ॉर्म और SRE भूमिकाओं के लिए उपलब्ध।',
-      downloadCv: 'सीवी डाउनलोड करें',
+      bio: 'सॉफ्टवेयर इंजीनियरिंग और सिस्टम में 5+ वर्षों के अनुभव वाला एआई डेवऑप्स इंजीनियर। मैं मज़बूत क्लाउड इन्फ्रास्ट्रक्चर, स्वचालित GitOps पाइपलाइन और एआई-त्वरित डिलीवरी सिस्टम बनाता हूं: ज़ीरो-डाउनटाइम सीआई/सीडी वर्कफ़्लो, Kubernetes, Helm और Terraform के साथ कंटेनर ऑर्केस्ट्रेशन, और इंजीनियरिंग गति बढ़ाने के लिए डेवऑप्स वातावरण में एजेंटिक एआई का একीकरণ। রিমোট এআই ডেভঅপ্স, প্ল্যাটফর্ম ও SRE ভূমিকা পরীক্ষা করা হয়েছে।',
+      downloadCv: 'সিভি ডাউনলোড করুন',
       contactInfo: 'संपर्क जानकारी'
     },
     stats: {
@@ -366,6 +402,29 @@ const translations: Record<Language, TranslationSchema> = {
       cancel: 'रद्द करें',
       message: 'नमस्ते अरुण, मैंने आपका पोर्टफोलियो देखा और आपसे जुड़ना चाहता/चाहती हूं।'
     },
+    about: {
+      kicker: 'पेशेवर सारांश',
+      title: 'अरुण जोजो के बारे में',
+      summary: 'सॉफ्टवेयर इंजीनियरिंग और सिस्टम में 5+ वर्षों के अनुभव वाला एआई डेवऑप्स इंजीनियर। मैं मज़बूत क्लाउड इन्फ्रास्ट्रक्चर, स्वचालित GitOps पाइपलाइन और एआई-त्वरित डिलीवरी सिस्टम बनाता हूं, जो एप्लिकेशन आर्किटेक्चर और क्लाउड ऑपरेशंस को जोड़ते हैं। मैं डेवलपर-नेतृत्व वाली विश्वसनीयता ("you build it, you run it") का समर्थक हूं: क्लाउड संसाधनों का बेहतर उपयोग, पाइपलाइन में शुरुआत से सुरक्षा, और ऑब्ज़र्वेबल, सेल्फ-हीलिंग प्लेटफ़ॉर्म।',
+      backHome: 'होम पर वापस जाएं',
+      contactMe: 'संपर्क करें',
+      capabilitiesTitle: 'मुख्य क्षमताएं',
+      capabilities: [
+        'AWS, Azure और GCP पर Terraform और Ansible के साथ इन्फ्रास्ट्रक्चर-एज़-कोड प्रोविज़निंग',
+        'GitOps वर्कफ़्लो के साथ Docker, Kubernetes और Helm द्वारा कंटेनर ऑर्केस्ट्रेशन',
+        'GitHub Actions के माध्यम से स्वचालित ज़ीरो-डाउनटाइम सीआई/सीडी पाइपलाइन',
+        'PHP, Node.js और ASP.NET Core में बैकएंड आर्किटेक्चर का अनुकूलन',
+        'Prometheus और Grafana के साथ ऑब्ज़र्वेबल, सेल्फ-हीलिंग प्लेटफ़ॉर्म बनाना',
+        'आधुनिक एआई टूल्स और एजेंट्स के साथ एआई-संवर्धित सॉफ्टवेयर डेवलपमेंट'
+      ],
+      snapshotTitle: 'प्रोफ़ाइल झलक',
+      snapshot: [
+        'स्केलेबल वेब एप्लिकेशन और डिजिटल उत्पाद बनाने का 5+ वर्षों का अनुभव।',
+        'Next.js, React, ASP.NET Core और Node.js की नींव पर Kubernetes, Terraform, Docker, Helm, GitOps और सीआई/सीडी में विशेषज्ञता।',
+        'रिमोट एआई डेवऑप्स, प्लेटफ़ॉर्म इंजीनियरिंग और SRE भूमिकाओं के लिए उपलब्ध।'
+      ],
+      portraitAlt: 'अरुण जोजो का चित्र'
+    },
     kcsa: {
       kicker: 'वर्तमान में कर रहे हैं',
       title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
@@ -376,13 +435,13 @@ const translations: Record<Language, TranslationSchema> = {
       title: 'संपर्क सूत्र',
       website: 'लिंक्डइन वेबसाइट',
       email: 'ईमेल',
-      phone: 'फ़ोन',
+      phone: 'वॉट्सऐप',
       location: 'स्थान',
       locationVal: 'एर्नाकुलम, केरल, भारत'
     }
   },
   de: {
-    nav: { home: 'Startseite', about: 'Über mich', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt' },
+    nav: { home: 'Startseite', about: 'Über mich', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt', education: 'Ausbildung' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'AI-DevOps-Engineer & Senior Software Engineer',
@@ -504,6 +563,29 @@ const translations: Record<Language, TranslationSchema> = {
       cancel: 'Abbrechen',
       message: 'Hallo Arun, ich habe dein Portfolio gesehen und würde mich gern vernetzen.'
     },
+    about: {
+      kicker: 'Berufliche Zusammenfassung',
+      title: 'Über Arun Jojo',
+      summary: 'AI-DevOps-Engineer mit 5+ Jahren Erfahrung in Softwareentwicklung und Systemen. Ich baue belastbare Cloud-Infrastruktur, automatisierte GitOps-Pipelines und KI-beschleunigte Delivery-Systeme und verbinde Anwendungsarchitektur mit Cloud-Betrieb. Ich stehe für entwicklergetriebene Zuverlässigkeit („you build it, you run it“): effiziente Nutzung von Cloud-Ressourcen, Sicherheit früh in der Pipeline und beobachtbare, selbstheilende Plattformen.',
+      backHome: 'Zurück zur Startseite',
+      contactMe: 'Kontakt',
+      capabilitiesTitle: 'Kernkompetenzen',
+      capabilities: [
+        'Infrastructure as Code mit Terraform und Ansible auf AWS, Azure und GCP',
+        'Container-Orchestrierung mit Docker, Kubernetes und Helm über GitOps-Workflows',
+        'Automatisierte CI/CD-Pipelines ohne Ausfallzeit mit GitHub Actions',
+        'Optimierung von Backend-Architekturen in PHP, Node.js und ASP.NET Core',
+        'Beobachtbare, selbstheilende Plattformen mit Prometheus und Grafana',
+        'KI-gestützte Softwareentwicklung mit modernen KI-Tools und Agenten'
+      ],
+      snapshotTitle: 'Profil auf einen Blick',
+      snapshot: [
+        '5+ Jahre Entwicklung skalierbarer Webanwendungen und digitaler Produkte.',
+        'Spezialisiert auf Kubernetes, Terraform, Docker, Helm, GitOps und CI/CD auf Basis von Next.js, React, ASP.NET Core und Node.js.',
+        'Offen für Remote-Rollen in AI DevOps, Platform Engineering und SRE.'
+      ],
+      portraitAlt: 'Porträt von Arun Jojo'
+    },
     kcsa: {
       kicker: 'Aktuell in Vorbereitung',
       title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
@@ -514,13 +596,13 @@ const translations: Record<Language, TranslationSchema> = {
       title: 'Kontaktinformationen',
       website: 'LinkedIn-Website',
       email: 'E-Mail',
-      phone: 'Telefon',
+      phone: 'WhatsApp',
       location: 'Standort',
       locationVal: 'Ernakulam, Kerala, Indien'
     }
   },
   es: {
-    nav: { home: 'Inicio', about: 'Acerca de', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto' },
+    nav: { home: 'Inicio', about: 'Acerca de', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto', education: 'Educación' },
     hero: {
       title: 'Arun Jojo',
       subtitle: 'Ingeniero AI DevOps e Ingeniero de Software Senior',
@@ -642,6 +724,29 @@ const translations: Record<Language, TranslationSchema> = {
       cancel: 'Cancelar',
       message: 'Hola Arun, visité tu portafolio y me gustaría conectar contigo.'
     },
+    about: {
+      kicker: 'Resumen Profesional',
+      title: 'Sobre Arun Jojo',
+      summary: 'Ingeniero AI DevOps con más de 5 años de experiencia en ingeniería de software y sistemas. Construyo infraestructura cloud resiliente, pipelines GitOps automatizados y sistemas de entrega acelerados por IA, uniendo la arquitectura de aplicaciones con las operaciones cloud. Promuevo la fiabilidad liderada por desarrolladores ("you build it, you run it"): uso eficiente de recursos cloud, seguridad desde el inicio del pipeline y plataformas observables y autorreparables.',
+      backHome: 'Volver al Inicio',
+      contactMe: 'Contáctame',
+      capabilitiesTitle: 'Capacidades Clave',
+      capabilities: [
+        'Infraestructura como código con Terraform y Ansible en AWS, Azure y GCP',
+        'Orquestación de contenedores con Docker, Kubernetes y Helm mediante flujos GitOps',
+        'Pipelines CI/CD automatizados sin tiempo de inactividad con GitHub Actions',
+        'Optimización de arquitecturas backend en PHP, Node.js y ASP.NET Core',
+        'Plataformas observables y autorreparables con Prometheus y Grafana',
+        'Desarrollo de software potenciado por IA con herramientas y agentes modernos'
+      ],
+      snapshotTitle: 'Perfil en Resumen',
+      snapshot: [
+        'Más de 5 años creando aplicaciones web escalables y productos digitales.',
+        'Especializado en Kubernetes, Terraform, Docker, Helm, GitOps y CI/CD, sobre una base de Next.js, React, ASP.NET Core y Node.js.',
+        'Disponible para roles remotos de AI DevOps, Platform Engineering y SRE.'
+      ],
+      portraitAlt: 'Retrato de Arun Jojo'
+    },
     kcsa: {
       kicker: 'Actualmente cursando',
       title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
@@ -652,13 +757,13 @@ const translations: Record<Language, TranslationSchema> = {
       title: 'Información de Contacto',
       website: 'Sitio Web de LinkedIn',
       email: 'Correo Electrónico',
-      phone: 'Teléfono',
+      phone: 'WhatsApp',
       location: 'Ubicación',
       locationVal: 'Ernakulam, Kerala, India'
     }
   },
   ar: {
-    nav: { home: 'الرئيسية', about: 'عنّي', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال' },
+    nav: { home: 'الرئيسية', about: 'عنّي', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال', education: 'التعليم' },
     hero: {
       title: 'أرون جوجو',
       subtitle: 'مهندس AI DevOps ومهندس برمجيات أول',
@@ -780,6 +885,29 @@ const translations: Record<Language, TranslationSchema> = {
       cancel: 'إلغاء',
       message: 'مرحبًا أرون، زرت معرض أعمالك وأود التواصل معك.'
     },
+    about: {
+      kicker: 'ملخص مهني',
+      title: 'نبذة عن أرون جوجو',
+      summary: 'مهندس AI DevOps بخبرة تزيد عن ٥ سنوات في هندسة البرمجيات والأنظمة. أبني بنية سحابية مرنة وخطوط GitOps مؤتمتة وأنظمة تسليم مُسرَّعة بالذكاء الاصطناعي تربط بين بنية التطبيقات والعمليات السحابية. أؤمن بالموثوقية التي يقودها المطورون ("you build it, you run it"): تحسين استخدام الموارد السحابية، وفرض الأمان مبكرًا في خط الإنتاج، وتقديم منصات قابلة للمراقبة وذاتية الإصلاح.',
+      backHome: 'العودة إلى الرئيسية',
+      contactMe: 'تواصل معي',
+      capabilitiesTitle: 'القدرات الأساسية',
+      capabilities: [
+        'تجهيز البنية التحتية كرمز باستخدام Terraform وAnsible على AWS وAzure وGCP',
+        'تنسيق الحاويات باستخدام Docker وKubernetes وHelm عبر سير عمل GitOps',
+        'خطوط CI/CD مؤتمتة دون توقف عبر GitHub Actions',
+        'تحسين بنى الخوادم الخلفية في PHP وNode.js وASP.NET Core',
+        'بناء منصات قابلة للمراقبة وذاتية الإصلاح باستخدام Prometheus وGrafana',
+        'تطوير برمجيات مدعوم بالذكاء الاصطناعي باستخدام أدوات ووكلاء حديثة'
+      ],
+      snapshotTitle: 'لمحة عن الملف الشخصي',
+      snapshot: [
+        'أكثر من ٥ سنوات في بناء تطبيقات ويب قابلة للتوسع ومنتجات رقمية.',
+        'متخصص في Kubernetes وTerraform وDocker وHelm وGitOps وCI/CD على أساس Next.js وReact وASP.NET Core وNode.js.',
+        'متاح لأدوار AI DevOps وهندسة المنصات وSRE عن بُعد.'
+      ],
+      portraitAlt: 'صورة أرون جوجو'
+    },
     kcsa: {
       kicker: 'أعمل حاليًا على',
       title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
@@ -790,7 +918,7 @@ const translations: Record<Language, TranslationSchema> = {
       title: 'معلومات الاتصال المباشر',
       website: 'موقع لينكد إن',
       email: 'البريد الإلكتروني',
-      phone: 'الهاتف',
+      phone: 'واتساب',
       location: 'الموقع الجغرافي',
       locationVal: 'إرناكولام، كيرالا، الهند'
     }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Download, Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { Download, Github, Linkedin, Mail, MessageSquareMoreIcon } from 'lucide-react'
 import { useTranslation } from '../../lib/i18n'
 import SpeakButton from './SpeakButton'
 
@@ -81,15 +81,15 @@ export default function Hero() {
           
           <div className="flex flex-wrap gap-4 items-center">
             <a
-              href="/docs/resume.pdf"
-              download="Arun_Jojo_Resume.pdf"
+              href="/docs/Arun-Jojo_Senior-DevOps-Engineer_Resume.pdf"
+              download="Arun-Jojo_Senior-DevOps-Engineer_Resume.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.16)] px-6 py-3 text-sm font-bold text-[var(--lagoon-deep)] no-underline transition hover:-translate-y-0.5 hover:bg-[rgba(79,184,178,0.26)] shadow-sm cursor-pointer"
             >
               <Download className="h-4 w-4" /> {t.hero.downloadCv}
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/60 dark:bg-black/30 px-6 py-3 text-sm font-bold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)] shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/60 dark:bg-black/60 px-6 py-3 text-sm font-bold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)] shadow-sm cursor-pointer"
             >
               {t.hero.contactInfo}
             </a>
@@ -101,7 +101,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)] transition"
-              aria-label="LinkedIn Profile"
+              aria-label="LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
             </a>
@@ -110,23 +110,23 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)] transition"
-              aria-label="GitHub Profile"
+              aria-label="GitHub"
             >
               <Github className="h-6 w-6" />
             </a>
             <a
               href="mailto:arunkjojo@gmail.com"
               className="text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)] transition"
-              aria-label="Email Address"
+              aria-label="Email"
             >
               <Mail className="h-6 w-6" />
             </a>
             <a
-              href="tel:+919400247717"
+              href="https://wa.me/919400247717"
               className="text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)] transition"
-              aria-label="Phone Number"
+              aria-label="WhatsApp"
             >
-              <Phone className="h-6 w-6" />
+              <MessageSquareMoreIcon className="h-6 w-6" />
             </a>
           </div>
         </div>

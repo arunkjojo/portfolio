@@ -118,7 +118,7 @@ The application is a full-featured, static-rendered portfolio SPA built using a 
 ```text
 personal-portfolio/
 ├── public/                 # Static asset delivery
-│   ├── docs/resume.pdf     # Extracted PDF Resume
+│   ├── docs/Arun-Jojo_Senior-DevOps-Engineer_Resume.pdf     # Extracted PDF Resume
 │   └── images/portrait.jpg # Profile Photo
 ├── src/                    # Application source code
 │   ├── components/         # Shared & layout components
@@ -169,6 +169,7 @@ personal-portfolio/
 ### E. Redirect Route (`/r`)
 *   `/r/<slug>` resolves a named shortcut from `SHORTCUTS` in `src/lib/redirects.ts` (linkedin, github, resume, whatsapp).
 *   `/r?url=<target>` redirects only to `https://` URLs whose host is in `ALLOWED_HOSTS` (or a subdomain of one). Bare hosts like `linkedin.com/in/x` get `https://` prepended. Never loosen this to an open redirect; add hosts to the allowlist instead.
+*   Short form `/r=<target>` (e.g. `/r=github`, `/r=linkedin.com/in/arunkjojo`) is rewritten to `/r?url=<target>` by `normalizeShortRedirectUrl()` in `src/main.tsx` before the router starts. A bare word target is treated as a shortcut name.
 
 ### F. Mobile WhatsApp Prompt
 *   `WhatsAppPrompt.tsx` shows a bottom banner with a visible 5s countdown, then opens `wa.me` with a localized message (`t.whatsapp.message`).
