@@ -2,6 +2,7 @@ import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import WhatsAppPrompt from '../components/WhatsAppPrompt'
 import { LanguageProvider, useTranslation } from '../lib/i18n'
 
 export const Route = createRootRoute({
@@ -31,6 +32,7 @@ function RootDocumentContent() {
         <Outlet />
       </div>
       <Footer />
+      <WhatsAppPrompt />
     </div>
   )
 }
