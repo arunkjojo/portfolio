@@ -7,10 +7,11 @@ export const Route = createFileRoute('/about')({
 
 function About() {
   const capabilities = [
-    'Architecting full-stack solutions using Next.js and Supabase PostgreSQL',
+    'Provisioning infrastructure as code with Terraform and Ansible across AWS, Azure, and GCP',
+    'Orchestrating containers with Docker, Kubernetes, and Helm using GitOps workflows',
     'Deploying automated zero-downtime CI/CD pipelines via GitHub Actions',
     'Optimizing backend architectures in PHP, Node.js, and ASP.NET Core',
-    'Unit & Functional testing using Vitest, Jest, and RTL',
+    'Building observable, self-healing platforms with Prometheus and Grafana',
     'AI-augmented software development using modern AI tools and agents',
   ]
 
@@ -27,7 +28,7 @@ function About() {
               About Arun Jojo
             </h1>
             <p className="mb-6 max-w-3xl text-base leading-relaxed text-[var(--sea-ink-soft)] md:text-lg">
-              DevOps-focused engineer with 5+ years of experience building scalable platforms, automating delivery pipelines, and strengthening reliability for high-throughput applications. I combine software engineering with CI/CD, cloud infrastructure, and AI-assisted operations to help teams release faster and operate more confidently.
+              AI DevOps Engineer with 5+ years of software engineering and systems experience. I build resilient cloud infrastructure, automated GitOps pipelines, and AI-accelerated delivery systems, bridging application architecture and cloud operations. I advocate developer-led reliability ("you build it, you run it"): optimizing cloud resource use, enforcing security early in the pipeline, and delivering observable, self-healing platforms.
             </p>
 
             <div className="mb-8 flex flex-wrap gap-4">
@@ -73,8 +74,8 @@ function About() {
               </p>
               <ul className="mt-3 space-y-3 text-sm leading-relaxed text-[var(--sea-ink-soft)]">
                 <li>• 5+ years building scalable web applications and digital products.</li>
-                <li>• Specializes in Next.js, React, TypeScript, Node.js, and DevOps delivery.</li>
-                <li>• Focused on performance, reliability, and AI-augmented engineering workflows.</li>
+                <li>• Specializes in Kubernetes, Terraform, Docker, Helm, GitOps, and CI/CD, on a Next.js, React, ASP.NET Core, and Node.js foundation.</li>
+                <li>• Open to remote AI DevOps, Platform Engineering, and SRE roles.</li>
               </ul>
             </div>
           </div>

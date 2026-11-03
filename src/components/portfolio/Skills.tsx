@@ -15,6 +15,8 @@ export default function Skills() {
         'Helm',
         'Kubernetes',
         'Terraform',
+        'Ansible',
+        'GitOps',
         'ArgoCD',
         'GitHub Pipelines',
         'Zero-Downtime Release',
@@ -22,7 +24,8 @@ export default function Skills() {
         'FluxCD',
         'Istio',
         'Prometheus & Grafana',
-        'Cloud Platforms'
+        'Linux',
+        'AWS / Azure / GCP'
       ]
     },
     {
@@ -31,6 +34,7 @@ export default function Skills() {
       items: [
         'GitHub Copilot',
         'Claude cowork & code',
+        'Gemini',
         'Cursor AI',
         'Codex',
         'Lovable',
@@ -51,7 +55,7 @@ export default function Skills() {
     {
       category: t.skills.categories.backend,
       icon: <Terminal className="h-5 w-5 text-[var(--lagoon-deep)]" />,
-      items: ['Node.js-Express.js', 'PHP', 'ASP.NET Core Web API', 'RESTful APIs', 'WebSockets']
+      items: ['Node.js-Express.js', 'Python', 'PHP','ASP.NET Core Web API', 'RESTful APIs', 'WebSockets']
     },
     {
       category: t.skills.categories.databases,

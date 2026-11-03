@@ -13,6 +13,8 @@ export default function Certifications() {
     { title: '12 Factor App', issuer: 'KodeKloud', date: 'Jul 2025' },
     { title: 'Ethical Hacking Stage 2 - Hacking the MAC', issuer: 'Hacker X', date: 'Aug 2025' },
     { title: 'Ethical Hacking Stage 1 - Know the OS', issuer: 'Hacker X', date: 'Aug 2025' },
+    // TODO: confirm issuer and date (LinkedIn export lists title only)
+    { title: 'AI Appreciate Badge', issuer: 'AI For All', date: '—' },
     { title: 'AI tools and ChatGPT workshop', issuer: 'Be10x', date: 'Nov 2024' },
     { title: 'Certificate in Prompt Engineering for ChatGPT', issuer: 'Great Learning', date: 'Nov 2024' },
     { title: 'Certificate in React.js', issuer: 'CareerNinja | LearnTube', date: 'Jun 2024' },
