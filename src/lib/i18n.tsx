@@ -76,6 +76,24 @@ export interface TranslationSchema {
     period: string
     bullets: string[]
   }
+  redirect: {
+    redirecting: string
+    fallback: string
+    invalidTitle: string
+    invalidDesc: string
+    backHome: string
+  }
+  whatsapp: {
+    countdown: string
+    cancel: string
+    message: string
+  }
+  kcsa: {
+    kicker: string
+    title: string
+    desc: string
+    link: string
+  }
   contact: {
     title: string
     website: string
@@ -198,6 +216,24 @@ const translations: Record<Language, TranslationSchema> = {
         'Achievements: Won the Best Coder of the ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Redirecting to',
+      fallback: 'Not redirected automatically? Continue',
+      invalidTitle: 'Link not available',
+      invalidDesc: 'This short link is unknown or points to a domain that is not allowed.',
+      backHome: 'Back to home'
+    },
+    whatsapp: {
+      countdown: 'Opening WhatsApp in {s}s…',
+      cancel: 'Cancel',
+      message: 'Hi Arun, I visited your portfolio and would like to connect.'
+    },
+    kcsa: {
+      kicker: 'Currently pursuing',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Building expertise in Kubernetes cluster hardening, cloud native threat modeling, and supply-chain security.',
+      link: 'About the certification'
+    },
     contact: {
       title: 'Contact Information',
       website: 'LinkedIn Website',
@@ -317,6 +353,24 @@ const translations: Record<Language, TranslationSchema> = {
         'IHRD मंजेश्वर से कंप्यूटर विज्ञान में 3 वर्षीय विज्ञान स्नातक डिग्री',
         'उपलब्धियां: ZEITGEIST के सर्वश्रेष्ठ कोडर का पुरस्कार जीता'
       ]
+    },
+    redirect: {
+      redirecting: 'रीडायरेक्ट हो रहा है',
+      fallback: 'अपने आप रीडायरेक्ट नहीं हुआ? आगे बढ़ें',
+      invalidTitle: 'लिंक उपलब्ध नहीं है',
+      invalidDesc: 'यह शॉर्ट लिंक अज्ञात है या ऐसे डोमेन की ओर इशारा करता है जिसकी अनुमति नहीं है।',
+      backHome: 'होम पर वापस जाएं'
+    },
+    whatsapp: {
+      countdown: '{s} सेकंड में WhatsApp खुल रहा है…',
+      cancel: 'रद्द करें',
+      message: 'नमस्ते अरुण, मैंने आपका पोर्टफोलियो देखा और आपसे जुड़ना चाहता/चाहती हूं।'
+    },
+    kcsa: {
+      kicker: 'वर्तमान में कर रहे हैं',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Kubernetes क्लस्टर हार्डनिंग, क्लाउड नेटिव थ्रेट मॉडलिंग और सप्लाई-चेन सुरक्षा में विशेषज्ञता बना रहा हूं।',
+      link: 'सर्टिफिकेशन के बारे में'
     },
     contact: {
       title: 'संपर्क सूत्र',
@@ -438,6 +492,24 @@ const translations: Record<Language, TranslationSchema> = {
         'Auszeichnungen: Gewinner als "Bester Coder" der ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Weiterleitung zu',
+      fallback: 'Keine automatische Weiterleitung? Weiter',
+      invalidTitle: 'Link nicht verfügbar',
+      invalidDesc: 'Dieser Kurzlink ist unbekannt oder verweist auf eine nicht erlaubte Domain.',
+      backHome: 'Zurück zur Startseite'
+    },
+    whatsapp: {
+      countdown: 'WhatsApp öffnet sich in {s} s…',
+      cancel: 'Abbrechen',
+      message: 'Hallo Arun, ich habe dein Portfolio gesehen und würde mich gern vernetzen.'
+    },
+    kcsa: {
+      kicker: 'Aktuell in Vorbereitung',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Vertiefung in Kubernetes-Cluster-Härtung, Cloud-Native-Bedrohungsmodellierung und Supply-Chain-Sicherheit.',
+      link: 'Zur Zertifizierung'
+    },
     contact: {
       title: 'Kontaktinformationen',
       website: 'LinkedIn-Website',
@@ -558,6 +630,24 @@ const translations: Record<Language, TranslationSchema> = {
         'Logros: Ganador del premio al "Mejor Codificador" en ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Redirigiendo a',
+      fallback: '¿No se redirigió automáticamente? Continuar',
+      invalidTitle: 'Enlace no disponible',
+      invalidDesc: 'Este enlace corto es desconocido o apunta a un dominio no permitido.',
+      backHome: 'Volver al inicio'
+    },
+    whatsapp: {
+      countdown: 'Abriendo WhatsApp en {s} s…',
+      cancel: 'Cancelar',
+      message: 'Hola Arun, visité tu portafolio y me gustaría conectar contigo.'
+    },
+    kcsa: {
+      kicker: 'Actualmente cursando',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Desarrollando experiencia en hardening de clústeres Kubernetes, modelado de amenazas cloud native y seguridad de la cadena de suministro.',
+      link: 'Sobre la certificación'
+    },
     contact: {
       title: 'Información de Contacto',
       website: 'Sitio Web de LinkedIn',
@@ -677,6 +767,24 @@ const translations: Record<Language, TranslationSchema> = {
         'بكالوريوس العلوم في علوم الحاسب الآلي (٣ سنوات) من كلية IHRD मंजेश्वर',
         'الإنجازات: الفوز بجائزة أفضل مبرمج في حدث ZEITGEIST'
       ]
+    },
+    redirect: {
+      redirecting: 'جارٍ التحويل إلى',
+      fallback: 'لم يتم التحويل تلقائيًا؟ تابع',
+      invalidTitle: 'الرابط غير متاح',
+      invalidDesc: 'هذا الرابط المختصر غير معروف أو يشير إلى نطاق غير مسموح به.',
+      backHome: 'العودة إلى الرئيسية'
+    },
+    whatsapp: {
+      countdown: 'سيتم فتح واتساب خلال {s} ث…',
+      cancel: 'إلغاء',
+      message: 'مرحبًا أرون، زرت معرض أعمالك وأود التواصل معك.'
+    },
+    kcsa: {
+      kicker: 'أعمل حاليًا على',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'بناء خبرة في تقوية عناقيد Kubernetes ونمذجة التهديدات السحابية الأصلية وأمن سلسلة التوريد.',
+      link: 'عن الشهادة'
     },
     contact: {
       title: 'معلومات الاتصال المباشر',
