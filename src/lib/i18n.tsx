@@ -82,6 +82,8 @@ export interface TranslationSchema {
     fallback: string
     invalidTitle: string
     invalidDesc: string
+    missingDesc: string
+    homeCountdown: string
     backHome: string
   }
   whatsapp: {
@@ -234,6 +236,8 @@ const translations: Record<Language, TranslationSchema> = {
       fallback: 'Not redirected automatically? Continue',
       invalidTitle: 'Link not available',
       invalidDesc: 'This short link is unknown or points to a domain that is not allowed.',
+      missingDesc: 'No link was provided.',
+      homeCountdown: 'Taking you to the home page in {s}s…',
       backHome: 'Back to home'
     },
     whatsapp: {
@@ -395,6 +399,8 @@ const translations: Record<Language, TranslationSchema> = {
       fallback: 'अपने आप रीडायरेक्ट नहीं हुआ? आगे बढ़ें',
       invalidTitle: 'लिंक उपलब्ध नहीं है',
       invalidDesc: 'यह शॉर्ट लिंक अज्ञात है या ऐसे डोमेन की ओर इशारा करता है जिसकी अनुमति नहीं है।',
+      missingDesc: 'कोई लिंक नहीं दिया गया।',
+      homeCountdown: '{s} सेकंड में होम पेज पर ले जाया जा रहा है…',
       backHome: 'होम पर वापस जाएं'
     },
     whatsapp: {
@@ -556,6 +562,8 @@ const translations: Record<Language, TranslationSchema> = {
       fallback: 'Keine automatische Weiterleitung? Weiter',
       invalidTitle: 'Link nicht verfügbar',
       invalidDesc: 'Dieser Kurzlink ist unbekannt oder verweist auf eine nicht erlaubte Domain.',
+      missingDesc: 'Es wurde kein Link angegeben.',
+      homeCountdown: 'Weiterleitung zur Startseite in {s} s…',
       backHome: 'Zurück zur Startseite'
     },
     whatsapp: {
@@ -717,6 +725,8 @@ const translations: Record<Language, TranslationSchema> = {
       fallback: '¿No se redirigió automáticamente? Continuar',
       invalidTitle: 'Enlace no disponible',
       invalidDesc: 'Este enlace corto es desconocido o apunta a un dominio no permitido.',
+      missingDesc: 'No se proporcionó ningún enlace.',
+      homeCountdown: 'Volviendo al inicio en {s} s…',
       backHome: 'Volver al inicio'
     },
     whatsapp: {
@@ -878,6 +888,8 @@ const translations: Record<Language, TranslationSchema> = {
       fallback: 'لم يتم التحويل تلقائيًا؟ تابع',
       invalidTitle: 'الرابط غير متاح',
       invalidDesc: 'هذا الرابط المختصر غير معروف أو يشير إلى نطاق غير مسموح به.',
+      missingDesc: 'لم يتم تقديم أي رابط.',
+      homeCountdown: 'سيتم نقلك إلى الصفحة الرئيسية خلال {s} ث…',
       backHome: 'العودة إلى الرئيسية'
     },
     whatsapp: {

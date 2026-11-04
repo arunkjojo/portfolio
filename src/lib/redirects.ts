@@ -51,7 +51,7 @@ export function resolveExternalUrl(raw: string): string | null {
   return url.toString()
 }
 
-export type RedirectResult = { ok: true; href: string } | { ok: false }
+export type RedirectResult = { ok: true; href: string } | { ok: false; reason: 'missing' | 'invalid' }
 
 export function resolveRedirect(slug: string | undefined, target: string | undefined): RedirectResult {
   // "/r=github" arrives as target "github": a bare word is a shortcut name.
@@ -61,13 +61,13 @@ export function resolveRedirect(slug: string | undefined, target: string | undef
     if (Object.hasOwn(SHORTCUTS, key)) {
       return { ok: true, href: SHORTCUTS[key as keyof typeof SHORTCUTS] }
     }
-    return { ok: false }
+    return { ok: false, reason: 'invalid' }
   }
-  if (target) {
+  if (target?.trim()) {
     const href = resolveExternalUrl(target)
-    return href ? { ok: true, href } : { ok: false }
+    return href ? { ok: true, href } : { ok: false, reason: 'invalid' }
   }
-  return { ok: false }
+  return { ok: false, reason: 'missing' }
 }
 
 export function isRedirectPath(pathname: string): boolean {
