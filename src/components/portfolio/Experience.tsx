@@ -10,27 +10,27 @@ export default function Experience() {
     {
       key: 'gesher' as const,
       company: 'Gesher Technologies',
-      period: 'May 2026 – Present'
+      period: 'Aug 2026 – Present'
     },
     {
       key: 'upskillingGap' as const,
       company: 'Self-Employed / Personal Projects',
-      period: 'Sep 2025 – Apr 2026'
+      period: 'Sep 2025 – Jul 2026'
     },
     {
       key: 'bct' as const,
-      company: 'BCT Consulting',
+      company: 'BCT Consulting (client: Information Kerala Mission, Govt. of Kerala)',
       period: 'Jun 2024 – Aug 2025'
     },
     {
       key: 'inluxFull' as const,
       company: 'Inlux Intelligence',
-      period: 'Oct 2022 – Jun 2024'
+      period: 'Nov 2022 – Jun 2024'
     },
     {
       key: 'hats' as const,
       company: '2Hats Logic Solutions',
-      period: 'Apr 2022 – Sep 2022'
+      period: 'Mar 2022 – Sep 2022'
     },
     {
       key: 'inluxReact' as const,

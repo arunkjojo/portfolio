@@ -12,6 +12,7 @@ export interface TranslationSchema {
     skills: string
     certifications: string
     contact: string
+    education: string
   }
   hero: {
     title: string
@@ -76,6 +77,36 @@ export interface TranslationSchema {
     period: string
     bullets: string[]
   }
+  redirect: {
+    redirecting: string
+    fallback: string
+    invalidTitle: string
+    invalidDesc: string
+    backHome: string
+  }
+  whatsapp: {
+    countdown: string
+    cancel: string
+    message: string
+  }
+  about: {
+    kicker: string
+    title: string
+    summary: string
+    backHome: string
+    contactMe: string
+    capabilitiesTitle: string
+    capabilities: string[]
+    snapshotTitle: string
+    snapshot: string[]
+    portraitAlt: string
+  }
+  kcsa: {
+    kicker: string
+    title: string
+    desc: string
+    link: string
+  }
   contact: {
     title: string
     website: string
@@ -88,49 +119,50 @@ export interface TranslationSchema {
 
 const translations: Record<Language, TranslationSchema> = {
   en: {
-    nav: { home: 'Home', about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact' },
+    nav: { home: 'Home', about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', certifications: 'Certifications', contact: 'Contact', education: 'Education' },
     hero: {
       title: 'Arun Jojo',
-      subtitle: 'DevOps Engineer with AI Automation',
-      bio: 'DevOps Engineer with AI Automation (1 year) and Software/Frontend Engineering (5+ years), with an overall experience of 5+ years building scalable web applications and automating delivery pipelines. I help teams ship faster by architecting CI/CD pipelines, integrating AIOps, and optimizing real-time systems that handle 10,000+ events/second.',
+      subtitle: 'AI DevOps Engineer & Senior Software Engineer',
+      bio: 'AI DevOps Engineer with 5+ years of software engineering and systems experience. I build resilient cloud infrastructure, automated GitOps pipelines, and AI-accelerated delivery systems: zero-downtime CI/CD workflows, container orchestration with Kubernetes, Helm, and Terraform, and agentic AI integrated into DevOps environments to maximize engineering velocity. Open to remote AI DevOps, Platform, and SRE roles.',
       downloadCv: 'Download CV',
       contactInfo: 'Contact Info'
     },
     stats: {
       experience: { value: '5+ Years', label: 'Overall Experience', desc: 'DevOps (1 yr), Software & Frontend (5+ yrs)' },
-      throughput: { value: '10,000+', label: 'Events / Second', desc: 'Optimizing real-time high-throughput systems' },
-      bottlenecks: { value: '30%', label: 'Less Bottlenecks', desc: 'Reduced rendering delay via SSR/ISR' },
-      delivery: { value: '40%', label: 'Faster Delivery', desc: 'Accelerated cycles via AI-augmented dev' }
+      throughput: { value: '80%', label: 'Faster Project Setup', desc: 'Terraform Infrastructure-as-Code provisioning' },
+      bottlenecks: { value: '30%', label: 'Faster Deployments', desc: 'Automated GitHub Actions pipelines & container orchestration' },
+      delivery: { value: '40%', label: 'Less Manual Overhead', desc: 'Dockerized microservices & automated provisioning' }
     },
     experience: {
       title: 'Work Experience',
       at: 'at',
       roles: {
         gesher: {
-          role: 'DevOps Engineer with AI Automation',
+          role: 'DevOps Engineer',
           location: 'Ernakulam, Kerala',
           highlights: [
-            'Architecting full-stack solutions using Next.js and Supabase PostgreSQL, focusing on high concurrency and modular backend design for scalability. Optimized backend infrastructure via AI driven development.',
-            'Implementing modern DevOps strategies, including automated CI/CD pipelines via GitHub Actions and containerization with Docker for seamless cloud scaling. Architected a deployment pipeline using GitHub Actions, ensuring zero-downtime frontend releases, increasing release frequency by 20%, and reducing manual intervention by 15% for a production-scale project.',
-            'Consulting on frontend performance, implementing advanced caching strategies, and SSR optimization to improve SEO and user retention. Implemented complex state management architectures using React, TypeScript, and Redux-Saga, ensuring type safety and reducing client-side rendering bottlenecks by 30%.'
+            'Led end-to-end development, deployment, and infrastructure automation for multiple client projects on a hybrid stack (Next.js, ASP.NET Core, MySQL), applying CI/CD and GitOps practices for high reliability and rapid delivery.',
+            'Integrated and managed regional and international payment gateways (Stripe, PhonePe, Cashfree) in Next.js and PHP applications, achieving 99.9% uptime for checkout services.',
+            'Developed Terraform scripts for infrastructure and environment provisioning (Infrastructure-as-Code), reducing manual setup time for new projects by 80%.'
           ]
         },
         upskillingGap: {
           role: 'AI-Automated DevOps Upskilling & Planned Break',
           location: 'Self-Employed / Personal Learning',
           highlights: [
-            'Planned career break for personal milestones (wedding and family functions).',
+            'Planned career break for personal milestones (wedding).',
             'Intensively upskilled in modern DevOps practices, AIOps, and AI automation tooling.',
             'Developed personal projects and automated workflows using loop-engineering activities and agentic orchestrations to prepare for the next career step.'
           ]
         },
         bct: {
           role: 'Senior Developer',
-          location: 'Thiruvandapuram, Kerala',
+          location: 'Thiruvananthapuram, Kerala',
           highlights: [
             'Implemented state management using React/Redux-Saga, specifically focusing on optimizing data handling that influenced application performance and stability in production environments.',
             'Collaborated with the File Management Team to streamline document workflow processes, applying principles of efficiency and system integration. Resulting in a 25% measurable increase in team development efficiency through AI-augmented development practices and GitHub Copilot.',
-            'Contributed to the deployment of the Ksmart and Ksuite web applications, ensuring functional accessibility and system stability across diverse user groups.'
+            'Streamlined digital file management for 100+ local body offices through optimized Ksmart and Ksuite features for client Information Kerala Mission (IKM).',
+            'Implemented digital signature integration in Ksuite, reducing document approval turnaround time by 40% for local body officials.'
           ]
         },
         inluxFull: {
@@ -144,7 +176,7 @@ const translations: Record<Language, TranslationSchema> = {
         },
         hats: {
           role: 'Jr. React Developer',
-          location: 'Ernakulam, Kerala',
+          location: 'Infopark, Kochi, Kerala',
           highlights: [
             'Built and deployed a Progressive Web App (PWA) and Trusted Web Activity (TWA) using React.js and React Native, achieving a 40% increase in mobile user retention, involving knowledge of application delivery and publishing processes.',
             'Managed real-time applications (Voice Translation App) and E-commerce platforms, requiring a focus on high availability and performance monitoring.'
@@ -197,48 +229,89 @@ const translations: Record<Language, TranslationSchema> = {
         'Achievements: Won the Best Coder of the ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Redirecting to',
+      fallback: 'Not redirected automatically? Continue',
+      invalidTitle: 'Link not available',
+      invalidDesc: 'This short link is unknown or points to a domain that is not allowed.',
+      backHome: 'Back to home'
+    },
+    whatsapp: {
+      countdown: 'Opening WhatsApp in {s}s…',
+      cancel: 'Cancel',
+      message: 'Hi Arun, I visited your portfolio and would like to connect.'
+    },
+    about: {
+      kicker: 'Professional Summary',
+      title: 'About Arun Jojo',
+      summary: 'AI DevOps Engineer with 5+ years of software engineering and systems experience. I build resilient cloud infrastructure, automated GitOps pipelines, and AI-accelerated delivery systems, bridging application architecture and cloud operations. I advocate developer-led reliability ("you build it, you run it"): optimizing cloud resource use, enforcing security early in the pipeline, and delivering observable, self-healing platforms.',
+      backHome: 'Back to Home',
+      contactMe: 'Contact Me',
+      capabilitiesTitle: 'Core Capabilities',
+      capabilities: [
+        'Provisioning infrastructure as code with Terraform and Ansible across AWS, Azure, and GCP',
+        'Orchestrating containers with Docker, Kubernetes, and Helm using GitOps workflows',
+        'Deploying automated zero-downtime CI/CD pipelines via GitHub Actions',
+        'Optimizing backend architectures in PHP, Node.js, and ASP.NET Core',
+        'Building observable, self-healing platforms with Prometheus and Grafana',
+        'AI-augmented software development using modern AI tools and agents'
+      ],
+      snapshotTitle: 'Profile Snapshot',
+      snapshot: [
+        '5+ years building scalable web applications and digital products.',
+        'Specializes in Kubernetes, Terraform, Docker, Helm, GitOps, and CI/CD, on a Next.js, React, ASP.NET Core, and Node.js foundation.',
+        'Open to remote AI DevOps, Platform Engineering, and SRE roles.'
+      ],
+      portraitAlt: 'Arun Jojo portrait'
+    },
+    kcsa: {
+      kicker: 'Currently pursuing',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Building expertise in Kubernetes cluster hardening, cloud native threat modeling, and supply-chain security.',
+      link: 'About the certification'
+    },
     contact: {
       title: 'Contact Information',
       website: 'LinkedIn Website',
       email: 'Email',
-      phone: 'Phone',
+      phone: 'WhatsApp',
       location: 'Location',
       locationVal: 'Ernakulam, Kerala, India'
     }
   },
   hi: {
-    nav: { home: 'होम', about: 'बारे में', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क' },
+    nav: { home: 'होम', about: 'बारे में', experience: 'अनुभव', projects: 'परियोजनाएं', skills: 'कौशल', certifications: 'प्रमाणपत्र', contact: 'संपर्क', education: 'शिक्षा' },
     hero: {
       title: 'अरुण जोजो',
-      subtitle: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
-      bio: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर (1 वर्ष) और सॉफ्टवेयर/फ्रंटएंड इंजीनियरिंग (5+ वर्ष), जिन्हें स्केलेबल वेब एप्लिकेशन बनाने और डिलीवरी पाइपलाइनों को स्वचालित करने का कुल 5+ वर्षों का अनुभव है। मैं सीआई/सीडी पाइपलाइनों को डिजाइन करके, एआईऑप्स को एकीकृत करके और 10,000+ इवेंट/सेकंड को संभालने वाले रीयल-टाइम सिस्टम को अनुकूलित करके टीमों को तेजी से डिलीवर करने में मदद करता हूं।',
-      downloadCv: 'सीवी डाउनलोड करें',
+      subtitle: 'एआई डेवऑप्स इंजीनियर और सीनियर सॉफ्टवेयर इंजीनियर',
+      bio: 'सॉफ्टवेयर इंजीनियरिंग और सिस्टम में 5+ वर्षों के अनुभव वाला एआई डेवऑप्स इंजीनियर। मैं मज़बूत क्लाउड इन्फ्रास्ट्रक्चर, स्वचालित GitOps पाइपलाइन और एआई-त्वरित डिलीवरी सिस्टम बनाता हूं: ज़ीरो-डाउनटाइम सीआई/सीडी वर्कफ़्लो, Kubernetes, Helm और Terraform के साथ कंटेनर ऑर्केस्ट्रेशन, और इंजीनियरिंग गति बढ़ाने के लिए डेवऑप्स वातावरण में एजेंटिक एआई का একीकरণ। রিমোট এআই ডেভঅপ্স, প্ল্যাটফর্ম ও SRE ভূমিকা পরীক্ষা করা হয়েছে।',
+      downloadCv: 'সিভি ডাউনলোড করুন',
       contactInfo: 'संपर्क जानकारी'
     },
     stats: {
       experience: { value: '5+ वर्ष', label: 'कुल अनुभव', desc: 'डेवऑप्स (1 वर्ष), सॉफ्टवेयर और फ्रंटएंड (5+ वर्ष)' },
-      throughput: { value: '10,000+', label: 'इवेंट / सेकंड', desc: 'रीयल-टाइम हाई-थ्रूपुट सिस्टम को अनुकूलित करना' },
-      bottlenecks: { value: '30%', label: 'कम बाधाएं', desc: 'एसएसआर/आईएसआर के माध्यम से रेंडरिंग में देरी को कम किया' },
-      delivery: { value: '40%', label: 'तेज़ डिलीवरी', desc: 'एआई-संवर्धित विकास के माध्यम से चक्रों को तेज किया' }
+      throughput: { value: '80%', label: 'तेज़ प्रोजेक्ट सेटअप', desc: 'Terraform इन्फ्रास्ट्रक्चर-एज़-कोड प्रोविज़निंग' },
+      bottlenecks: { value: '30%', label: 'तेज़ डिप्लॉयमेंट', desc: 'स्वचालित GitHub Actions पाइपलाइन और कंटेनर ऑर्केस्ट्रेशन' },
+      delivery: { value: '40%', label: 'कम मैनुअल ओवरहेड', desc: 'Docker माइक्रोसर्विसेज़ और स्वचालित प्रोविज़निंग' }
     },
     experience: {
       title: 'कार्य अनुभव',
       at: 'पर',
       roles: {
         gesher: {
-          role: 'एआई ऑटोमेशन के साथ डेवऑप्स इंजीनियर',
+          role: 'डेवऑप्स इंजीनियर',
           location: 'एर्नाकुलम, केरल',
           highlights: [
-            'नेक्स्ट.जेएस और Supabase पोस्टग्रेएसक्यूएल का उपयोग करके फुल-स्टैक समाधान तैयार करना, स्केलेबिलिटी के लिए उच्च समवर्ती और मॉड्यूलर बैकएंड डिजाइन पर ध्यान केंद्रित करना। एआई-संचालित विकास के माध्यम से बैकएंड इंफ्रास्ट्रक्चर को अनुकूलित किया।',
-            'गीथूब एक्शन्स के माध्यम से स्वचालित सीआई/सीडी पाइपलाइनों और निर्बाध क्लाउड स्केलिंग के लिए डॉकर के साथ कंटेनराइजेशन सहित आधुनिक डेवऑप्स रणनीतियों को लागू करना।',
-            'SEO और उपयोगकर्ता प्रतिधारण को बेहतर बनाने के लिए उन्नत कैशिंग रणनीतियों और SSR अनुकूलन को लागू करना।'
+            'हाइब्रिड टेक स्टैक (Next.js, ASP.NET Core, MySQL) पर कई क्लाइंट प्रोजेक्ट्स के लिए एंड-टू-एंड डेवलपमेंट, डिप्लॉयमेंट और इन्फ्रास्ट्रक्चर ऑटोमेशन का नेतृत्व किया, उच्च विश्वसनीयता और तेज़ डिलीवरी के लिए सीआई/सीडी और GitOps प्रथाओं को लागू किया।',
+            'Next.js और PHP एप्लिकेशन में क्षेत्रीय और अंतरराष्ट्रीय पेमेंट गेटवे (Stripe, PhonePe, Cashfree) को एकीकृत और प्रबंधित किया, जिससे चेकआउट सेवाओं का 99.9% अपटाइम हासिल हुआ।',
+            'इन्फ्रास्ट्रक्चर और एनवायरनमेंट प्रोविज़निंग (Infrastructure-as-Code) के लिए Terraform स्क्रिप्ट विकसित कीं, जिससे नए प्रोजेक्ट्स का मैनुअल सेटअप समय 80% कम हुआ।'
           ]
         },
         upskillingGap: {
           role: 'एआई-स्वचालित डेवऑप्स अपस्किलिंग और नियोजित ब्रेक',
           location: 'स्व-नियोजित / व्यक्तिगत सीखना',
           highlights: [
-            'व्यक्तिगत मील के पत्थर (शादी और अन्य पारिवारिक समारोहों) के लिए नियोजित करियर ब्रेक।',
+            'व्यक्तिगत मील के पत्थर (शादी) के लिए नियोजित करियर ब्रेक।',
             'आधुनिक डेवऑप्स प्रथाओं, एआईऑप्स और एआई ऑटोमेशन टूल्स में गहन रूप से कौशल बढ़ाया।',
             'अगले करियर कदम की तैयारी के लिए लूप-इंजीनियरिंग गतिविधियों और एजेंटिक ऑर्केस्ट्रेशन का उपयोग करके व्यक्तिगत परियोजनाएं और स्वचालित वर्कफ़्लो विकसित किए।'
           ]
@@ -249,7 +322,8 @@ const translations: Record<Language, TranslationSchema> = {
           highlights: [
             'रिएक्ट/रिएडक्स-सागा का उपयोग करके राज्य प्रबंधन को लागू किया, विशेष रूप से उत्पादन वातावरण में अनुप्रयोग प्रदर्शन को प्रभावित करने वाले डेटा हैंडलिंग को अनुकूलित करने पर ध्यान केंद्रित किया।',
             'एआई-संवर्धित विकास प्रथाओं और गिटहब कोपायलट के माध्यम से टीम विकास दक्षता में 25% की औसत वृद्धि।',
-            'Ksmart और Ksuite वेब अनुप्रयोगों की तैनाती में योगदान दिया, जिससे उपयोगकर्ता समूहों में सिस्टम स्थिरता सुनिश्चित हुई।'
+            'क्लाइंट इन्फॉर्मेशन केरल मिशन (IKM) के लिए Ksmart और Ksuite की अनुकूलित सुविधाओं के माध्यम से 100+ स्थानीय निकाय कार्यालयों के डिजिटल फ़ाइल प्रबंधन को सुव्यवस्थित किया।',
+            'Ksuite में डिजिटल हस्ताक्षर एकीकरण लागू किया, जिससे स्थानीय निकाय अधिकारियों के लिए दस्तावेज़ अनुमोदन समय 40% कम हुआ।'
           ]
         },
         inluxFull: {
@@ -263,7 +337,7 @@ const translations: Record<Language, TranslationSchema> = {
         },
         hats: {
           role: 'जूनियर रिएक्ट डेवलपर',
-          location: 'एर्नाकुलम, केरल',
+          location: 'इन्फोपार्क, कोच्चि, केरल',
           highlights: [
             'रिएक्ट.जेएस और रिएक्ट नेटिव का उपयोग करके प्रोग्रेसिव वेब ऐप (PWA) और ट्रस्टेड वेब एक्टिविटी (TWA) का निर्माण और परिनियोजन किया, जिससे मोबाइल उपयोगकर्ता प्रतिधारण में 40% की वृद्धि हुई।',
             'आवाज अनुवाद ऐप (Voice Translation App) और ई-कॉमर्स प्लेटफॉर्म जैसे रीयल-टाइम अनुप्रयोगों का प्रबंधन किया।'
@@ -316,59 +390,101 @@ const translations: Record<Language, TranslationSchema> = {
         'उपलब्धियां: ZEITGEIST के सर्वश्रेष्ठ कोडर का पुरस्कार जीता'
       ]
     },
+    redirect: {
+      redirecting: 'रीडायरेक्ट हो रहा है',
+      fallback: 'अपने आप रीडायरेक्ट नहीं हुआ? आगे बढ़ें',
+      invalidTitle: 'लिंक उपलब्ध नहीं है',
+      invalidDesc: 'यह शॉर्ट लिंक अज्ञात है या ऐसे डोमेन की ओर इशारा करता है जिसकी अनुमति नहीं है।',
+      backHome: 'होम पर वापस जाएं'
+    },
+    whatsapp: {
+      countdown: '{s} सेकंड में WhatsApp खुल रहा है…',
+      cancel: 'रद्द करें',
+      message: 'नमस्ते अरुण, मैंने आपका पोर्टफोलियो देखा और आपसे जुड़ना चाहता/चाहती हूं।'
+    },
+    about: {
+      kicker: 'पेशेवर सारांश',
+      title: 'अरुण जोजो के बारे में',
+      summary: 'सॉफ्टवेयर इंजीनियरिंग और सिस्टम में 5+ वर्षों के अनुभव वाला एआई डेवऑप्स इंजीनियर। मैं मज़बूत क्लाउड इन्फ्रास्ट्रक्चर, स्वचालित GitOps पाइपलाइन और एआई-त्वरित डिलीवरी सिस्टम बनाता हूं, जो एप्लिकेशन आर्किटेक्चर और क्लाउड ऑपरेशंस को जोड़ते हैं। मैं डेवलपर-नेतृत्व वाली विश्वसनीयता ("you build it, you run it") का समर्थक हूं: क्लाउड संसाधनों का बेहतर उपयोग, पाइपलाइन में शुरुआत से सुरक्षा, और ऑब्ज़र्वेबल, सेल्फ-हीलिंग प्लेटफ़ॉर्म।',
+      backHome: 'होम पर वापस जाएं',
+      contactMe: 'संपर्क करें',
+      capabilitiesTitle: 'मुख्य क्षमताएं',
+      capabilities: [
+        'AWS, Azure और GCP पर Terraform और Ansible के साथ इन्फ्रास्ट्रक्चर-एज़-कोड प्रोविज़निंग',
+        'GitOps वर्कफ़्लो के साथ Docker, Kubernetes और Helm द्वारा कंटेनर ऑर्केस्ट्रेशन',
+        'GitHub Actions के माध्यम से स्वचालित ज़ीरो-डाउनटाइम सीआई/सीडी पाइपलाइन',
+        'PHP, Node.js और ASP.NET Core में बैकएंड आर्किटेक्चर का अनुकूलन',
+        'Prometheus और Grafana के साथ ऑब्ज़र्वेबल, सेल्फ-हीलिंग प्लेटफ़ॉर्म बनाना',
+        'आधुनिक एआई टूल्स और एजेंट्स के साथ एआई-संवर्धित सॉफ्टवेयर डेवलपमेंट'
+      ],
+      snapshotTitle: 'प्रोफ़ाइल झलक',
+      snapshot: [
+        'स्केलेबल वेब एप्लिकेशन और डिजिटल उत्पाद बनाने का 5+ वर्षों का अनुभव।',
+        'Next.js, React, ASP.NET Core और Node.js की नींव पर Kubernetes, Terraform, Docker, Helm, GitOps और सीआई/सीडी में विशेषज्ञता।',
+        'रिमोट एआई डेवऑप्स, प्लेटफ़ॉर्म इंजीनियरिंग और SRE भूमिकाओं के लिए उपलब्ध।'
+      ],
+      portraitAlt: 'अरुण जोजो का चित्र'
+    },
+    kcsa: {
+      kicker: 'वर्तमान में कर रहे हैं',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Kubernetes क्लस्टर हार्डनिंग, क्लाउड नेटिव थ्रेट मॉडलिंग और सप्लाई-चेन सुरक्षा में विशेषज्ञता बना रहा हूं।',
+      link: 'सर्टिफिकेशन के बारे में'
+    },
     contact: {
       title: 'संपर्क सूत्र',
       website: 'लिंक्डइन वेबसाइट',
       email: 'ईमेल',
-      phone: 'फ़ोन',
+      phone: 'वॉट्सऐप',
       location: 'स्थान',
       locationVal: 'एर्नाकुलम, केरल, भारत'
     }
   },
   de: {
-    nav: { home: 'Startseite', about: 'Über mich', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt' },
+    nav: { home: 'Startseite', about: 'Über mich', experience: 'Erfahrung', projects: 'Projekte', skills: 'Fähigkeiten', certifications: 'Zertifikate', contact: 'Kontakt', education: 'Ausbildung' },
     hero: {
       title: 'Arun Jojo',
-      subtitle: 'DevOps-Engineer mit KI-Automatisierung',
-      bio: 'DevOps-Engineer mit KI-Automatisierung (1 Jahr) und Software-/Frontend-Entwicklung (5+ Jahre) mit einer Gesamterfahrung von 5+ Jahren im Aufbau skalierbarer Webanwendungen und der Automatisierung von Bereitstellungspipelines. Ich helfe Teams, schneller zu liefern, indem ich CI/CD-Pipelines architiere, AIOps integriere und Echtzeitsysteme optimiere, die 10.000+ Ereignisse/Sekunde verarbeiten.',
+      subtitle: 'AI-DevOps-Engineer & Senior Software Engineer',
+      bio: 'AI-DevOps-Engineer mit 5+ Jahren Erfahrung in Softwareentwicklung und Systemen. Ich baue belastbare Cloud-Infrastruktur, automatisierte GitOps-Pipelines und KI-beschleunigte Delivery-Systeme: CI/CD-Workflows ohne Ausfallzeit, Container-Orchestrierung mit Kubernetes, Helm und Terraform sowie agentische KI in DevOps-Umgebungen für maximale Entwicklungsgeschwindigkeit. Offen für Remote-Rollen in AI DevOps, Platform Engineering und SRE.',
       downloadCv: 'Lebenslauf herunterladen',
       contactInfo: 'Kontaktinfo'
     },
     stats: {
       experience: { value: '5+ Jahre', label: 'Gesamterfahrung', desc: 'DevOps (1 J.), Software & Frontend (5+ J.)' },
-      throughput: { value: '10.000+', label: 'Ereignisse / Sekunde', desc: 'Optimierung von Echtzeit-Systemen' },
-      bottlenecks: { value: '30%', label: 'Weniger Engpässe', desc: 'Reduzierte Rendering-Verzögerung durch SSR/ISR' },
-      delivery: { value: '40%', label: 'Schnellere Lieferung', desc: 'Beschleunigte Zyklen durch KI-gestützte Entwicklung' }
+      throughput: { value: '80%', label: 'Schnelleres Projekt-Setup', desc: 'Terraform Infrastructure-as-Code-Bereitstellung' },
+      bottlenecks: { value: '30%', label: 'Schnellere Deployments', desc: 'Automatisierte GitHub-Actions-Pipelines & Container-Orchestrierung' },
+      delivery: { value: '40%', label: 'Weniger manueller Aufwand', desc: 'Docker-Microservices & automatisierte Bereitstellung' }
     },
     experience: {
       title: 'Berufserfahrung',
       at: 'bei',
       roles: {
         gesher: {
-          role: 'DevOps-Engineer mit KI-Automatisierung',
+          role: 'DevOps-Engineer',
           location: 'Ernakulam, Indien',
           highlights: [
-            'Architektur von Full-Stack-Lösungen mit Next.js und Supabase PostgreSQL. Optimierung der Backend-Infrastruktur durch KI-gestützte Entwicklung.',
-            'Implementierung moderner DevOps-Strategien einschließlich automatisierter CI/CD-Pipelines über GitHub Actions und Containerisierung mit Docker.',
-            'Beratung zur Frontend-Performance, Implementierung fortgeschrittener Caching-Strategien und SSR-Optimierung zur Verbesserung von SEO.'
+            'Leitung der End-to-End-Entwicklung, Bereitstellung und Infrastrukturautomatisierung für mehrere Kundenprojekte auf einem hybriden Stack (Next.js, ASP.NET Core, MySQL) mit CI/CD- und GitOps-Praktiken für hohe Zuverlässigkeit und schnelle Lieferung.',
+            'Integration und Betrieb regionaler und internationaler Zahlungs-Gateways (Stripe, PhonePe, Cashfree) in Next.js- und PHP-Anwendungen mit 99,9% Verfügbarkeit der Checkout-Dienste.',
+            'Entwicklung von Terraform-Skripten zur Infrastruktur- und Umgebungsbereitstellung (Infrastructure-as-Code), wodurch die manuelle Einrichtungszeit neuer Projekte um 80% sank.'
           ]
         },
         upskillingGap: {
           role: 'KI-Automatisierte DevOps-Fortbildung & geplante Pause',
           location: 'Selbstständig / Persönliches Lernen',
           highlights: [
-            'Geplante Karrierepause für persönliche Meilensteine (Hochzeit und Familienfeiern).',
+            'Geplante Karrierepause für persönliche Meilensteine (Hochzeit).',
             'Intensive Fortbildung in modernen DevOps-Praktiken, AIOps und KI-Automatisierungswerkzeugen.',
             'Entwicklung persönlicher Projekte und automatisierter Workflows mithilfe von Loop-Engineering-Aktivitäten und Agenten-Orchestrierungen.'
           ]
         },
         bct: {
           role: 'Senior Entwickler',
-          location: 'Thiruvandapuram, Indien',
+          location: 'Thiruvananthapuram, Indien',
           highlights: [
             'Implementierung des Statusmanagements mit React/Redux-Saga zur Optimierung der Datenverarbeitung in Produktionsumgebungen.',
             'Effizienzsteigerung im Team um 25% durch KI-gestützte Entwicklungsmethoden und GitHub Copilot.',
-            'Mitarbeit bei der Bereitstellung der Ksmart- und Ksuite-Webanwendungen.'
+            'Optimierung der digitalen Aktenverwaltung für über 100 Kommunalbehörden durch verbesserte Ksmart- und Ksuite-Funktionen für den Kunden Information Kerala Mission (IKM).',
+            'Integration digitaler Signaturen in Ksuite, wodurch die Genehmigungsdauer von Dokumenten für kommunale Beamte um 40% sank.'
           ]
         },
         inluxFull: {
@@ -382,7 +498,7 @@ const translations: Record<Language, TranslationSchema> = {
         },
         hats: {
           role: 'Junior React-Entwickler',
-          location: 'Ernakulam, Indien',
+          location: 'Infopark, Kochi, Indien',
           highlights: [
             'Bau und Bereitstellung einer PWA und TWA unter Verwendung von React.js and React Native mit einer Steigerung der Nutzerbindung um 40%.',
             'Verwaltung von Echtzeitanwendungen (Sprachübersetzungs-App) und E-Commerce-Plattformen.'
@@ -435,59 +551,101 @@ const translations: Record<Language, TranslationSchema> = {
         'Auszeichnungen: Gewinner als "Bester Coder" der ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Weiterleitung zu',
+      fallback: 'Keine automatische Weiterleitung? Weiter',
+      invalidTitle: 'Link nicht verfügbar',
+      invalidDesc: 'Dieser Kurzlink ist unbekannt oder verweist auf eine nicht erlaubte Domain.',
+      backHome: 'Zurück zur Startseite'
+    },
+    whatsapp: {
+      countdown: 'WhatsApp öffnet sich in {s} s…',
+      cancel: 'Abbrechen',
+      message: 'Hallo Arun, ich habe dein Portfolio gesehen und würde mich gern vernetzen.'
+    },
+    about: {
+      kicker: 'Berufliche Zusammenfassung',
+      title: 'Über Arun Jojo',
+      summary: 'AI-DevOps-Engineer mit 5+ Jahren Erfahrung in Softwareentwicklung und Systemen. Ich baue belastbare Cloud-Infrastruktur, automatisierte GitOps-Pipelines und KI-beschleunigte Delivery-Systeme und verbinde Anwendungsarchitektur mit Cloud-Betrieb. Ich stehe für entwicklergetriebene Zuverlässigkeit („you build it, you run it“): effiziente Nutzung von Cloud-Ressourcen, Sicherheit früh in der Pipeline und beobachtbare, selbstheilende Plattformen.',
+      backHome: 'Zurück zur Startseite',
+      contactMe: 'Kontakt',
+      capabilitiesTitle: 'Kernkompetenzen',
+      capabilities: [
+        'Infrastructure as Code mit Terraform und Ansible auf AWS, Azure und GCP',
+        'Container-Orchestrierung mit Docker, Kubernetes und Helm über GitOps-Workflows',
+        'Automatisierte CI/CD-Pipelines ohne Ausfallzeit mit GitHub Actions',
+        'Optimierung von Backend-Architekturen in PHP, Node.js und ASP.NET Core',
+        'Beobachtbare, selbstheilende Plattformen mit Prometheus und Grafana',
+        'KI-gestützte Softwareentwicklung mit modernen KI-Tools und Agenten'
+      ],
+      snapshotTitle: 'Profil auf einen Blick',
+      snapshot: [
+        '5+ Jahre Entwicklung skalierbarer Webanwendungen und digitaler Produkte.',
+        'Spezialisiert auf Kubernetes, Terraform, Docker, Helm, GitOps und CI/CD auf Basis von Next.js, React, ASP.NET Core und Node.js.',
+        'Offen für Remote-Rollen in AI DevOps, Platform Engineering und SRE.'
+      ],
+      portraitAlt: 'Porträt von Arun Jojo'
+    },
+    kcsa: {
+      kicker: 'Aktuell in Vorbereitung',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Vertiefung in Kubernetes-Cluster-Härtung, Cloud-Native-Bedrohungsmodellierung und Supply-Chain-Sicherheit.',
+      link: 'Zur Zertifizierung'
+    },
     contact: {
       title: 'Kontaktinformationen',
       website: 'LinkedIn-Website',
       email: 'E-Mail',
-      phone: 'Telefon',
+      phone: 'WhatsApp',
       location: 'Standort',
       locationVal: 'Ernakulam, Kerala, Indien'
     }
   },
   es: {
-    nav: { home: 'Inicio', about: 'Acerca de', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto' },
+    nav: { home: 'Inicio', about: 'Acerca de', experience: 'Experiencia', projects: 'Proyectos', skills: 'Habilidades', certifications: 'Certificaciones', contact: 'Contacto', education: 'Educación' },
     hero: {
       title: 'Arun Jojo',
-      subtitle: 'Ingeniero DevOps con Automatización de IA',
-      bio: 'Ingeniero DevOps con Automatización de IA (1 año) y Desarrollo de Software/Frontend (5+ años), con una experiencia general de 5+ años en la construcción de aplicaciones web escalables y automatización de pipelines de entrega. Ayudo a los equipos a entregar más rápido diseñando pipelines de CI/CD, integrando AIOps y optimizando sistemas en tiempo real que manejan más de 10,000 eventos por segundo.',
+      subtitle: 'Ingeniero AI DevOps e Ingeniero de Software Senior',
+      bio: 'Ingeniero AI DevOps con más de 5 años de experiencia en ingeniería de software y sistemas. Construyo infraestructura cloud resiliente, pipelines GitOps automatizados y sistemas de entrega acelerados por IA: flujos CI/CD sin tiempo de inactividad, orquestación de contenedores con Kubernetes, Helm y Terraform, e IA agéntica integrada en entornos DevOps para maximizar la velocidad de ingeniería. Disponible para roles remotos de AI DevOps, Platform y SRE.',
       downloadCv: 'Descargar CV',
       contactInfo: 'Información de Contacto'
     },
     stats: {
       experience: { value: '5+ Años', label: 'Experiencia General', desc: 'DevOps (1 año), Software y Frontend (5+ años)' },
-      throughput: { value: '10,000+', label: 'Eventos / Segundo', desc: 'Optimización de sistemas en tiempo real de alto rendimiento' },
-      bottlenecks: { value: '30%', label: 'Menos Cuellos de Botella', desc: 'Reducción de latencia de renderizado mediante SSR/ISR' },
-      delivery: { value: '40%', label: 'Entrega más Rápida', desc: 'Ciclos acelerados mediante desarrollo aumentado por IA' }
+      throughput: { value: '80%', label: 'Configuración más Rápida', desc: 'Aprovisionamiento Infrastructure-as-Code con Terraform' },
+      bottlenecks: { value: '30%', label: 'Despliegues más Rápidos', desc: 'Pipelines automatizados con GitHub Actions y orquestación de contenedores' },
+      delivery: { value: '40%', label: 'Menos Trabajo Manual', desc: 'Microservicios con Docker y aprovisionamiento automatizado' }
     },
     experience: {
       title: 'Experiencia Laboral',
       at: 'en',
       roles: {
         gesher: {
-          role: 'Ingeniero DevOps con Automatización de IA',
+          role: 'Ingeniero DevOps',
           location: 'Ernakulam, India',
           highlights: [
-            'Arquitectura de soluciones full-stack usando Next.js y Supabase PostgreSQL. Optimización de la infraestructura backend mediante desarrollo guiado por IA.',
-            'Implementación de estrategias modernas de DevOps, incluidos pipelines de CI/CD automatizados mediante GitHub Actions y contenedorización con Docker.',
-            'Consultoría sobre rendimiento frontend, implementación de estrategias avanzadas de almacenamiento en caché y optimización SSR.'
+            'Lideré el desarrollo, despliegue y automatización de infraestructura de extremo a extremo para múltiples proyectos de clientes sobre un stack híbrido (Next.js, ASP.NET Core, MySQL), aplicando prácticas CI/CD y GitOps para alta fiabilidad y entrega rápida.',
+            'Integré y gestioné pasarelas de pago regionales e internacionales (Stripe, PhonePe, Cashfree) en aplicaciones Next.js y PHP, logrando un 99.9% de disponibilidad en los servicios de checkout.',
+            'Desarrollé scripts de Terraform para el aprovisionamiento de infraestructura y entornos (Infrastructure-as-Code), reduciendo un 80% el tiempo de configuración manual de nuevos proyectos.'
           ]
         },
         upskillingGap: {
           role: 'Capacitación DevOps Automatizada por IA y Pausa Planificada',
           location: 'Trabajo por cuenta propia / Aprendizaje personal',
           highlights: [
-            'Pausa profesional planificada para hitos personales (boda y funciones familiares).',
+            'Pausa profesional planificada para hitos personales (boda).',
             'Capacitación intensiva en prácticas modernas de DevOps, AIOps y herramientas de automatización de IA.',
             'Desarrollo de proyectos personales y flujos de trabajo automatizados utilizando actividades de ingeniería en bucle y orquestaciones de agentes.'
           ]
         },
         bct: {
           role: 'Desarrollador Senior',
-          location: 'Thiruvandapuram, India',
+          location: 'Thiruvananthapuram, India',
           highlights: [
             'Implementación de la gestión de estados con React/Redux-Saga para optimizar el manejo de datos en entornos de producción.',
             'Aumento del 25% en la eficiencia del desarrollo del equipo a través de prácticas aumentadas con IA y GitHub Copilot.',
-            'Contribución al despliegue de las aplicaciones web Ksmart y Ksuite.'
+            'Optimicé la gestión digital de archivos para más de 100 oficinas de organismos locales mediante funciones mejoradas de Ksmart y Ksuite para el cliente Information Kerala Mission (IKM).',
+            'Implementé la integración de firma digital en Ksuite, reduciendo un 40% el tiempo de aprobación de documentos para los funcionarios locales.'
           ]
         },
         inluxFull: {
@@ -501,7 +659,7 @@ const translations: Record<Language, TranslationSchema> = {
         },
         hats: {
           role: 'Desarrollador React Junior',
-          location: 'Ernakulam, India',
+          location: 'Infopark, Kochi, India',
           highlights: [
             'Construcción y despliegue de PWA y TWA usando React.js y React Native, logrando un aumento del 40% en la retención de usuarios móviles.',
             'Gestión de aplicaciones en tiempo real (aplicación de traducción de voz) y plataformas de comercio electrónico.'
@@ -554,59 +712,101 @@ const translations: Record<Language, TranslationSchema> = {
         'Logros: Ganador del premio al "Mejor Codificador" en ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'Redirigiendo a',
+      fallback: '¿No se redirigió automáticamente? Continuar',
+      invalidTitle: 'Enlace no disponible',
+      invalidDesc: 'Este enlace corto es desconocido o apunta a un dominio no permitido.',
+      backHome: 'Volver al inicio'
+    },
+    whatsapp: {
+      countdown: 'Abriendo WhatsApp en {s} s…',
+      cancel: 'Cancelar',
+      message: 'Hola Arun, visité tu portafolio y me gustaría conectar contigo.'
+    },
+    about: {
+      kicker: 'Resumen Profesional',
+      title: 'Sobre Arun Jojo',
+      summary: 'Ingeniero AI DevOps con más de 5 años de experiencia en ingeniería de software y sistemas. Construyo infraestructura cloud resiliente, pipelines GitOps automatizados y sistemas de entrega acelerados por IA, uniendo la arquitectura de aplicaciones con las operaciones cloud. Promuevo la fiabilidad liderada por desarrolladores ("you build it, you run it"): uso eficiente de recursos cloud, seguridad desde el inicio del pipeline y plataformas observables y autorreparables.',
+      backHome: 'Volver al Inicio',
+      contactMe: 'Contáctame',
+      capabilitiesTitle: 'Capacidades Clave',
+      capabilities: [
+        'Infraestructura como código con Terraform y Ansible en AWS, Azure y GCP',
+        'Orquestación de contenedores con Docker, Kubernetes y Helm mediante flujos GitOps',
+        'Pipelines CI/CD automatizados sin tiempo de inactividad con GitHub Actions',
+        'Optimización de arquitecturas backend en PHP, Node.js y ASP.NET Core',
+        'Plataformas observables y autorreparables con Prometheus y Grafana',
+        'Desarrollo de software potenciado por IA con herramientas y agentes modernos'
+      ],
+      snapshotTitle: 'Perfil en Resumen',
+      snapshot: [
+        'Más de 5 años creando aplicaciones web escalables y productos digitales.',
+        'Especializado en Kubernetes, Terraform, Docker, Helm, GitOps y CI/CD, sobre una base de Next.js, React, ASP.NET Core y Node.js.',
+        'Disponible para roles remotos de AI DevOps, Platform Engineering y SRE.'
+      ],
+      portraitAlt: 'Retrato de Arun Jojo'
+    },
+    kcsa: {
+      kicker: 'Actualmente cursando',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'Desarrollando experiencia en hardening de clústeres Kubernetes, modelado de amenazas cloud native y seguridad de la cadena de suministro.',
+      link: 'Sobre la certificación'
+    },
     contact: {
       title: 'Información de Contacto',
       website: 'Sitio Web de LinkedIn',
       email: 'Correo Electrónico',
-      phone: 'Teléfono',
+      phone: 'WhatsApp',
       location: 'Ubicación',
       locationVal: 'Ernakulam, Kerala, India'
     }
   },
   ar: {
-    nav: { home: 'الرئيسية', about: 'عنّي', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال' },
+    nav: { home: 'الرئيسية', about: 'عنّي', experience: 'الخبرة', projects: 'المشاريع', skills: 'المهارات', certifications: 'الشهادات', contact: 'الاتصال', education: 'التعليم' },
     hero: {
       title: 'أرون جوجو',
-      subtitle: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',
-      bio: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي (سنة واحدة) وهندسة البرمجيات والواجهات الأمامية (٥+ سنوات) بخبرة إجمالية تزيد عن ٥ سنوات في بناء تطبيقات الويب القابلة للتوسع وأتمتة خطوط أنابيب التسليم. أساعد الفرق على التسليم بشكل أسرع من خلال تصميم أنابيب CI/CD ودمج AIOps وتحسين الأنظمة في الوقت الفعلي التي تتعامل مع أكثر من 10,000 حدث/ثانية.',
+      subtitle: 'مهندس AI DevOps ومهندس برمجيات أول',
+      bio: 'مهندس AI DevOps بخبرة تزيد عن ٥ سنوات في هندسة البرمجيات والأنظمة. أبني بنية سحابية مرنة وخطوط GitOps مؤتمتة وأنظمة تسليم مُسرَّعة بالذكاء الاصطناعي: سير عمل CI/CD دون توقف، وتنسيق الحاويات باستخدام Kubernetes وHelm وTerraform، ودمج الذكاء الاصطناعي الوكيلي في بيئات ديف أوبس لرفع سرعة الهندسة. متاح لأدوار AI DevOps وهندسة المنصات وSRE عن بُعد.',
       downloadCv: 'تحميل السيرة الذاتية',
       contactInfo: 'معلومات الاتصال'
     },
     stats: {
       experience: { value: '٥+ سنوات', label: 'الخبرة الإجمالية', desc: 'ديف أوبس (سنة واحدة)، هندسة البرمجيات والواجهات (٥+ سنوات)' },
-      throughput: { value: '١٠,٠٠٠+', label: 'حدث / ثانية', desc: 'تحسين الأنظمة في الوقت الفعلي ذات الإنتاجية العالية' },
-      bottlenecks: { value: '٣٠٪', label: 'أداء أفضل', desc: 'تقليل تأخير العرض من خلال استراتيجيات SSR/ISR' },
-      delivery: { value: '٤٠٪', label: 'تسليم أسرع', desc: 'تسريع دورات التطوير من خلال البرمجة المدعومة بالذكاء الاصطناعي' }
+      throughput: { value: '٨٠٪', label: 'إعداد أسرع للمشاريع', desc: 'تجهيز البنية التحتية كرمز باستخدام Terraform' },
+      bottlenecks: { value: '٣٠٪', label: 'نشر أسرع', desc: 'خطوط GitHub Actions مؤتمتة وتنسيق الحاويات' },
+      delivery: { value: '٤٠٪', label: 'جهد يدوي أقل', desc: 'خدمات مصغرة بـ Docker وتجهيز مؤتمت' }
     },
     experience: {
       title: 'الخبرة المهنية',
       at: 'في',
       roles: {
         gesher: {
-          role: 'مهندس ديف أوبس مع أتمتة الذكاء الاصطناعي',
+          role: 'مهندس ديف أوبس',
           location: 'إرناكولام، الهند',
           highlights: [
-            'هندسة حلول الويب المتكاملة باستخدام Next.js و Supabase PostgreSQL مع التركيز على التصميم القابل للتوسع. تحسين البنية التحتية من خلال البرمجة المعتمدة على الذكاء الاصطناعي.',
-            'تنفيذ استراتيجيات DevOps الحديثة بما في ذلك أنابيب CI/CD المؤتمتة عبر GitHub Actions والحاويات باستخدام Docker لتسهيل التوسع السحابي.',
-            'استشارات أداء واجهة المستخدم، وتطبيق استراتيجيات التخزين المؤقت المتقدمة، وتحسين SSR لتعزيز محركات البحث.'
+            'قيادة التطوير والنشر وأتمتة البنية التحتية من البداية إلى النهاية لعدة مشاريع عملاء على تقنيات هجينة (Next.js وASP.NET Core وMySQL) مع تطبيق ممارسات CI/CD وGitOps لتحقيق موثوقية عالية وتسليم سريع.',
+            'دمج وإدارة بوابات دفع إقليمية ودولية (Stripe وPhonePe وCashfree) في تطبيقات Next.js وPHP، مع تحقيق جاهزية بنسبة 99.9% لخدمات الدفع.',
+            'تطوير نصوص Terraform لتجهيز البنية التحتية والبيئات (البنية التحتية كرمز)، مما قلل وقت الإعداد اليدوي للمشاريع الجديدة بنسبة 80%.'
           ]
         },
         upskillingGap: {
           role: 'تطوير مهارات ديف أوبس المؤتمتة بالذكاء الاصطناعي وفترة استراحة مخططة',
           location: 'عمل حر / تعليم شخصي',
           highlights: [
-            'استراحة مهنية مخططة لأحداث شخصية (الزفاف ومناسبات عائلية أخرى).',
+            'استراحة مهنية مخططة لأحداث شخصية (الزفاف).',
             'تطوير مكثف للمهارات في ممارسات ديف أوبس الحديثة وAIOps وأدوات أتمتة الذكاء الاصطناعي.',
             'تطوير مشاريع شخصية وسير عمل مؤتمت باستخدام أنشطة هندسة التكرار والتنسيق البرمجي للاستعداد للخطوة المهنية التالية.'
           ]
         },
         bct: {
           role: 'مطور برمجيات أول',
-          location: 'تيروفاناندابورام، الهند',
+          location: 'ثيروفانانثابورام، الهند',
           highlights: [
             'تطبيق إدارة الحالة باستخدام React/Redux-Saga، مع التركيز بشكل خاص على تحسين معالجة البيانات التي تؤثر على استقرار التطبيق في البيئات الحية.',
-            'زيادة بنسبة ٢٥٪ in كفاءة تطوير الفريق من خلال استخدام ممارسات التطوير المعززة بالذكاء الاصطناعي ومساعد GitHub Copilot.',
-            'المساهمة في نشر تطبيقات الويب Ksmart و Ksuite، مما يضمن الاستقرار وسهولة الاستخدام.'
+            'زيادة بنسبة ٢٥٪ في كفاءة تطوير الفريق من خلال استخدام ممارسات التطوير المعززة بالذكاء الاصطناعي ومساعد GitHub Copilot.',
+            'تبسيط إدارة الملفات الرقمية لأكثر من 100 مكتب للهيئات المحلية من خلال ميزات محسّنة في Ksmart وKsuite للعميل Information Kerala Mission (IKM).',
+            'تنفيذ تكامل التوقيع الرقمي في Ksuite، مما قلل وقت اعتماد المستندات بنسبة 40% لمسؤولي الهيئات المحلية.'
           ]
         },
         inluxFull: {
@@ -620,7 +820,7 @@ const translations: Record<Language, TranslationSchema> = {
         },
         hats: {
           role: 'مطور React مبتدئ',
-          location: 'إرناكولام، الهند',
+          location: 'إنفوبارك، كوتشي، الهند',
           highlights: [
             'بناء ونشر تطبيقات الويب التقدمية (PWA) وتطبيقات الأنشطة الموثوقة (TWA) باستخدام React.js و React Native، وتحقيق زيادة بنسبة ٤٠٪ في استبقاء المستخدمين.',
             'إدارة تطبيقات الوقت الفعلي (تطبيق ترجمة الصوت) ومنصات التجارة الإلكترونية.'
@@ -673,11 +873,52 @@ const translations: Record<Language, TranslationSchema> = {
         'الإنجازات: الفوز بجائزة أفضل مبرمج في حدث ZEITGEIST'
       ]
     },
+    redirect: {
+      redirecting: 'جارٍ التحويل إلى',
+      fallback: 'لم يتم التحويل تلقائيًا؟ تابع',
+      invalidTitle: 'الرابط غير متاح',
+      invalidDesc: 'هذا الرابط المختصر غير معروف أو يشير إلى نطاق غير مسموح به.',
+      backHome: 'العودة إلى الرئيسية'
+    },
+    whatsapp: {
+      countdown: 'سيتم فتح واتساب خلال {s} ث…',
+      cancel: 'إلغاء',
+      message: 'مرحبًا أرون، زرت معرض أعمالك وأود التواصل معك.'
+    },
+    about: {
+      kicker: 'ملخص مهني',
+      title: 'نبذة عن أرون جوجو',
+      summary: 'مهندس AI DevOps بخبرة تزيد عن ٥ سنوات في هندسة البرمجيات والأنظمة. أبني بنية سحابية مرنة وخطوط GitOps مؤتمتة وأنظمة تسليم مُسرَّعة بالذكاء الاصطناعي تربط بين بنية التطبيقات والعمليات السحابية. أؤمن بالموثوقية التي يقودها المطورون ("you build it, you run it"): تحسين استخدام الموارد السحابية، وفرض الأمان مبكرًا في خط الإنتاج، وتقديم منصات قابلة للمراقبة وذاتية الإصلاح.',
+      backHome: 'العودة إلى الرئيسية',
+      contactMe: 'تواصل معي',
+      capabilitiesTitle: 'القدرات الأساسية',
+      capabilities: [
+        'تجهيز البنية التحتية كرمز باستخدام Terraform وAnsible على AWS وAzure وGCP',
+        'تنسيق الحاويات باستخدام Docker وKubernetes وHelm عبر سير عمل GitOps',
+        'خطوط CI/CD مؤتمتة دون توقف عبر GitHub Actions',
+        'تحسين بنى الخوادم الخلفية في PHP وNode.js وASP.NET Core',
+        'بناء منصات قابلة للمراقبة وذاتية الإصلاح باستخدام Prometheus وGrafana',
+        'تطوير برمجيات مدعوم بالذكاء الاصطناعي باستخدام أدوات ووكلاء حديثة'
+      ],
+      snapshotTitle: 'لمحة عن الملف الشخصي',
+      snapshot: [
+        'أكثر من ٥ سنوات في بناء تطبيقات ويب قابلة للتوسع ومنتجات رقمية.',
+        'متخصص في Kubernetes وTerraform وDocker وHelm وGitOps وCI/CD على أساس Next.js وReact وASP.NET Core وNode.js.',
+        'متاح لأدوار AI DevOps وهندسة المنصات وSRE عن بُعد.'
+      ],
+      portraitAlt: 'صورة أرون جوجو'
+    },
+    kcsa: {
+      kicker: 'أعمل حاليًا على',
+      title: 'Kubernetes and Cloud Native Security Associate (KCSA)',
+      desc: 'بناء خبرة في تقوية عناقيد Kubernetes ونمذجة التهديدات السحابية الأصلية وأمن سلسلة التوريد.',
+      link: 'عن الشهادة'
+    },
     contact: {
       title: 'معلومات الاتصال المباشر',
       website: 'موقع لينكد إن',
       email: 'البريد الإلكتروني',
-      phone: 'الهاتف',
+      phone: 'واتساب',
       location: 'الموقع الجغرافي',
       locationVal: 'إرناكولام، كيرالا، الهند'
     }

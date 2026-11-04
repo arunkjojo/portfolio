@@ -6,7 +6,7 @@ export default function Education() {
   const { t, language } = useTranslation()
 
   return (
-    <section className="mb-16">
+    <section id="education" className="mb-16">
       <div className="flex items-center gap-2 mb-8">
         <GraduationCap className="h-6 w-6 text-[var(--lagoon-deep)]" />
         <h2 className="text-2xl font-bold tracking-tight text-[var(--sea-ink)]">{t.education.title}</h2>

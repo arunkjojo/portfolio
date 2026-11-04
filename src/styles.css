@@ -497,3 +497,74 @@ a:active,
   transform: translateY(0);
 }
 
+
+/* KCSA 3D highlight card */
+@property --cert-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cert-3d-scene {
+  perspective: 1100px;
+}
+
+.cert-3d-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  border-radius: 1.75rem;
+  padding: 3px;
+  background: conic-gradient(
+    from var(--cert-angle),
+    var(--lagoon),
+    var(--palm),
+    var(--lagoon-deep),
+    color-mix(in oklab, var(--lagoon) 40%, transparent),
+    var(--lagoon)
+  );
+  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out, box-shadow 250ms ease;
+  box-shadow:
+    0 2px 0 var(--inset-glint) inset,
+    0 30px 60px -18px color-mix(in oklab, var(--lagoon-deep) 45%, transparent),
+    0 14px 28px rgba(23, 58, 64, 0.12),
+    0 0 0 1px var(--line);
+  animation: cert-border-spin 6s linear infinite;
+}
+
+.cert-3d-card:hover {
+  box-shadow:
+    0 2px 0 var(--inset-glint) inset,
+    0 40px 80px -20px color-mix(in oklab, var(--lagoon-deep) 60%, transparent),
+    0 18px 36px rgba(23, 58, 64, 0.16),
+    0 0 24px color-mix(in oklab, var(--lagoon) 35%, transparent);
+}
+
+.cert-3d-inner {
+  border-radius: calc(1.75rem - 3px);
+  background: linear-gradient(165deg, var(--surface-strong), color-mix(in oklab, var(--surface-strong) 85%, var(--lagoon) 15%));
+}
+
+.cert-3d-icon {
+  background: color-mix(in oklab, var(--lagoon) 18%, transparent);
+  border: 1px solid var(--chip-line);
+  transform: translateZ(28px);
+}
+
+@keyframes cert-border-spin {
+  to { --cert-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-3d-card {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+  .cert-3d-inner,
+  .cert-3d-icon {
+    transform: none;
+  }
+}

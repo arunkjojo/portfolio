@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RChar123SlugChar125RouteImport } from './routes/r.{-$slug}'
 
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RChar123SlugChar125Route = RChar123SlugChar125RouteImport.update({
+  id: '/r/{-$slug}',
+  path: '/r/{-$slug}',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/r/{-$slug}': typeof RChar123SlugChar125Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/r/{-$slug}': typeof RChar123SlugChar125Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/r/{-$slug}': typeof RChar123SlugChar125Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/about' | '/r/{-$slug}'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/about' | '/r/{-$slug}'
+  id: '__root__' | '/' | '/about' | '/r/{-$slug}'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  RChar123SlugChar125Route: typeof RChar123SlugChar125Route
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/r/{-$slug}': {
+      id: '/r/{-$slug}'
+      path: '/r/{-$slug}'
+      fullPath: '/r/{-$slug}'
+      preLoaderRoute: typeof RChar123SlugChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  RChar123SlugChar125Route: RChar123SlugChar125Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

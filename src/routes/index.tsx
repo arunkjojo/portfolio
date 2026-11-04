@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect } from 'react'
 import Hero from '../components/portfolio/Hero'
 import Stats from '../components/portfolio/Stats'
+import CertHighlight from '../components/portfolio/CertHighlight'
 import Experience from '../components/portfolio/Experience'
 import Projects from '../components/portfolio/Projects'
 import Skills from '../components/portfolio/Skills'
@@ -30,12 +31,15 @@ function App() {
   }, [])
 
   return (
-    <main className="page-wrap px-4 pb-16 pt-24 overflow-x-hidden">
+    <main className="page-wrap px-4 pb-16 pt-16 overflow-x-hidden">
       <div className="scroll-fade-in">
         <Hero />
       </div>
       <div className="scroll-fade-in">
         <Stats />
+      </div>
+      <div className="scroll-fade-in">
+        <CertHighlight />
       </div>
       <div className="scroll-fade-in">
         <Experience />

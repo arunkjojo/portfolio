@@ -5,20 +5,24 @@ export default function Certifications() {
   const { t } = useTranslation()
 
   const certificationsList = [
-    { title: 'Model Context Protocol: Advanced Topics', issuer: 'Anthropic', date: 'Aug 2025' },
-    { title: 'Claude Code 101', issuer: 'Anthropic', date: 'Jul 2025' },
-    { title: 'Claude Code: Software Engineering with Generative AI', issuer: 'Anthropic', date: 'Jul 2025' },
-    { title: 'Back-End Development with .NET', issuer: 'Anthropic', date: 'Jul 2025' },
-    { title: 'Learn by Doing - Prompt Engineering 101', issuer: 'KodeKloud', date: 'Aug 2025' },
-    { title: '12 Factor App', issuer: 'KodeKloud', date: 'Jul 2025' },
-    { title: 'Ethical Hacking Stage 2 - Hacking the MAC', issuer: 'Hacker X', date: 'Aug 2025' },
-    { title: 'Ethical Hacking Stage 1 - Know the OS', issuer: 'Hacker X', date: 'Aug 2025' },
-    { title: 'AI tools and ChatGPT workshop', issuer: 'Be10x', date: 'Nov 2024' },
-    { title: 'Certificate in Prompt Engineering for ChatGPT', issuer: 'Great Learning', date: 'Nov 2024' },
-    { title: 'Certificate in React.js', issuer: 'CareerNinja | LearnTube', date: 'Jun 2024' },
-    { title: 'Mastering JavaScript Fundamentals', issuer: 'Geekster', date: 'May 2024' },
-    { title: 'React and Redux Certification Test', issuer: 'KGCoding by Prashant Sir', date: 'Mar 2024' },
-    { title: 'Udemy Certification on React JS', issuer: 'Udemy', date: 'Mar 2022' }
+    { title: 'Kubernetes and Cloud Native Security Associate (KCSA)', issuer: 'Linux Foundation', date: 'Pursuing' },
+    { title: 'Introduction to DevOps', issuer: 'IBM', date: 'Oct 2026' },
+    { title: 'AI Appreciate Badge - AI For All', issuer: 'CBSE & Intel', date: 'Sep 2026' },
+    { title: 'DevOps Engineer', issuer: 'KodeKloud', date: 'Aug 2026' },
+    { title: 'Model Context Protocol: Advanced Topics', issuer: 'Anthropic', date: 'Aug 2026' },
+    { title: 'Claude Code: Software Engineering with Generative AI Agents', issuer: 'Vanderbilt University', date: 'Jul 2026' },
+    { title: 'Claude Code 101', issuer: 'Anthropic', date: 'Jul 2026' },
+    { title: 'Back-End Development with .NET', issuer: 'Anthropic', date: 'Jun 2026' },
+    { title: 'Learn by Doing - Prompt Engineering 101', issuer: 'KodeKloud', date: 'May 2026' },
+    { title: 'DevOps 12 Factor App', issuer: 'KodeKloud', date: 'Apr 2026' }
+    // { title: 'Ethical Hacking Stage 2 - Hacking the MAC', issuer: 'Hacker X', date: 'Aug 2025' },
+    // { title: 'Ethical Hacking Stage 1 - Know the OS', issuer: 'Hacker X', date: 'Aug 2025' },
+    // { title: 'AI tools and ChatGPT workshop', issuer: 'Be10x', date: 'Nov 2024' },
+    // { title: 'Certificate in Prompt Engineering for ChatGPT', issuer: 'Great Learning', date: 'Nov 2024' },
+    // { title: 'Certificate in React.js', issuer: 'CareerNinja | LearnTube', date: 'Jun 2024' },
+    // { title: 'Mastering JavaScript Fundamentals', issuer: 'Geekster', date: 'May 2024' },
+    // { title: 'React and Redux Certification Test', issuer: 'KGCoding by Prashant Sir', date: 'Mar 2024' },
+    // { title: 'Udemy Certification on React JS', issuer: 'Udemy', date: 'Mar 2022' }
   ]
 
   return (
