@@ -131,12 +131,12 @@ personal-portfolio/
 │   │       ├── Projects.tsx, Skills.tsx, Certifications.tsx, Education.tsx, Contact.tsx
 │   ├── lib/
 │   │   ├── i18n.tsx        # Multi-language translation state & Context
-│   │   └── redirects.ts    # /r shortcuts, host allowlist, WhatsApp number
+│   │   └── redirects.ts    # /r env redirect, links, WhatsApp number
 │   ├── routes/             # File-based routing folder
 │   │   ├── __root.tsx      # Layout shell, i18n provider, WhatsApp prompt
 │   │   ├── index.tsx       # Landing page (renders portfolio sections)
 │   │   ├── about.tsx       # Secondary about details page
-│   │   └── r.{-$slug}.tsx  # /r short-link & allowlisted redirect route
+│   │   └── r.tsx           # /r env-configured redirect or links page
 │   ├── styles.css          # Design system stylesheet
 │   └── router.tsx          # TanStack Router instance
 ├── package.json            # Dependencies & scripts
@@ -167,10 +167,9 @@ personal-portfolio/
 *   Profile content source of truth is the user's LinkedIn profile. When syncing, work from a LinkedIn "Save to PDF" export (`docs/linkedin-profile.pdf`, kept out of git); do not scrape linkedin.com. Periods/companies live in the components; prose lives in `i18n.tsx` and must be updated in all five languages.
 
 ### E. Redirect Route (`/r`)
-*   `/r/<slug>` resolves a named shortcut from `SHORTCUTS` in `src/lib/redirects.ts` (linkedin, github, resume, whatsapp).
-*   `/r?url=<target>` redirects only to `https://` URLs whose host is in `ALLOWED_HOSTS` (or a subdomain of one). Bare hosts like `linkedin.com/in/x` get `https://` prepended. Never loosen this to an open redirect; add hosts to the allowlist instead.
-*   With no target (`/r`, `/r?url=`, `/r=`), the page shows "Link not available" with a 5s countdown, then navigates to `/`. Unknown or disallowed targets show the same title without auto-redirect.
-*   Short form `/r=<target>` (e.g. `/r=github`, `/r=linkedin.com/in/arunkjojo`) is rewritten to `/r?url=<target>` by `normalizeShortRedirectUrl()` in `src/main.tsx` before the router starts. A bare word target is treated as a shortcut name.
+*   `/r` reads its target from `VITE_REDIRECT_URL` via `getConfiguredRedirect()` in `src/lib/redirects.ts`. The target is never taken from the URL (no `?url=`, `/r=`, or `/r/<slug>`).
+*   Set it in Vercel (Project → Settings → Environment Variables) or in `.env` locally (see `.env.example`). Vite inlines it at build time: a change in Vercel needs a redeploy, a change in `.env` needs a dev-server restart.
+*   When set to an `https://` URL or a same-site path (`/docs/...`), `/r` auto-redirects there. When empty or invalid (invalid logs a console warning), `/r` shows a links page: GitHub, LinkedIn, Resume (`LINKS`) and Connect on WhatsApp (`whatsappUrl(t.whatsapp.message)`).
 
 ### F. Mobile WhatsApp Prompt
 *   `WhatsAppPrompt.tsx` shows a bottom banner with a visible 5s countdown, then opens `wa.me` with a localized message (`t.whatsapp.message`).
