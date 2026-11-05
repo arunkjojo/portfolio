@@ -80,8 +80,10 @@ export interface TranslationSchema {
   redirect: {
     redirecting: string
     fallback: string
-    invalidTitle: string
-    invalidDesc: string
+    linksTitle: string
+    linksDesc: string
+    resume: string
+    whatsapp: string
     backHome: string
   }
   whatsapp: {
@@ -232,8 +234,10 @@ const translations: Record<Language, TranslationSchema> = {
     redirect: {
       redirecting: 'Redirecting to',
       fallback: 'Not redirected automatically? Continue',
-      invalidTitle: 'Link not available',
-      invalidDesc: 'This short link is unknown or points to a domain that is not allowed.',
+      linksTitle: 'Find me here',
+      linksDesc: 'Pick where you\'d like to connect.',
+      resume: 'Resume',
+      whatsapp: 'Connect on WhatsApp',
       backHome: 'Back to home'
     },
     whatsapp: {
@@ -393,8 +397,10 @@ const translations: Record<Language, TranslationSchema> = {
     redirect: {
       redirecting: 'रीडायरेक्ट हो रहा है',
       fallback: 'अपने आप रीडायरेक्ट नहीं हुआ? आगे बढ़ें',
-      invalidTitle: 'लिंक उपलब्ध नहीं है',
-      invalidDesc: 'यह शॉर्ट लिंक अज्ञात है या ऐसे डोमेन की ओर इशारा करता है जिसकी अनुमति नहीं है।',
+      linksTitle: 'मुझसे यहाँ जुड़ें',
+      linksDesc: 'चुनें कि आप कहाँ जुड़ना चाहते हैं।',
+      resume: 'रिज़्यूमे',
+      whatsapp: 'WhatsApp पर जुड़ें',
       backHome: 'होम पर वापस जाएं'
     },
     whatsapp: {
@@ -554,8 +560,10 @@ const translations: Record<Language, TranslationSchema> = {
     redirect: {
       redirecting: 'Weiterleitung zu',
       fallback: 'Keine automatische Weiterleitung? Weiter',
-      invalidTitle: 'Link nicht verfügbar',
-      invalidDesc: 'Dieser Kurzlink ist unbekannt oder verweist auf eine nicht erlaubte Domain.',
+      linksTitle: 'Hier finden Sie mich',
+      linksDesc: 'Wählen Sie, wo Sie sich vernetzen möchten.',
+      resume: 'Lebenslauf',
+      whatsapp: 'Auf WhatsApp verbinden',
       backHome: 'Zurück zur Startseite'
     },
     whatsapp: {
@@ -715,8 +723,10 @@ const translations: Record<Language, TranslationSchema> = {
     redirect: {
       redirecting: 'Redirigiendo a',
       fallback: '¿No se redirigió automáticamente? Continuar',
-      invalidTitle: 'Enlace no disponible',
-      invalidDesc: 'Este enlace corto es desconocido o apunta a un dominio no permitido.',
+      linksTitle: 'Encuéntrame aquí',
+      linksDesc: 'Elige dónde te gustaría conectar.',
+      resume: 'Currículum',
+      whatsapp: 'Conectar por WhatsApp',
       backHome: 'Volver al inicio'
     },
     whatsapp: {
@@ -876,8 +886,10 @@ const translations: Record<Language, TranslationSchema> = {
     redirect: {
       redirecting: 'جارٍ التحويل إلى',
       fallback: 'لم يتم التحويل تلقائيًا؟ تابع',
-      invalidTitle: 'الرابط غير متاح',
-      invalidDesc: 'هذا الرابط المختصر غير معروف أو يشير إلى نطاق غير مسموح به.',
+      linksTitle: 'تجدني هنا',
+      linksDesc: 'اختر المكان الذي تود التواصل فيه.',
+      resume: 'السيرة الذاتية',
+      whatsapp: 'تواصل عبر واتساب',
       backHome: 'العودة إلى الرئيسية'
     },
     whatsapp: {

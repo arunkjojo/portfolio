@@ -9,10 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RRouteImport } from './routes/r'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as RChar123SlugChar125RouteImport } from './routes/r.{-$slug}'
 
+const RRoute = RRouteImport.update({
+  id: '/r',
+  path: '/r',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -23,44 +28,46 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RChar123SlugChar125Route = RChar123SlugChar125RouteImport.update({
-  id: '/r/{-$slug}',
-  path: '/r/{-$slug}',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/r/{-$slug}': typeof RChar123SlugChar125Route
+  '/r': typeof RRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/r/{-$slug}': typeof RChar123SlugChar125Route
+  '/r': typeof RRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/r/{-$slug}': typeof RChar123SlugChar125Route
+  '/r': typeof RRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/r/{-$slug}'
+  fullPaths: '/' | '/about' | '/r'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/r/{-$slug}'
-  id: '__root__' | '/' | '/about' | '/r/{-$slug}'
+  to: '/' | '/about' | '/r'
+  id: '__root__' | '/' | '/about' | '/r'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  RChar123SlugChar125Route: typeof RChar123SlugChar125Route
+  RRoute: typeof RRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/r': {
+      id: '/r'
+      path: '/r'
+      fullPath: '/r'
+      preLoaderRoute: typeof RRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -75,20 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/r/{-$slug}': {
-      id: '/r/{-$slug}'
-      path: '/r/{-$slug}'
-      fullPath: '/r/{-$slug}'
-      preLoaderRoute: typeof RChar123SlugChar125RouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  RChar123SlugChar125Route: RChar123SlugChar125Route,
+  RRoute: RRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
